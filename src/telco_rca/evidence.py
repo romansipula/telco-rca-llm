@@ -240,9 +240,11 @@ def extract(
             base_share = reference.categorical_share[name]
         else:
             base_share = _share(arr)
-        keys = set(seg_share) | set(base_share)
+        keys = sorted(set(seg_share) | set(base_share))
         shifts = {k: seg_share.get(k, 0.0) - base_share.get(k, 0.0) for k in keys}
-        kmax = max(shifts, key=lambda k: abs(shifts[k])) if shifts else ""
+        # deterministic tie-break (with two categories the shifts are always +x / -x):
+        # largest |shift|, then the category that grew, then name
+        kmax = max(keys, key=lambda k: (round(abs(shifts[k]), 9), shifts[k] > 0, k)) if keys else ""
         cats.append(CategoricalEvidence(name, seg_share, base_share, abs(shifts.get(kmax, 0.0)), kmax))
 
     return Evidence(case.case_id, T, case.sampling_seconds, (s, e), segment_given, note, kpis, cats,

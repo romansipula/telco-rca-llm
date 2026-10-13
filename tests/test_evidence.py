@@ -73,3 +73,12 @@ def test_no_segment_mode_and_render_and_features():
     names = feature_names(list(c.numeric), list(c.categorical))
     f = to_features(extract(c), list(c.numeric), list(c.categorical))
     assert len(names) == len(f)
+
+
+def test_categorical_tie_break_is_deterministic():
+    # two categories => shifts are always +x / -x; the grown category must be reported, independent
+    # of PYTHONHASHSEED (this once made the prompts differ between runs)
+    c = _case()
+    for _ in range(3):
+        ev = extract(c)
+        assert ev.categorical[0].shifted_value == "UDP"

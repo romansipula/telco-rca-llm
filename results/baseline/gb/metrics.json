@@ -3,20 +3,20 @@
  "json_valid_rate": 1.0,
  "schema_valid_rate": 0.0,
  "root_cause": {
-  "accuracy": 0.7435064935064936,
-  "macro_f1": 0.5746523357428431,
+  "accuracy": 0.737012987012987,
+  "macro_f1": 0.5936451011728113,
   "per_class_f1": {
    "Antenna Failure": 0.7368421052631579,
-   "Buffer Overflow (Gradual Buildup)": 0.7222222222222222,
-   "Co-Channel Interference (Mild)": 0.3783783783783784,
+   "Buffer Overflow (Gradual Buildup)": 0.6923076923076923,
+   "Co-Channel Interference (Mild)": 0.39436619718309857,
    "Co-Channel Interference (Severe)": 0.8260869565217391,
-   "Doppler Shift (Severe)": 0.4,
+   "Doppler Shift (Severe)": 0.42857142857142855,
    "Faulty Handover Algorithm (Too Frequent)": 0.0,
-   "Faulty RF Filters (Temporal)": 0.6842105263157895,
-   "High Network Congestion (Gradual Buildup)": 0.7586206896551724,
+   "Faulty RF Filters (Temporal)": 0.7,
+   "High Network Congestion (Gradual Buildup)": 0.6037735849056604,
    "High Network Congestion (Sudden Spike)": 0.8148148148148148,
    "Jamming": 1.0,
-   "Resource Allocation Bugs": 0.0
+   "Resource Allocation Bugs": 0.3333333333333333
   },
   "confusion_matrix": {
    "labels": [
@@ -50,13 +50,13 @@
     ],
     [
      0,
-     26,
+     27,
+     0,
+     0,
+     4,
      0,
      0,
      6,
-     0,
-     0,
-     5,
      0,
      0,
      0,
@@ -121,11 +121,11 @@
     [
      0,
      0,
-     1,
+     0,
      3,
      0,
      0,
-     13,
+     14,
      0,
      0,
      0,
@@ -134,13 +134,13 @@
     ],
     [
      0,
-     8,
+     13,
      1,
      0,
      0,
      0,
-     0,
-     22,
+     1,
+     16,
      0,
      0,
      0,
@@ -177,7 +177,7 @@
     [
      0,
      1,
-     8,
+     6,
      0,
      0,
      0,
@@ -185,7 +185,7 @@
      0,
      1,
      0,
-     0,
+     2,
      0
     ],
     [
@@ -214,19 +214,20 @@
   "mentions_not_in_deviating_list": 0
  },
  "root_cause_excl_jamming": {
-  "accuracy": 0.6342592592592593,
+  "accuracy": 0.625,
   "n": 216
  },
  "pred_distribution": {
   "Jamming": 92,
-  "Co-Channel Interference (Mild)": 53,
+  "Co-Channel Interference (Mild)": 50,
   "Co-Channel Interference (Severe)": 42,
-  "Buffer Overflow (Gradual Buildup)": 35,
-  "High Network Congestion (Gradual Buildup)": 27,
-  "Faulty RF Filters (Temporal)": 21,
+  "Buffer Overflow (Gradual Buildup)": 41,
+  "Faulty RF Filters (Temporal)": 23,
+  "High Network Congestion (Gradual Buildup)": 22,
   "High Network Congestion (Sudden Spike)": 16,
-  "Doppler Shift (Severe)": 12,
-  "Antenna Failure": 10
+  "Antenna Failure": 10,
+  "Doppler Shift (Severe)": 10,
+  "Resource Allocation Bugs": 2
  },
  "system": "gradient_boosting",
  "params": {
@@ -234,7 +235,7 @@
   "learning_rate": 0.05,
   "min_child_samples": 10,
   "n_estimators": 300,
-  "num_leaves": 15
+  "num_leaves": 7
  },
  "cv": [
   {
@@ -245,8 +246,8 @@
     "n_estimators": 300,
     "num_leaves": 7
    },
-   "cv_macro_f1": 0.777132243500678,
-   "cv_accuracy": 0.7648327939590076
+   "cv_macro_f1": 0.7787355488464712,
+   "cv_accuracy": 0.7680690399137001
   },
   {
    "params": {
@@ -256,8 +257,8 @@
     "n_estimators": 300,
     "num_leaves": 15
    },
-   "cv_macro_f1": 0.7772543922736915,
-   "cv_accuracy": 0.7659115426105717
+   "cv_macro_f1": 0.7722635509808078,
+   "cv_accuracy": 0.761596548004315
   },
   {
    "params": {
@@ -267,8 +268,8 @@
     "n_estimators": 300,
     "num_leaves": 7
    },
-   "cv_macro_f1": 0.7399477343411891,
-   "cv_accuracy": 0.7411003236245954
+   "cv_macro_f1": 0.7438514459458566,
+   "cv_accuracy": 0.7518878101402373
   },
   {
    "params": {
@@ -278,8 +279,8 @@
     "n_estimators": 300,
     "num_leaves": 15
    },
-   "cv_macro_f1": 0.7374129055846688,
-   "cv_accuracy": 0.7432578209277239
+   "cv_macro_f1": 0.7441672203185375,
+   "cv_accuracy": 0.7475728155339806
   }
  ]
 }

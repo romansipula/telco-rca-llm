@@ -219,16 +219,6 @@
  },
  "explanation_rougeL": 0.397114783964626,
  "resolution_rougeL": 1.0,
- "explanation_bertscore": {
-  "f1": 0.8624903559684753,
-  "f1_rescaled": 0.18524464964866638,
-  "model": "roberta-large"
- },
- "resolution_bertscore": {
-  "f1": 1.0,
-  "f1_rescaled": 1.0000001192092896,
-  "model": "roberta-large"
- },
  "pred_distribution": {
   "Jamming": 92,
   "Co-Channel Interference (Severe)": 50,
@@ -242,6 +232,5 @@
   "Resource Allocation Bugs": 10,
   "Antenna Failure": 9
  },
- "system": "baseline/oracle_targets",
- "cost": {}
+ "system": "oracle_targets"
 }

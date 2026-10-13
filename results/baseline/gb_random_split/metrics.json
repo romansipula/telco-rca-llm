@@ -3,18 +3,18 @@
  "json_valid_rate": 1.0,
  "schema_valid_rate": 0.0,
  "root_cause": {
-  "accuracy": 0.9595141700404858,
-  "macro_f1": 0.9483638459715015,
+  "accuracy": 0.951417004048583,
+  "macro_f1": 0.9367949709642499,
   "per_class_f1": {
    "Antenna Failure": 1.0,
-   "Buffer Overflow (Gradual Buildup)": 0.9259259259259259,
-   "Co-Channel Interference (Mild)": 0.9473684210526315,
+   "Buffer Overflow (Gradual Buildup)": 0.9090909090909091,
+   "Co-Channel Interference (Mild)": 0.9285714285714286,
    "Co-Channel Interference (Severe)": 0.9333333333333333,
    "Doppler Shift (Severe)": 0.9523809523809523,
-   "Faulty Handover Algorithm (Too Frequent)": 1.0,
+   "Faulty Handover Algorithm (Too Frequent)": 0.9655172413793104,
    "Faulty RF Filters (Temporal)": 0.9230769230769231,
    "High Network Congestion (Gradual Buildup)": 0.9230769230769231,
-   "High Network Congestion (Sudden Spike)": 0.8571428571428571,
+   "High Network Congestion (Sudden Spike)": 0.8,
    "Jamming": 1.0,
    "Resource Allocation Bugs": 0.9696969696969697
   },
@@ -64,8 +64,8 @@
     ],
     [
      0,
-     0,
-     27,
+     1,
+     26,
      0,
      0,
      0,
@@ -152,10 +152,10 @@
      0,
      3,
      0,
+     1,
      0,
      0,
-     0,
-     9,
+     8,
      0,
      0,
      0
@@ -214,21 +214,21 @@
   "mentions_not_in_deviating_list": 0
  },
  "root_cause_excl_jamming": {
-  "accuracy": 0.9468085106382979,
+  "accuracy": 0.9361702127659575,
   "n": 188
  },
  "pred_distribution": {
   "Jamming": 59,
-  "Co-Channel Interference (Mild)": 27,
-  "Buffer Overflow (Gradual Buildup)": 25,
+  "Co-Channel Interference (Mild)": 26,
+  "Buffer Overflow (Gradual Buildup)": 26,
   "Co-Channel Interference (Severe)": 24,
   "Antenna Failure": 22,
   "Doppler Shift (Severe)": 22,
   "Resource Allocation Bugs": 17,
+  "Faulty Handover Algorithm (Too Frequent)": 15,
   "High Network Congestion (Gradual Buildup)": 14,
   "Faulty RF Filters (Temporal)": 14,
-  "Faulty Handover Algorithm (Too Frequent)": 14,
-  "High Network Congestion (Sudden Spike)": 9
+  "High Network Congestion (Sudden Spike)": 8
  },
  "system": "gradient_boosting_on_leaky_random_window_split",
  "note": "window-level random 80/20 split; overlapping windows of one recording on both sides"

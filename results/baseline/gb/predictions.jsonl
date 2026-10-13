@@ -160,12 +160,12 @@
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:09:58.400", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:01.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:04.800", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:08.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:08.000", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:11.200", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:17.600", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:20.800", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:24.000", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
-{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:27.200", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
+{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:27.200", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:30.400", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:33.600", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:10:36.800", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
@@ -179,10 +179,10 @@
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:02.400", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:05.600", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:08.800", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
-{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:12.000", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
+{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:12.000", "output": "{\"root_cause\": \"Resource Allocation Bugs\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:15.200", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:18.400", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
-{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:21.600", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
+{"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:21.600", "output": "{\"root_cause\": \"Resource Allocation Bugs\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:24.800", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:28.000", "output": "{\"root_cause\": \"High Network Congestion (Sudden Spike)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:11:31.200", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
@@ -237,7 +237,7 @@
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:15:34.400", "output": "{\"root_cause\": \"Antenna Failure\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:15:37.600", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_A/YouTube@2026-01-28 00:15:40.800", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:00:12.800", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:00:12.800", "output": "{\"root_cause\": \"Faulty RF Filters (Temporal)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:00:16.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:00:19.200", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:00:22.400", "output": "{\"root_cause\": \"Co-Channel Interference (Mild)\"}"}
@@ -270,14 +270,14 @@
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:24.000", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:27.200", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:30.400", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:33.600", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:36.800", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:33.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:36.800", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:40.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:43.200", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:46.400", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:49.600", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:52.800", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:56.000", "output": "{\"root_cause\": \"High Network Congestion (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:46.400", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:49.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:52.800", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:56.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:06:59.200", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:07:02.400", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:07:05.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
@@ -293,12 +293,12 @@
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:24.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:27.200", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:30.400", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:33.600", "output": "{\"root_cause\": \"Doppler Shift (Severe)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:33.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:36.800", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:40.000", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:43.200", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:46.400", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
-{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:49.600", "output": "{\"root_cause\": \"Doppler Shift (Severe)\"}"}
+{"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:49.600", "output": "{\"root_cause\": \"Buffer Overflow (Gradual Buildup)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:52.800", "output": "{\"root_cause\": \"Doppler Shift (Severe)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:56.000", "output": "{\"root_cause\": \"Doppler Shift (Severe)\"}"}
 {"case_id": "synthetic/Zone_B/YouTube@2027-07-07 00:14:59.200", "output": "{\"root_cause\": \"Doppler Shift (Severe)\"}"}
