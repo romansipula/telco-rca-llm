@@ -1,1 +1,1 @@
-7569e96d94967d57febff18171e4ed822f8de72c Gemma 4: CPU embedding lookup as a plain-tensor wrapper; balanced 2-GPU inference map
+71edd92272087c28c84d38867f777e5e8d4eab18 Answer-span loss (logits_to_keep) for SFT; CPU lookup returns on the embedding device

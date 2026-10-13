@@ -105,7 +105,7 @@ def parse_ticket(text: str) -> Ticket:
     return Ticket(**out)
 
 
-def _download(rel_path: str, cache_dir: Path, retries: int = 4) -> Path:
+def _download(rel_path: str, cache_dir: Path, retries: int = 9) -> Path:
     """Download one dataset file, verifying its length (a silently truncated CSV would change the
     reference profiles and therefore the prompts)."""
     dst = cache_dir / rel_path
@@ -131,8 +131,13 @@ def _download(rel_path: str, cache_dir: Path, retries: int = 4) -> Path:
             tmp.rename(dst)
             return dst
         except OSError as e:
-            log.warning("download failed: %s", e)
-            time.sleep(2 * attempt)
+            # HF answers 429 to bursts of unauthenticated requests (seen from Kaggle): back off
+            wait = min(2 ** attempt, 120)
+            retry_after = getattr(e, "headers", None) and e.headers.get("Retry-After")
+            if retry_after and str(retry_after).isdigit():
+                wait = max(wait, min(int(retry_after), 300))
+            log.warning("download failed: %s; retrying in %ss", e, wait)
+            time.sleep(wait)
     raise OSError(f"could not download {url}")
 
 

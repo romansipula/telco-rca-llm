@@ -1,1 +1,1 @@
-romansipula/telco-rca-gpu-gemma4 has status "KernelWorkerStatus.COMPLETE"
+romansipula/telco-rca-gpu-gemma4 has status "KernelWorkerStatus.ERROR"

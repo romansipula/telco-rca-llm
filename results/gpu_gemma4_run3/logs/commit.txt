@@ -1,0 +1,1 @@
+7569e96d94967d57febff18171e4ed822f8de72c Gemma 4: CPU embedding lookup as a plain-tensor wrapper; balanced 2-GPU inference map
