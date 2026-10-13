@@ -47,7 +47,23 @@ def merge_adapter(cfg: dict, adapter: str | None, out_dir: Path) -> Path:
         if (snap / name).exists() and not (merged / name).exists():
             shutil.copy(snap / name, merged / name)
     del model
+    if os.environ.get("TELCO_RCA_PRUNE_HF"):
+        _prune_hf_cache(cfg["hf_id"])
     return merged
+
+
+def _prune_hf_cache(repo_id: str) -> None:
+    """Free disk: drop the cached base weights once the merged copy exists."""
+    try:
+        from huggingface_hub import scan_cache_dir
+
+        info = scan_cache_dir()
+        revs = [r.commit_hash for repo in info.repos if repo.repo_id == repo_id for r in repo.revisions]
+        if revs:
+            info.delete_revisions(*revs).execute()
+            log.info("pruned HF cache for %s", repo_id)
+    except Exception as e:  # pragma: no cover
+        log.warning("could not prune HF cache: %s", e)
 
 
 def export_gguf(cfg: dict, adapter: str | None, out_dir: str, llama_cpp: str, quants=("Q8_0", "Q4_K_M"),
@@ -64,6 +80,8 @@ def export_gguf(cfg: dict, adapter: str | None, out_dir: str, llama_cpp: str, qu
         cmd = [sys.executable, str(lc / "convert_hf_to_gguf.py"), str(merged), "--outfile", str(f16), "--outtype", "f16"]
         log.info("%s", " ".join(cmd))
         subprocess.run(cmd, check=True)
+    if not keep_merged:
+        shutil.rmtree(merged, ignore_errors=True)  # quantisation only needs the f16 GGUF
     quant_bin = _find_bin(lc, "llama-quantize")
     for q in quants:
         dst = out / f"{name}-{q}.gguf"
