@@ -1,0 +1,13 @@
+0.00.004.706 I srv  llama_server: initializing ...
+0.00.007.106 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.009.226 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.011.954 I srv    load_model: loading model '/home/user/gguf/gemma4_hybrid/gguf/gemma4-e4b-rca-Q4_K_M.gguf'
+0.02.648.630 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.02.649.630 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.02.714.903 W load: '</s>' is a normal token here, removing it from EOG list
+0.11.160.365 I cmn          init: llama threadpool init, n_threads = 4
+0.11.483.563 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.11.496.824 I srv  llama_server: model loaded
+0.11.496.853 I srv  llama_server: listening on http://127.0.0.1:56777
+0.12.169.456 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.12.169.539 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0

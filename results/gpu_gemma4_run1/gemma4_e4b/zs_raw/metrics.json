@@ -219,11 +219,21 @@
  },
  "explanation_rougeL": 0.13524885485715746,
  "resolution_rougeL": 0.12257087667393897,
+ "explanation_bertscore": {
+  "f1": 0.8408035635948181,
+  "f1_rescaled": 0.05674940347671509,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.8655717372894287,
+  "f1_rescaled": 0.20350240170955658,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Co-Channel Interference (Severe)": 257,
   "High Network Congestion (Sudden Spike)": 3
  },
- "system": "gemma4_e4b/zs_raw_partial",
+ "system": "gemma4_e4b_zeroshot_raw",
  "cost": {
   "prompt_tokens": {
    "mean": 7197.073076923077,

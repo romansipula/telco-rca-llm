@@ -221,7 +221,7 @@
  "resolution_rougeL": 1.0,
  "explanation_bertscore": {
   "f1": 0.8624903559684753,
-  "f1_rescaled": 0.18524464964866638,
+  "f1_rescaled": 0.185244619846344,
   "model": "roberta-large"
  },
  "resolution_bertscore": {
@@ -242,6 +242,6 @@
   "Resource Allocation Bugs": 10,
   "Antenna Failure": 9
  },
- "system": "baseline/oracle_targets",
+ "system": "oracle_sft_targets",
  "cost": {}
 }

@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.22461451238755534,
  "resolution_rougeL": 0.5435384366389185,
+ "explanation_bertscore": {
+  "f1": 0.8426629304885864,
+  "f1_rescaled": 0.0677664652466774,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9366260766983032,
+  "f1_rescaled": 0.6245045065879822,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Faulty RF Filters (Temporal)": 96,
   "Buffer Overflow (Gradual Buildup)": 45,
@@ -232,7 +242,7 @@
   "Resource Allocation Bugs": 2,
   "High Network Congestion (Sudden Spike)": 1
  },
- "system": "ministral3_3b/sft_evidence",
+ "system": "ministral3_3b_sft_evidence",
  "cost": {
   "prompt_tokens": {
    "mean": 778.0519480519481,

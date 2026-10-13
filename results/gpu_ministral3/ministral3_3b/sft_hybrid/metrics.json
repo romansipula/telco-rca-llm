@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.3019535316843318,
  "resolution_rougeL": 0.7383224847239284,
+ "explanation_bertscore": {
+  "f1": 0.8501390814781189,
+  "f1_rescaled": 0.11206256598234177,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9627501964569092,
+  "f1_rescaled": 0.7792925238609314,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Co-Channel Interference (Mild)": 69,
   "Jamming": 63,
@@ -231,7 +241,7 @@
   "Antenna Failure": 10,
   "Resource Allocation Bugs": 3
  },
- "system": "ministral3_3b/sft_hybrid",
+ "system": "ministral3_3b_sft_hybrid",
  "cost": {
   "prompt_tokens": {
    "mean": 838.2824675324675,

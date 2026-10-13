@@ -1,0 +1,1 @@
+{"kernel": "romansipula/telco-rca-cpu-gemma4-q8-0", "kind": "cpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "b589bb21c8cd72f0216dc462afb133c4a4066b03", "pushed_at": "2026-10-13T23:05:21Z", "overrides": {"task":"infer","model":"gemma4_e4b","gguf_glob":"*Q8_0.gguf","mode":"hybrid","examples_glob":"hybrid_test.jsonl","tag":"gemma4_hybrid_q8_0","budget_hours":11.5}}

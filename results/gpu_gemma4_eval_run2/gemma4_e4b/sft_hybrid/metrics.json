@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.32928644694213505,
  "resolution_rougeL": 0.7672658461469586,
+ "explanation_bertscore": {
+  "f1": 0.852645993232727,
+  "f1_rescaled": 0.12691648304462433,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9692906141281128,
+  "f1_rescaled": 0.8180443644523621,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Jamming": 92,
   "Co-Channel Interference (Mild)": 50,
@@ -231,7 +241,7 @@
   "Doppler Shift (Severe)": 9,
   "Resource Allocation Bugs": 2
  },
- "system": "gemma4_e4b/sft_hybrid",
+ "system": "gemma4_e4b_sft_hybrid",
  "cost": {
   "prompt_tokens": {
    "mean": 799.5292207792207,

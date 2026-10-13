@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.05006843115220783,
  "resolution_rougeL": 0.04725553545060334,
+ "explanation_bertscore": {
+  "f1": 0.8613120913505554,
+  "f1_rescaled": 0.17826366424560547,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.8873766660690308,
+  "f1_rescaled": 0.33269795775413513,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "None": 179,
   "High Network Congestion (Sudden Spike)": 57,
@@ -226,7 +236,7 @@
   "Faulty RF Filters (Temporal)": 20,
   "Co-Channel Interference (Severe)": 10
  },
- "system": "ministral3_3b/zs_raw",
+ "system": "ministral3_3b_zeroshot_raw",
  "cost": {
   "prompt_tokens": {
    "mean": 7418.354166666667,

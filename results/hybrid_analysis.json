@@ -1,0 +1,20 @@
+{
+ "results/gpu_gemma4_eval_run2/gemma4_e4b/sft_hybrid/predictions.jsonl": {
+  "n": 308,
+  "agree_with_gb_top1": 0.9155844155844156,
+  "within_gb_top3": 0.9935064935064936,
+  "llm_right_gb_wrong": 12,
+  "llm_wrong_gb_right": 12,
+  "both_right": 215,
+  "both_wrong": 69
+ },
+ "results/gpu_ministral3/ministral3_3b/sft_hybrid/predictions.jsonl": {
+  "n": 308,
+  "agree_with_gb_top1": 0.8084415584415584,
+  "within_gb_top3": 0.9967532467532467,
+  "llm_right_gb_wrong": 17,
+  "llm_wrong_gb_right": 42,
+  "both_right": 185,
+  "both_wrong": 64
+ }
+}

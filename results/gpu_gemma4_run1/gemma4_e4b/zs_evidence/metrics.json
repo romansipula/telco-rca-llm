@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.14534508506337226,
  "resolution_rougeL": 0.13186282435438576,
+ "explanation_bertscore": {
+  "f1": 0.8446288704872131,
+  "f1_rescaled": 0.07941441982984543,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.87166428565979,
+  "f1_rescaled": 0.23960168659687042,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Co-Channel Interference (Severe)": 222,
   "High Network Congestion (Sudden Spike)": 74,
@@ -226,7 +236,7 @@
   "High Network Congestion (Gradual Buildup)": 3,
   "Resource Allocation Bugs": 1
  },
- "system": "gemma4_e4b/zs_evidence",
+ "system": "gemma4_e4b_zeroshot_evidence",
  "cost": {
   "prompt_tokens": {
    "mean": 742.4415584415584,

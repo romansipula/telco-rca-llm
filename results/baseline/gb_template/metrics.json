@@ -241,6 +241,6 @@
   "Doppler Shift (Severe)": 10,
   "Resource Allocation Bugs": 2
  },
- "system": "baseline/gb_template",
+ "system": "gb_plus_ticket_template",
  "cost": {}
 }

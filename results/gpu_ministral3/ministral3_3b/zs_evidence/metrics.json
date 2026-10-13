@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.06902528385772354,
  "resolution_rougeL": 0.06193742601610505,
+ "explanation_bertscore": {
+  "f1": 0.8560099601745605,
+  "f1_rescaled": 0.14684797823429108,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.8814836740493774,
+  "f1_rescaled": 0.2977818250656128,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "None": 144,
   "Antenna Failure": 72,
@@ -230,7 +240,7 @@
   "Faulty Handover Algorithm (Too Frequent)": 2,
   "High Network Congestion (Gradual Buildup)": 2
  },
- "system": "ministral3_3b/zs_evidence",
+ "system": "ministral3_3b_zeroshot_evidence",
  "cost": {
   "prompt_tokens": {
    "mean": 778.0519480519481,
