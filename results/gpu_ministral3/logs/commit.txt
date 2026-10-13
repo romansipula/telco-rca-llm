@@ -1,0 +1,1 @@
+5f10b3fb4c22bc7f129edac43697c5ce1a140d76 GPU verification run; fix Gemma QLoRA OOM, torchao conflict; budget-driven training settings

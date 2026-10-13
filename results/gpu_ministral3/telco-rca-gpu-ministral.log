@@ -1,0 +1,15 @@
+[{"stream_name":"stdout","time":0.561870814,"data":"+ nvidia-smi\n"}
+,{"stream_name":"stdout","time":0.980071154,"data":"+ git clone --depth 50 --branch claude/sweet-goldberg-nxv0hn https://github.com/romansipula/telco-rca-llm /kaggle/tmp/repo\n"}
+,{"stream_name":"stdout","time":1.5564400109999998,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 git log -1 --format='%H %s' \u003e /kaggle/working/logs/commit.txt\n"}
+,{"stream_name":"stdout","time":1.562741336,"data":"+ /usr/bin/python3 -m pip install -q -e '/kaggle/tmp/repo[train]' 'transformers==5.19.0' 'peft==0.21.2' 'accelerate==1.15.0' 'bitsandbytes\u003e=0.46' 'lightgbm\u003e=4.0' rouge-score\n"}
+,{"stream_name":"stdout","time":28.813125187,"data":"+ /usr/bin/python3 -m pip uninstall -y -q torchao\n"}
+,{"stream_name":"stdout","time":29.912253931,"data":"+ /usr/bin/python3 -m pip freeze \u003e /kaggle/working/logs/pip-freeze.txt\n"}
+,{"stream_name":"stdout","time":31.792092336,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca prepare --out /kaggle/tmp/prepared --stats-out /kaggle/working/data_stats.json --check-hash /kaggle/tmp/repo/results/data_stats.json\n"}
+,{"stream_name":"stderr","time":77.411956875,"data":"command failed (1): cd /kaggle/tmp/repo \u0026\u0026 telco-rca prepare --out /kaggle/tmp/prepared --stats-out /kaggle/working/data_stats.json --check-hash /kaggle/tmp/repo/results/data_stats.json; see /kaggle/working/logs/setup.log\n"}
+,{"stream_name":"stderr","time":79.279587832,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":79.279615049,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":79.54530662,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":79.545331269,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":80.428316187,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":81.418087027,"data":"[NbConvertApp] Writing 316732 bytes to __results__.html\n"}
+]

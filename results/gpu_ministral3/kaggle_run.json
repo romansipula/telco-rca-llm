@@ -1,0 +1,1 @@
+{"kernel": "romansipula/telco-rca-gpu-ministral", "kind": "gpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "5f10b3fb4c22bc7f129edac43697c5ce1a140d76", "pushed_at": "2026-10-13T15:36:18Z", "overrides": {"models":["ministral3_3b"],"budget_hours":4.0}}

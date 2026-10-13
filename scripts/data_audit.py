@@ -6,7 +6,6 @@ import argparse
 import json
 from collections import Counter, defaultdict
 from datetime import datetime
-from pathlib import Path
 
 from telco_rca.io import write_json
 from telco_rca.pipeline import load_prepared

@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.33864267020810146,
  "resolution_rougeL": 0.8061755219805883,
+ "explanation_bertscore": {
+  "f1": 0.8544718623161316,
+  "f1_rescaled": 0.1377350389957428,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9730955958366394,
+  "f1_rescaled": 0.8405892252922058,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Jamming": 92,
   "Co-Channel Interference (Mild)": 53,
@@ -230,5 +240,6 @@
   "Doppler Shift (Severe)": 12,
   "Antenna Failure": 10
  },
- "system": "gb_plus_ticket_template"
+ "system": "baseline/gb_template",
+ "cost": {}
 }

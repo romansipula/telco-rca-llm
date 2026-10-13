@@ -1,0 +1,1 @@
+romansipula/telco-rca-gpu-ministral has status "KernelWorkerStatus.ERROR"

@@ -23,6 +23,7 @@ import json
 import logging
 import os
 import re
+import time
 import urllib.request
 from pathlib import Path
 
@@ -104,23 +105,35 @@ def parse_ticket(text: str) -> Ticket:
     return Ticket(**out)
 
 
-def _download(rel_path: str, cache_dir: Path) -> Path:
+def _download(rel_path: str, cache_dir: Path, retries: int = 4) -> Path:
+    """Download one dataset file, verifying its length (a silently truncated CSV would change the
+    reference profiles and therefore the prompts)."""
     dst = cache_dir / rel_path
     if dst.exists() and dst.stat().st_size > 0:
         return dst
     dst.parent.mkdir(parents=True, exist_ok=True)
     url = HF_BASE + rel_path
-    log.info("downloading %s", url)
-    req = urllib.request.Request(url, headers={"User-Agent": "telco-rca"})
     tmp = dst.with_suffix(dst.suffix + ".part")
-    with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
-        while True:
-            chunk = r.read(1 << 20)
-            if not chunk:
-                break
-            f.write(chunk)
-    tmp.rename(dst)
-    return dst
+    for attempt in range(1, retries + 1):
+        log.info("downloading %s (attempt %d)", url, attempt)
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "telco-rca"})
+            with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
+                expected = int(r.headers.get("Content-Length") or -1)
+                while True:
+                    chunk = r.read(1 << 20)
+                    if not chunk:
+                        break
+                    f.write(chunk)
+            got = tmp.stat().st_size
+            if expected >= 0 and got != expected:
+                raise OSError(f"truncated download: {got} of {expected} bytes")
+            tmp.rename(dst)
+            return dst
+        except OSError as e:
+            log.warning("download failed: %s", e)
+            time.sleep(2 * attempt)
+    raise OSError(f"could not download {url}")
 
 
 def _cat(v) -> str:
