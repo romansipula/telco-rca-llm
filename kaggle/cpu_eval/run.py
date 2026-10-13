@@ -66,6 +66,8 @@ def setup():
     extra = "'peft==0.21.2' 'accelerate==1.15.0'" if SPEC["task"] == "export" else ""
     sh(f"{sys.executable} -m pip install -q -e '{REPO}' 'transformers==5.19.0' {extra} sentencepiece protobuf "
        "huggingface_hub")
+    # Kaggle ships torchao 0.10, which recent peft refuses to import alongside; not needed here
+    sh(f"{sys.executable} -m pip uninstall -y -q torchao", check=False)
     if not LCPP.exists():
         sh(f"git clone --depth 1 https://github.com/ggml-org/llama.cpp.git {LCPP}")
     sh(f"cd {LCPP} && git log -1 --format='%H %cd' > {LOG / 'llama_cpp_commit.txt'}")
