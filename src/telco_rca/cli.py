@@ -41,12 +41,17 @@ def cmd_prepare(args):
     if args.stats_out:
         write_json(args.stats_out, stats)
     print(json.dumps({k: ({kk: vv for kk, vv in v.items() if kk != "groups"} if isinstance(v, dict) else v)
-                      for k, v in stats.items()}, indent=1))
+                      for k, v in stats.items() if k != "case_hashes"}, indent=1))
     if args.check_hash:
-        ref = read_json(args.check_hash).get("prepared_sha256")
-        if ref != stats["prepared_sha256"]:
-            raise SystemExit(f"prepared data hash {stats['prepared_sha256']} != committed {ref}")
-        print("prepared data hash matches", ref)
+        from .pipeline import compare_hashes
+
+        diff = compare_hashes(rows, read_json(args.check_hash))
+        report = {"n_cases": len(rows), "n_differing": len(diff), "differing_case_ids": diff}
+        if args.stats_out:
+            write_json(Path(args.stats_out).with_name("hash_check.json"), report)
+        print(f"prepared data vs committed: {len(diff)} of {len(rows)} cases differ")
+        if len(diff) > args.max_diff_frac * len(rows):
+            raise SystemExit(f"{len(diff)} cases differ from the committed prepared data: {diff[:5]}")
 
 
 def cmd_baseline(args):
@@ -212,7 +217,9 @@ def main(argv=None):
     p.add_argument("--resplit", action="store_true")
     p.add_argument("--out")
     p.add_argument("--stats-out")
-    p.add_argument("--check-hash", help="data_stats.json whose prepared_sha256 must match")
+    p.add_argument("--check-hash", help="committed data_stats.json to compare per-case hashes with")
+    p.add_argument("--max-diff-frac", type=float, default=0.03,
+                   help="fail if more cases than this differ (float/SIMD differences across CPUs)")
     p.set_defaults(fn=cmd_prepare)
 
     p = common(sub.add_parser("baseline"))

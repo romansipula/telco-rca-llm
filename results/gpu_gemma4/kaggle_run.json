@@ -1,1 +1,1 @@
-{"kernel": "romansipula/telco-rca-gpu-gemma", "kind": "gpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "5f10b3fb4c22bc7f129edac43697c5ce1a140d76", "pushed_at": "2026-10-13T15:36:48Z", "overrides": {"models":["gemma4_e4b"],"budget_hours":6.0}}
+{"kernel": "romansipula/telco-rca-gpu-gemma4", "kind": "gpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "41edc62bb00414f281eaeea780ddfbb8a859e873", "pushed_at": "2026-10-13T15:54:26Z", "overrides": {"models":["gemma4_e4b"],"budget_hours":6.0}}

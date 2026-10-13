@@ -166,6 +166,10 @@ def main():
     for p in W.rglob("ckpt"):
         shutil.rmtree(p, ignore_errors=True)
     shutil.copy(prep / "meta.json", W / "meta.json")
+    # keep the exact test prompts for the CPU runs (not committed: kaggle_fetch skips sft/)
+    (W / "sft").mkdir(exist_ok=True)
+    for f in sft.glob("*_test.jsonl"):
+        shutil.copy(f, W / "sft" / f.name)
     (W / "jobs.json").write_text(json.dumps({"spec": SPEC, "status": status, "elapsed_s": time.time() - T0},
                                             indent=1))
     print(json.dumps(status, indent=1))

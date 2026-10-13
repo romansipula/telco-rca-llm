@@ -17,3 +17,4 @@ kaggle.json
 results/**/adapter/
 results/**/merged/
 results/**/raw_download/
+results/**/sft/

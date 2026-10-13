@@ -14,6 +14,7 @@
 #   REF=<git branch/commit the kernel installs>   (default: current branch, must be pushed)
 #   POLL=<seconds between status checks>          (default 600, i.e. at most every 10 min)
 #   NO_WAIT=1                                     push only, do not poll/download
+#   DATASETS=<owner/ds>[,<owner/ds>...]           Kaggle datasets to attach (e.g. the shared test prompts)
 set -euo pipefail
 
 KIND=$1; SLUG=$2; RUN_ID=$3; OVERRIDES=${4:-'{}'}; shift 4 || true
@@ -47,6 +48,7 @@ open(dst, "w").write(code)
 print(json.dumps(spec))
 PY
 
+DS_JSON=$(python3 -c 'import json,sys; print(json.dumps([d for d in sys.argv[1].split(",") if d]))' "${DATASETS:-}")
 SRC_JSON=$(python3 -c 'import json,sys; print(json.dumps(sys.argv[1:]))' "${SOURCES[@]+"${SOURCES[@]}"}")
 cat > "$WORK/kernel-metadata.json" <<EOF
 {
@@ -59,7 +61,7 @@ cat > "$WORK/kernel-metadata.json" <<EOF
   "enable_gpu": $GPU,
   $SHAPE
   "enable_internet": true,
-  "dataset_sources": [],
+  "dataset_sources": $DS_JSON,
   "competition_sources": [],
   "kernel_sources": $SRC_JSON
 }

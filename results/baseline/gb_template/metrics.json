@@ -219,6 +219,16 @@
  },
  "explanation_rougeL": 0.3382703507708767,
  "resolution_rougeL": 0.8046856698413855,
+ "explanation_bertscore": {
+  "f1": 0.8546459674835205,
+  "f1_rescaled": 0.13876649737358093,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9730377197265625,
+  "f1_rescaled": 0.8402464985847473,
+  "model": "roberta-large"
+ },
  "pred_distribution": {
   "Jamming": 92,
   "Co-Channel Interference (Mild)": 50,
@@ -231,5 +241,6 @@
   "Doppler Shift (Severe)": 10,
   "Resource Allocation Bugs": 2
  },
- "system": "gb_plus_ticket_template"
+ "system": "baseline/gb_template",
+ "cost": {}
 }

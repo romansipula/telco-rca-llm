@@ -25,6 +25,7 @@ SPEC = {
     "gguf_glob": "*Q4_K_M.gguf",
     "hf_gguf": None,  # e.g. ["google/gemma-4-26B-A4B-it-qat-q4_0-gguf", "gemma-4-26B_q4_0-it.gguf"]
     "mode": "hybrid",
+    "examples_glob": None,  # e.g. "hybrid_test.jsonl" from an attached dataset with the GPU-run prompts
     "limit": None,
     "budget_hours": 11.0,
     "max_new_tokens": 512,
@@ -94,11 +95,17 @@ def export():
 
 
 def infer():
-    prep = TMP / "prepared"
-    sh(f"cd {REPO} && telco-rca prepare --out {prep} --check-hash {REPO / 'results' / 'data_stats.json'}")
-    sft = TMP / "sft"
-    sh(f"cd {REPO} && telco-rca build-sft --prepared {prep} --mode {SPEC['mode']} --out {sft} "
-       f"--gb-probs {REPO / 'results' / 'baseline' / 'gb_probs.jsonl'}")
+    if SPEC.get("examples_glob"):
+        # byte-identical prompts to the GPU runs (built and hash-checked once, then shared)
+        examples = find_input(SPEC["examples_glob"])
+    else:
+        prep = TMP / "prepared"
+        sh(f"cd {REPO} && telco-rca prepare --out {prep} --stats-out {W / 'data_stats.json'} "
+           f"--check-hash {REPO / 'results' / 'data_stats.json'}")
+        sft = TMP / "sft"
+        sh(f"cd {REPO} && telco-rca build-sft --prepared {prep} --mode {SPEC['mode']} --out {sft} "
+           f"--gb-probs {REPO / 'results' / 'baseline' / 'gb_probs.jsonl'}")
+        examples = sft / f"{SPEC['mode']}_test.jsonl"
     if SPEC.get("hf_gguf"):
         from huggingface_hub import hf_hub_download
 
@@ -111,7 +118,7 @@ def infer():
     # stop cleanly before the Kaggle 12 h wall: predictions are appended line by line
     timeout = int(SPEC["budget_hours"] * 3600 - (time.time() - T0))
     cmd = (f"cd {REPO} && timeout {timeout} telco-rca infer-cpu --gguf {gguf} --model-config "
-           f"configs/models/{SPEC['model']}.yaml --examples {sft}/{SPEC['mode']}_test.jsonl --out {out} "
+           f"configs/models/{SPEC['model']}.yaml --examples {examples} --out {out} "
            f"--llama-cpp {LCPP} --max-new-tokens {SPEC['max_new_tokens']}{lim}")
     rc = sh(cmd, LOG / "infer.log", check=False)
     (W / tag / "status.json").write_text(json.dumps({"rc": rc, "elapsed_s": time.time() - T0, "spec": SPEC}))

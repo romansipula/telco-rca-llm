@@ -109,8 +109,24 @@ def prepared_hash(rows: list[dict]) -> str:
     return h.hexdigest()
 
 
+def case_hashes(rows: list[dict]) -> dict[str, str]:
+    import hashlib
+    import json
+
+    return {r["case_id"]: hashlib.sha1(json.dumps([r["split"], r["evidence_text"], r["raw_text"], r["target"]],
+                                                  sort_keys=True).encode()).hexdigest()[:12]
+            for r in sorted(rows, key=lambda r: r["case_id"])}
+
+
+def compare_hashes(rows: list[dict], committed: dict) -> list[str]:
+    """Case ids whose prompts/targets differ from the committed per-case hashes."""
+    ref = committed.get("case_hashes", {})
+    now = case_hashes(rows)
+    return sorted(k for k in set(ref) | set(now) if ref.get(k) != now.get(k))
+
+
 def data_stats(rows: list[dict]) -> dict:
-    out: dict = {"prepared_sha256": prepared_hash(rows)}
+    out: dict = {"prepared_sha256": prepared_hash(rows), "case_hashes": case_hashes(rows)}
     for split in sorted({r["split"] for r in rows}):
         rs = [r for r in rows if r["split"] == split]
         out[split] = {

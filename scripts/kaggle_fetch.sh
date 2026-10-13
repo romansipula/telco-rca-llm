@@ -21,6 +21,6 @@ kaggle kernels output "$KERNEL" -p "$OUT/raw_download" -o > "$OUT/download.log" 
 echo "$S" > "$OUT/kernel_status.txt"
 # copy small files (<= 5 MB) preserving layout
 ( cd "$OUT/raw_download" && find . -type f -size -5M \
-    ! -path "*/adapter/*" ! -name "*.gguf" ! -name "*.safetensors" -print0 \
+    ! -path "*/adapter/*" ! -path "./sft/*" ! -name "*.gguf" ! -name "*.safetensors" -print0 \
   | while IFS= read -r -d '' f; do mkdir -p "$OUT/$(dirname "$f")"; cp "$f" "$OUT/$f"; done )
 echo "outputs in $OUT"
