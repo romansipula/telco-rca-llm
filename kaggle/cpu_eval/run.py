@@ -73,7 +73,9 @@ def setup():
     sh(f"cd {LCPP} && cmake -B build -DGGML_NATIVE=ON -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release "
        f"&& cmake --build build -j{os.cpu_count()} --target {targets}", LOG / "llama_build.log")
     if SPEC["task"] == "export":
-        sh(f"{sys.executable} -m pip install -q -e {LCPP}/gguf-py mistral-common", check=False)
+        # no mistral-common: with it, transformers returns a tokenizer backend the converter cannot read
+        sh(f"{sys.executable} -m pip install -q -e {LCPP}/gguf-py", check=False)
+        sh(f"{sys.executable} -m pip uninstall -y -q mistral-common", check=False)
     os.environ["TELCO_RCA_CACHE"] = str(TMP / "cache")
     os.environ["HF_HOME"] = str(TMP / "hf")
 
