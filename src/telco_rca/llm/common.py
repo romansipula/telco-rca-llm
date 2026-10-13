@@ -124,7 +124,7 @@ def offload_to_cpu(model, names: list[str]) -> list[str]:
     (it refuses to train 4-bit models with CPU offload). A lookup is exact, so results are identical."""
     import torch
 
-    target = model.get_input_embeddings().weight.device  # consumers combine it with inputs_embeds
+    target_ref = {"device": model.get_input_embeddings().weight.device}  # combined with inputs_embeds
 
     class _CPUEmbedding(torch.nn.Module):
         def __init__(self, emb):
@@ -139,7 +139,7 @@ def offload_to_cpu(model, names: list[str]) -> list[str]:
             out = torch.nn.functional.embedding(input_ids.to("cpu"), self.table)
             if self.scale is not None:
                 out = out * torch.tensor(self.scale, dtype=self.table.dtype)
-            return out.to(target)
+            return out.to(target_ref["device"])
 
     moved = []
     for name in names:
@@ -150,13 +150,25 @@ def offload_to_cpu(model, names: list[str]) -> list[str]:
         except AttributeError:
             log.warning("cpu_modules: %s not found", name)
             continue
-        setattr(parent, child, _CPUEmbedding(emb))
+        wrapper = _CPUEmbedding(emb)
+        wrapper.target_ref = target_ref
+        setattr(parent, child, wrapper)
         del emb
         moved.append(name)
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
     log.info("embedding lookups kept on CPU: %s", moved)
     return moved
+
+
+def offload_to_cpu_target_fix(model, names: list[str]) -> None:
+    """After moving a model whose lookups were wrapped on CPU, point their outputs at the new device."""
+    dev = model.get_input_embeddings().weight.device
+    for name in names:
+        mod = model.get_submodule(name)
+        if hasattr(mod, "target_ref"):
+            mod.target_ref["device"] = dev
+            assert mod.table.device.type == "cpu"
 
 
 def finite_probe(model, tokenizer, texts: list[str], max_len: int = 1024) -> dict:

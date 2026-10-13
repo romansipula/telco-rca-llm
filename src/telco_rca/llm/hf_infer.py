@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 
 from ..io import read_jsonl
-from .common import load_model, load_tokenizer, offload_to_cpu, peak_gpu_mb
+from .common import load_model, load_tokenizer, offload_to_cpu, offload_to_cpu_target_fix, peak_gpu_mb
 from .data import end_of_turn, render_prompt
 
 log = logging.getLogger(__name__)
@@ -89,11 +89,18 @@ def infer(cfg: dict, examples_file: str, out_file: str, adapter: str | None = No
     if device_map is None:
         device_map = "auto" if torch.cuda.is_available() and torch.cuda.device_count() > 1 and \
             cfg.get("infer_multi_gpu", False) else None
-    model = load_model(cfg, quant=quant, device_map=device_map,
-                       compute_dtype=cfg.get("infer_dtype", cfg.get("compute_dtype", "float16"))
-                       if torch.cuda.is_available() else "float32")
-    if cfg.get("cpu_modules") and torch.cuda.is_available():
+    dtype = cfg.get("infer_dtype", cfg.get("compute_dtype", "float16")) if torch.cuda.is_available() else "float32"
+    if cfg.get("cpu_modules") and torch.cuda.is_available() and quant == "none":
+        # load in host RAM, keep the big lookup tables there, move the rest to the GPU
+        # (the full fp16 Gemma 4 E4B does not fit a T4 while loading)
+        model = load_model(cfg, quant="none", device_map={"": "cpu"}, compute_dtype=dtype)
         offload_to_cpu(model, cfg["cpu_modules"])
+        model.to("cuda:0")
+        offload_to_cpu_target_fix(model, cfg["cpu_modules"])
+    else:
+        model = load_model(cfg, quant=quant, device_map=device_map, compute_dtype=dtype)
+        if cfg.get("cpu_modules") and torch.cuda.is_available():
+            offload_to_cpu(model, cfg["cpu_modules"])
     if adapter:
         from peft import PeftModel
 
