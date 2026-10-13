@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telco-rca"
+version = "0.1.0"
+description = "Evidence-grounded LLM root-cause analysis and ticket writing for already-detected KPI anomalies"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.26",
+  "pyyaml>=6.0",
+  "jsonschema>=4.0",
+  "scikit-learn>=1.4",
+  "lightgbm>=4.0",
+]
+
+[project.optional-dependencies]
+# metrics on generated text
+eval = ["rouge-score>=0.1.2", "bert-score>=0.3.13", "matplotlib>=3.7", "pandas>=2.0"]
+# GPU fine-tuning / HF inference (torch installed separately for the right CUDA/CPU build)
+train = ["transformers>=4.57", "peft>=0.17", "accelerate>=1.0", "bitsandbytes>=0.45", "safetensors", "sentencepiece", "protobuf"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+telco-rca = "telco_rca.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+telco_rca = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"

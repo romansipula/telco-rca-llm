@@ -1,0 +1,8 @@
+# Randomly initialised tiny Llama-architecture model built locally (no download); CI smoke tests only.
+hf_id: __tiny__
+short_name: tiny
+loader: causal_lm
+compute_dtype: float32
+lora: {r: 4, alpha: 8, dropout: 0.0, target_modules: ["q_proj", "v_proj"]}
+train: {epochs: 1, batch_size: 2, grad_accum: 1, lr: 1.0e-3, max_seq_len: 4096, logging_steps: 1}
+seed: 0

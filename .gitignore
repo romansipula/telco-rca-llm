@@ -1,0 +1,19 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+# never commit data, weights or secrets
+data_cache/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.joblib
+kaggle.json
+.env
+results/**/adapter/
+results/**/merged/
+results/**/raw_download/

@@ -1,0 +1,16 @@
+# Data + evidence configuration for TelecomTS. Paths are relative to the repo root.
+dataset:
+  adapter: telecomts
+  kwargs:
+    history_steps: 3000   # 5 min of preceding history at 100 ms
+    min_history: 300
+split:
+  manifest: configs/splits/telecomts_grouped_seed42.json   # committed; created by `telco-rca prepare --resplit`
+  test_fraction: 0.25
+  seed: 42
+evidence:
+  z_threshold: 3.0
+  min_local_baseline: 16
+  use_segment: true
+prepared_dir: data_cache/prepared/telecomts
+seed: 42

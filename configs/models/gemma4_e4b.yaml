@@ -1,0 +1,18 @@
+# Gemma 4 E4B instruct (Google, Apache-2.0). Multimodal checkpoint; only the language model gets LoRA.
+hf_id: google/gemma-4-E4B-it
+short_name: gemma4-e4b-rca
+loader: auto                 # AutoModelForCausalLM -> Gemma4ForConditionalGeneration
+compute_dtype: float16       # T4: no bf16. Overflow is probed before training (fp32_fallback)
+fp32_fallback: true
+chat_template_kwargs: {enable_thinking: false}
+infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
+infer_multi_gpu: true        # ~16 GB in fp16 -> spread over 2x T4
+lora: {r: 16, alpha: 32, dropout: 0.05}
+train:
+  epochs: 3
+  batch_size: 2
+  grad_accum: 8
+  lr: 2.0e-4
+  max_seq_len: 2048
+  warmup_ratio: 0.05
+seed: 42

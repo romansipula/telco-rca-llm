@@ -1,0 +1,18 @@
+# Ministral 3 3B Instruct 2512 (Mistral AI, Apache-2.0). The default repo ships FP8 weights,
+# which a T4 cannot run, so the official BF16 copy is used (weights cast to fp16 on load).
+hf_id: mistralai/Ministral-3-3B-Instruct-2512-BF16
+short_name: ministral3-3b-rca
+loader: image_text_to_text   # Mistral3ForConditionalGeneration (vision tower untouched)
+compute_dtype: float16
+fp32_fallback: true
+infer_quant: none
+infer_multi_gpu: false
+lora: {r: 16, alpha: 32, dropout: 0.05}
+train:
+  epochs: 3
+  batch_size: 2
+  grad_accum: 8
+  lr: 2.0e-4
+  max_seq_len: 2048
+  warmup_ratio: 0.05
+seed: 42

@@ -1,0 +1,17 @@
+# IBM Granite 4.1 3B instruct (IBM, Apache-2.0). Optional third model if GPU budget remains.
+hf_id: ibm-granite/granite-4.1-3b
+short_name: granite41-3b-rca
+loader: causal_lm
+compute_dtype: float16
+fp32_fallback: true
+infer_quant: none
+infer_multi_gpu: false
+lora: {r: 16, alpha: 32, dropout: 0.05}
+train:
+  epochs: 3
+  batch_size: 2
+  grad_accum: 8
+  lr: 2.0e-4
+  max_seq_len: 2048
+  warmup_ratio: 0.05
+seed: 42
