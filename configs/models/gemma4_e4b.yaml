@@ -6,7 +6,8 @@ compute_dtype: float16       # T4: no bf16. Overflow is probed before training (
 fp32_fallback: true
 chat_template_kwargs: {enable_thinking: false}
 infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
-infer_multi_gpu: true        # fp16 weights spread over 2x T4
+infer_multi_gpu: false       # fp16 fits one T4 once the per-layer table is on CPU (2-GPU split hit
+                             # a cuda:0/cuda:1 mismatch with the CPU lookup)
 # (the per-layer table moved to CPU frees ~5.6 GB on GPU 0, which "auto" had packed full)
 # QLoRA: the 2.82B-parameter per-layer embedding table (262144 x 10752, not quantised by bnb) does not
 # fit next to the model on a T4, even split over two (first full run OOMed). It is a pure lookup, so it

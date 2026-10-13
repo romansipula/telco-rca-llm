@@ -99,7 +99,9 @@ def jobs_for(model, sft):
                                 f"--examples {sft}/hybrid_test.jsonl --adapter {out}/sft_hybrid/adapter "
                                 f"--out {out}/sft_hybrid/predictions.jsonl --batch-size 8{lim}{mnt}"),
     }
-    return [(f"{model}/{j}", dict(J[j], deps=[f"{model}/{d}" for d in J[j]["deps"]])) for j in SPEC["jobs"]]
+    # dependencies outside this run's job list are assumed satisfied (adapters seeded from inputs)
+    return [(f"{model}/{j}", dict(J[j], deps=[f"{model}/{d}" for d in J[j]["deps"] if d in SPEC["jobs"]]))
+            for j in SPEC["jobs"]]
 
 
 def seed_from_inputs():
@@ -109,6 +111,14 @@ def seed_from_inputs():
     if not root.exists():
         return
     systems = {"zs_evidence", "zs_raw", "sft_evidence", "sft_hybrid"}
+    for a in root.rglob("adapter_config.json"):
+        parts = a.parent.relative_to(root).parts
+        model = next((p for p in parts if p in SPEC["models"]), None)
+        if model and len(parts) >= 2 and parts[-2] in systems:
+            dst = W / model / parts[-2] / "adapter"
+            if not dst.exists():
+                shutil.copytree(a.parent, dst)
+                print("seeded adapter", dst, flush=True)
     for f in root.rglob("predictions.jsonl"):
         parts = f.relative_to(root).parts
         model = next((p for p in parts if p in SPEC["models"]), None)
