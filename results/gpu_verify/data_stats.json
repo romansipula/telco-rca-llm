@@ -1,0 +1,61 @@
+{
+ "prepared_sha256": "f3c3d5875cc8596122d8cf949409ebf428781e25197776b67b0db215e44392a1",
+ "test": {
+  "n_cases": 308,
+  "groups": [
+   "jammer/YouTube",
+   "synthetic/Zone_A/YouTube",
+   "synthetic/Zone_B/YouTube"
+  ],
+  "class_counts": {
+   "Antenna Failure": 9,
+   "Buffer Overflow (Gradual Buildup)": 37,
+   "Co-Channel Interference (Mild)": 21,
+   "Co-Channel Interference (Severe)": 50,
+   "Doppler Shift (Severe)": 18,
+   "Faulty Handover Algorithm (Too Frequent)": 12,
+   "Faulty RF Filters (Temporal)": 17,
+   "High Network Congestion (Gradual Buildup)": 31,
+   "High Network Congestion (Sudden Spike)": 11,
+   "Jamming": 92,
+   "Resource Allocation Bugs": 10
+  },
+  "baseline_source": {
+   "reference": 191,
+   "local": 117
+  },
+  "segment_covers_full_window": 178
+ },
+ "train": {
+  "n_cases": 927,
+  "groups": [
+   "jammer/File",
+   "jammer/Twitch",
+   "synthetic/Zone_A/File",
+   "synthetic/Zone_A/Twitch",
+   "synthetic/Zone_B/File",
+   "synthetic/Zone_B/Twitch",
+   "synthetic/Zone_C/File",
+   "synthetic/Zone_C/Twitch",
+   "synthetic/Zone_C/YouTube"
+  ],
+  "class_counts": {
+   "Antenna Failure": 98,
+   "Buffer Overflow (Gradual Buildup)": 101,
+   "Co-Channel Interference (Mild)": 125,
+   "Co-Channel Interference (Severe)": 64,
+   "Doppler Shift (Severe)": 68,
+   "Faulty Handover Algorithm (Too Frequent)": 52,
+   "Faulty RF Filters (Temporal)": 83,
+   "High Network Congestion (Gradual Buildup)": 62,
+   "High Network Congestion (Sudden Spike)": 37,
+   "Jamming": 187,
+   "Resource Allocation Bugs": 50
+  },
+  "baseline_source": {
+   "reference": 467,
+   "local": 460
+  },
+  "segment_covers_full_window": 415
+ }
+}

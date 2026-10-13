@@ -1,0 +1,56 @@
+2026-10-13 15:30:39,068 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 15:30:39,840 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/ibm-granite/granite-4.1-3b "HTTP/1.1 200 OK"
+2026-10-13 15:30:39,867 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/ibm-granite/granite-4.1-3b/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 15:30:39,897 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/ibm-granite/granite-4.1-3b/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 15:30:40,548 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/ibm-granite/granite-4.1-3b "HTTP/1.1 200 OK"
+2026-10-13 15:30:40,771 INFO telco_rca.llm.common: loading ibm-granite/granite-4.1-3b with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 15:30:40,789 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/ibm-granite/granite-4.1-3b "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:57,  6.27it/s]Loading weights:   4%|▎         | 13/362 [00:00<00:06, 58.06it/s]Loading weights:   6%|▋         | 23/362 [00:00<00:04, 72.55it/s]Loading weights:  11%|█         | 39/362 [00:00<00:03, 99.10it/s]Loading weights:  14%|█▍        | 50/362 [00:00<00:03, 90.96it/s]Loading weights:  18%|█▊        | 66/362 [00:00<00:03, 96.66it/s]Loading weights:  21%|██        | 76/362 [00:00<00:02, 97.19it/s]Loading weights:  26%|██▌       | 93/362 [00:01<00:02, 102.22it/s]Loading weights:  29%|██▊       | 104/362 [00:01<00:02, 98.67it/s]Loading weights:  33%|███▎      | 120/362 [00:01<00:02, 105.99it/s]Loading weights:  36%|███▌      | 131/362 [00:01<00:02, 96.29it/s] Loading weights:  41%|████      | 147/362 [00:01<00:02, 103.76it/s]Loading weights:  44%|████▎     | 158/362 [00:01<00:02, 98.14it/s] Loading weights:  48%|████▊     | 174/362 [00:01<00:01, 106.79it/s]Loading weights:  51%|█████     | 185/362 [00:01<00:01, 97.76it/s] Loading weights:  56%|█████▌    | 201/362 [00:02<00:01, 106.73it/s]Loading weights:  59%|█████▊    | 212/362 [00:02<00:01, 106.11it/s]Loading weights:  62%|██████▏   | 223/362 [00:02<00:01, 106.02it/s]Loading weights:  65%|██████▌   | 237/362 [00:02<00:01, 98.51it/s] Loading weights:  70%|███████   | 255/362 [00:02<00:00, 110.06it/s]Loading weights:  74%|███████▍  | 267/362 [00:02<00:00, 108.63it/s]Loading weights:  77%|███████▋  | 278/362 [00:02<00:00, 103.06it/s]Loading weights:  80%|████████  | 291/362 [00:02<00:00, 108.12it/s]Loading weights:  83%|████████▎ | 302/362 [00:03<00:00, 106.94it/s]Loading weights:  86%|████████▋ | 313/362 [00:03<00:00, 101.81it/s]Loading weights:  90%|█████████ | 327/362 [00:03<00:00, 106.65it/s]Loading weights:  93%|█████████▎| 338/362 [00:03<00:00, 102.36it/s]Loading weights:  98%|█████████▊| 354/362 [00:03<00:00, 106.25it/s]Loading weights: 100%|██████████| 362/362 [00:03<00:00, 102.06it/s]
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 297, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 145, in cmd_infer_hf
+    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 61, in infer
+    model = PeftModel.from_pretrained(model, adapter)
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 593, in from_pretrained
+    model = MODEL_TYPE_TO_PEFT_MODEL_MAPPING[config.task_type](
+        model,
+    ...<3 lines>...
+        low_cpu_mem_usage=low_cpu_mem_usage,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 2082, in __init__
+    super().__init__(model, peft_config, adapter_name, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 177, in __init__
+    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+                      ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py", line 344, in __init__
+    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py", line 978, in inject_adapter
+    self._create_and_replace(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        peft_config, adapter_name, target, target_name, parent, current_key=key
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py", line 389, in _create_and_replace
+    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py", line 552, in _create_new_module
+    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py", line 160, in dispatch_torchao
+    if not is_torchao_available():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/peft/import_utils.py", line 162, in is_torchao_available
+    raise ImportError(
+    ...<2 lines>...
+    )
+ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported

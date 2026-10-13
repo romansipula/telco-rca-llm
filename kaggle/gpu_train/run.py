@@ -51,6 +51,8 @@ def setup():
     sh(f"cd {REPO} && git log -1 --format='%H %s' > {LOG / 'commit.txt'}")
     sh(f"{sys.executable} -m pip install -q -e '{REPO}[train]' 'transformers==5.19.0' 'peft==0.21.2' "
        "'accelerate==1.15.0' 'bitsandbytes>=0.46' 'lightgbm>=4.0' rouge-score")
+    # Kaggle ships torchao 0.10, which recent peft refuses to import alongside; it is not needed here
+    sh(f"{sys.executable} -m pip uninstall -y -q torchao", check=False)
     sh(f"{sys.executable} -m pip freeze > {LOG / 'pip-freeze.txt'}", check=False)
     os.environ["TELCO_RCA_CACHE"] = str(TMP / "cache")
     os.environ["HF_HOME"] = str(TMP / "hf")
@@ -74,6 +76,7 @@ def jobs_for(model, sft):
 
     cfg = yaml.safe_load(model_cfg_path(model).read_text())
     ng = 2 if cfg.get("infer_multi_gpu") else 1
+    tg = 2 if cfg.get("train_multi_gpu") else 1
     mc = model_cfg_path(model)
     out = W / model
     ms = f" --max-steps {SPEC['train_max_steps']}" if SPEC.get("train_max_steps") else ""
@@ -81,14 +84,14 @@ def jobs_for(model, sft):
     rlim = f" --limit {SPEC['raw_limit']}" if SPEC.get("raw_limit") else lim
     mnt = f" --max-new-tokens {SPEC['max_new_tokens']}"
     J = {
-        "train_evidence": dict(gpus=1, deps=[], cmd=f"telco-rca train --model-config {mc} --train-file "
+        "train_evidence": dict(gpus=tg, deps=[], cmd=f"telco-rca train --model-config {mc} --train-file "
                                f"{sft}/evidence_train.jsonl --output-dir {out}/sft_evidence{ms}"),
-        "train_hybrid": dict(gpus=1, deps=[], cmd=f"telco-rca train --model-config {mc} --train-file "
+        "train_hybrid": dict(gpus=tg, deps=[], cmd=f"telco-rca train --model-config {mc} --train-file "
                              f"{sft}/hybrid_train.jsonl --output-dir {out}/sft_hybrid{ms}"),
         "zs_evidence": dict(gpus=ng, deps=[], cmd=f"telco-rca infer-hf --model-config {mc} --examples "
                             f"{sft}/evidence_test.jsonl --out {out}/zs_evidence/predictions.jsonl --batch-size 8{lim}{mnt}"),
         "zs_raw": dict(gpus=ng, deps=[], cmd=f"telco-rca infer-hf --model-config {mc} --examples "
-                       f"{sft}/raw_test.jsonl --out {out}/zs_raw/predictions.jsonl --batch-size 2{rlim}{mnt}"),
+                       f"{sft}/raw_test.jsonl --out {out}/zs_raw/predictions.jsonl --batch-size 4{rlim}{mnt}"),
         "sft_evidence_eval": dict(gpus=ng, deps=["train_evidence"], cmd=f"telco-rca infer-hf --model-config {mc} "
                                   f"--examples {sft}/evidence_test.jsonl --adapter {out}/sft_evidence/adapter "
                                   f"--out {out}/sft_evidence/predictions.jsonl --batch-size 8{lim}{mnt}"),

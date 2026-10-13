@@ -1,0 +1,53 @@
+{
+ "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+ "train_file": "/kaggle/tmp/sft/evidence_train.jsonl",
+ "n_examples": 927,
+ "dropped_too_long": 0,
+ "trainable_params": 24707072,
+ "compute_dtype": "float16",
+ "fp32_fallback_used": false,
+ "quant": "4bit",
+ "fp16_probe": {
+  "finite": true,
+  "losses": [
+   2.460137128829956,
+   2.3949575424194336,
+   2.3827195167541504
+  ]
+ },
+ "loss_history": [
+  {
+   "step": 5,
+   "loss": 0.7821338176727295,
+   "lr": 5.000000000000002e-05
+  }
+ ],
+ "final_loss": 0.7821338176727295,
+ "train_seconds": 389.37475991249084,
+ "peak_gpu_mb": 7443.0068359375,
+ "gpu": {
+  "cuda": true,
+  "devices": [
+   "Tesla T4"
+  ],
+  "capability": [
+   7,
+   5
+  ],
+  "bf16_supported": true,
+  "visible": "1"
+ },
+ "train_cfg": {
+  "epochs": 3,
+  "batch_size": 2,
+  "grad_accum": 8,
+  "lr": 0.0002,
+  "max_seq_len": 2048,
+  "warmup_ratio": 0.05
+ },
+ "lora": {
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05
+ }
+}

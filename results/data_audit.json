@@ -1,0 +1,69 @@
+{
+ "n_cases": 1235,
+ "n_recordings": 12,
+ "cases_per_recording": {
+  "jammer/File": 93,
+  "jammer/Twitch": 94,
+  "jammer/YouTube": 92,
+  "synthetic/Zone_A/File": 66,
+  "synthetic/Zone_A/Twitch": 98,
+  "synthetic/Zone_A/YouTube": 147,
+  "synthetic/Zone_B/File": 137,
+  "synthetic/Zone_B/Twitch": 99,
+  "synthetic/Zone_B/YouTube": 69,
+  "synthetic/Zone_C/File": 136,
+  "synthetic/Zone_C/Twitch": 79,
+  "synthetic/Zone_C/YouTube": 125
+ },
+ "unique_tickets_per_class": {
+  "Antenna Failure": 1,
+  "Buffer Overflow (Gradual Buildup)": 1,
+  "Co-Channel Interference (Mild)": 1,
+  "Co-Channel Interference (Severe)": 1,
+  "Doppler Shift (Severe)": 1,
+  "Faulty Handover Algorithm (Too Frequent)": 1,
+  "Faulty RF Filters (Temporal)": 1,
+  "High Network Congestion (Gradual Buildup)": 1,
+  "High Network Congestion (Sudden Spike)": 1,
+  "Jamming": 1,
+  "Resource Allocation Bugs": 1
+ },
+ "unique_affected_kpi_sets_per_class": {
+  "Antenna Failure": 1,
+  "Buffer Overflow (Gradual Buildup)": 1,
+  "Co-Channel Interference (Mild)": 1,
+  "Co-Channel Interference (Severe)": 1,
+  "Doppler Shift (Severe)": 1,
+  "Faulty Handover Algorithm (Too Frequent)": 1,
+  "Faulty RF Filters (Temporal)": 1,
+  "High Network Congestion (Gradual Buildup)": 1,
+  "High Network Congestion (Sudden Spike)": 1,
+  "Jamming": 1,
+  "Resource Allocation Bugs": 1
+ },
+ "most_common_start_time_gaps_s": {
+  "3.2": 859,
+  "10.0": 272,
+  "6.4": 14,
+  "12.8": 9,
+  "9.6": 5
+ },
+ "window_seconds": 12.8,
+ "segment_covers_whole_window": 593,
+ "baseline_source": {
+  "reference": 658,
+  "local": 577
+ },
+ "deviating_kpis_per_case": {
+  "mean": 4.163562753036437,
+  "zero": 78
+ },
+ "jamming_recordings": [
+  "jammer/File",
+  "jammer/Twitch",
+  "jammer/YouTube"
+ ],
+ "labels_only_in_jamming_recordings": [
+  "Jamming"
+ ]
+}

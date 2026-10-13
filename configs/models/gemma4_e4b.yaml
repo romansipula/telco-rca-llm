@@ -7,9 +7,10 @@ fp32_fallback: true
 chat_template_kwargs: {enable_thinking: false}
 infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
 infer_multi_gpu: true        # ~16 GB in fp16 -> spread over 2x T4
+train_multi_gpu: true        # QLoRA OOMs on one T4 (262k-vocab per-layer embeddings stay fp16)
 lora: {r: 16, alpha: 32, dropout: 0.05}
 train:
-  epochs: 3
+  epochs: 2
   batch_size: 2
   grad_accum: 8
   lr: 2.0e-4

@@ -10,9 +10,9 @@ infer_quant: none
 infer_multi_gpu: false
 lora: {r: 16, alpha: 32, dropout: 0.05}
 train:
-  epochs: 3
-  batch_size: 2
-  grad_accum: 8
+  epochs: 2
+  batch_size: 4
+  grad_accum: 4
   lr: 2.0e-4
   max_seq_len: 2048
   warmup_ratio: 0.05

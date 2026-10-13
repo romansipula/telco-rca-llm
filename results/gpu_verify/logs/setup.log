@@ -1,0 +1,91 @@
+Cloning into '/kaggle/tmp/repo'...
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 98.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 835.4/835.4 kB 21.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 21.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 42.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 26.2 MB/s eta 0:00:00
+2026-10-13 15:13:59,666 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/File/processed/chunked.jsonl
+2026-10-13 15:13:59,834 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl
+2026-10-13 15:13:59,996 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/YouTube/processed/chunked.jsonl
+2026-10-13 15:14:00,133 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/File/processed/chunked.jsonl
+2026-10-13 15:14:00,258 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/Twitch/processed/chunked.jsonl
+2026-10-13 15:14:00,436 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/YouTube/processed/chunked.jsonl
+2026-10-13 15:14:00,613 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/File/processed/chunked.jsonl
+2026-10-13 15:14:00,791 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/Twitch/processed/chunked.jsonl
+2026-10-13 15:14:00,933 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/YouTube/processed/chunked.jsonl
+2026-10-13 15:14:01,060 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/File/processed/chunked.jsonl
+2026-10-13 15:14:01,247 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/Twitch/processed/chunked.jsonl
+2026-10-13 15:14:01,374 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/YouTube/processed/chunked.jsonl
+2026-10-13 15:14:01,536 INFO telco_rca.pipeline: loaded 1235 cases from telecomts
+2026-10-13 15:14:01,537 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/File/raw/metrics.csv
+2026-10-13 15:14:02,265 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_A/no_congestion/File/raw/metrics.csv
+2026-10-13 15:14:05,175 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/raw/metrics.csv
+2026-10-13 15:14:05,366 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_A/no_congestion/Twitch/raw/metrics.csv
+2026-10-13 15:14:08,856 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/File/raw/metrics.csv
+2026-10-13 15:14:10,509 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/Twitch/raw/metrics.csv
+2026-10-13 15:14:12,915 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/File/raw/metrics.csv
+2026-10-13 15:14:16,074 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/Twitch/raw/metrics.csv
+2026-10-13 15:14:16,264 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_B/no_congestion/Twitch/raw/metrics.csv
+2026-10-13 15:14:20,453 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/File/raw/metrics.csv
+2026-10-13 15:14:20,696 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_C/no_congestion/File/raw/metrics.csv
+2026-10-13 15:14:25,594 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/Twitch/raw/metrics.csv
+2026-10-13 15:14:27,655 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_C/YouTube/raw/metrics.csv
+2026-10-13 15:14:27,839 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_C/no_congestion/YouTube/raw/metrics.csv
+2026-10-13 15:14:32,411 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/YouTube/raw/metrics.csv
+2026-10-13 15:14:32,727 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_A/no_congestion/YouTube/raw/metrics.csv
+2026-10-13 15:14:35,718 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_A/YouTube/raw/metrics.csv
+2026-10-13 15:14:39,179 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/synthetic/Zone_B/YouTube/raw/metrics.csv
+2026-10-13 15:14:39,355 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/normal/stationary/Zone_B/no_congestion/YouTube/raw/metrics.csv
+2026-10-13 15:14:43,166 INFO telco_rca.pipeline: wrote 1235 prepared cases to /kaggle/tmp/prepared
+{
+ "prepared_sha256": "f3c3d5875cc8596122d8cf949409ebf428781e25197776b67b0db215e44392a1",
+ "test": {
+  "n_cases": 308,
+  "class_counts": {
+   "Antenna Failure": 9,
+   "Buffer Overflow (Gradual Buildup)": 37,
+   "Co-Channel Interference (Mild)": 21,
+   "Co-Channel Interference (Severe)": 50,
+   "Doppler Shift (Severe)": 18,
+   "Faulty Handover Algorithm (Too Frequent)": 12,
+   "Faulty RF Filters (Temporal)": 17,
+   "High Network Congestion (Gradual Buildup)": 31,
+   "High Network Congestion (Sudden Spike)": 11,
+   "Jamming": 92,
+   "Resource Allocation Bugs": 10
+  },
+  "baseline_source": {
+   "reference": 191,
+   "local": 117
+  },
+  "segment_covers_full_window": 178
+ },
+ "train": {
+  "n_cases": 927,
+  "class_counts": {
+   "Antenna Failure": 98,
+   "Buffer Overflow (Gradual Buildup)": 101,
+   "Co-Channel Interference (Mild)": 125,
+   "Co-Channel Interference (Severe)": 64,
+   "Doppler Shift (Severe)": 68,
+   "Faulty Handover Algorithm (Too Frequent)": 52,
+   "Faulty RF Filters (Temporal)": 83,
+   "High Network Congestion (Gradual Buildup)": 62,
+   "High Network Congestion (Sudden Spike)": 37,
+   "Jamming": 187,
+   "Resource Allocation Bugs": 50
+  },
+  "baseline_source": {
+   "reference": 467,
+   "local": 460
+  },
+  "segment_covers_full_window": 415
+ }
+}
+prepared data hash matches f3c3d5875cc8596122d8cf949409ebf428781e25197776b67b0db215e44392a1
+train 927
+test 308
+train 927
+test 308
+train 927
+test 308

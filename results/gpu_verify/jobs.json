@@ -1,0 +1,107 @@
+{
+ "spec": {
+  "repo": "https://github.com/romansipula/telco-rca-llm",
+  "ref": "claude/sweet-goldberg-nxv0hn",
+  "models": [
+   "gemma4_e4b",
+   "ministral3_3b",
+   "granite41_3b"
+  ],
+  "jobs": [
+   "train_evidence",
+   "zs_evidence",
+   "sft_evidence_eval",
+   "zs_raw"
+  ],
+  "train_max_steps": 6,
+  "infer_limit": 8,
+  "raw_limit": 2,
+  "budget_hours": 1.5,
+  "max_new_tokens": 400
+ },
+ "status": {
+  "gemma4_e4b/train_evidence": {
+   "rc": 1,
+   "seconds": 255.01342010498047,
+   "gpus": [
+    0
+   ]
+  },
+  "gemma4_e4b/sft_evidence_eval": {
+   "rc": "skipped (dependency failed)"
+  },
+  "ministral3_3b/zs_evidence": {
+   "rc": 0,
+   "seconds": 75.00332856178284,
+   "gpus": [
+    0
+   ]
+  },
+  "ministral3_3b/zs_raw": {
+   "rc": 0,
+   "seconds": 90.00542140007019,
+   "gpus": [
+    0
+   ]
+  },
+  "ministral3_3b/train_evidence": {
+   "rc": 0,
+   "seconds": 435.026385307312,
+   "gpus": [
+    1
+   ]
+  },
+  "ministral3_3b/sft_evidence_eval": {
+   "rc": 1,
+   "seconds": 60.00727581977844,
+   "gpus": [
+    1
+   ]
+  },
+  "granite41_3b/zs_evidence": {
+   "rc": 0,
+   "seconds": 45.00321650505066,
+   "gpus": [
+    1
+   ]
+  },
+  "granite41_3b/zs_raw": {
+   "rc": 0,
+   "seconds": 60.00538229942322,
+   "gpus": [
+    1
+   ]
+  },
+  "granite41_3b/train_evidence": {
+   "rc": 0,
+   "seconds": 255.02346777915955,
+   "gpus": [
+    0
+   ]
+  },
+  "gemma4_e4b/zs_evidence": {
+   "rc": 0,
+   "seconds": 120.00600385665894,
+   "gpus": [
+    1,
+    0
+   ]
+  },
+  "gemma4_e4b/zs_raw": {
+   "rc": 0,
+   "seconds": 135.0088014602661,
+   "gpus": [
+    1,
+    0
+   ]
+  },
+  "granite41_3b/sft_evidence_eval": {
+   "rc": 1,
+   "seconds": 30.00123405456543,
+   "gpus": [
+    1
+   ]
+  }
+ },
+ "elapsed_s": 1065.4892358779907
+}

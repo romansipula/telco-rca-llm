@@ -1,0 +1,122 @@
+2026-10-13 15:15:18,797 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 15:15:24,379 INFO datasets: TensorFlow version 2.20.0 available.
+2026-10-13 15:15:24,382 INFO datasets: JAX version 0.11.1 available.
+2026-10-13 15:15:26,121 INFO httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,144 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,161 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 15:15:26,161 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 15:15:26,167 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,174 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,217 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 15:15:26,222 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,228 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,250 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 15:15:26,269 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,284 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer.json "HTTP/1.1 302 Found"
+2026-10-13 15:15:26,362 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/xet-read-token/ee0ef6023621cff504d758262d4e04895a5af4a2 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,775 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-13 15:15:26,795 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-10-13 15:15:26,817 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 15:15:26,823 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:26,830 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 15:15:29,740 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 15:15:32,611 INFO telco_rca.llm.train: SFT examples: 927 (dropped 0 over max length)
+2026-10-13 15:15:32,611 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=4bit dtype=torch.float16
+2026-10-13 15:15:32,632 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 15:15:32,648 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-13 15:15:32,706 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/model.safetensors "HTTP/1.1 302 Found"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   0%|          | 3/2076 [00:00<08:23,  4.11it/s]Loading weights:   0%|          | 8/2076 [00:00<03:16, 10.53it/s]Loading weights:   1%|          | 15/2076 [00:01<01:43, 19.97it/s]Loading weights:   1%|          | 20/2076 [00:01<01:28, 23.26it/s]Loading weights:   2%|▏         | 34/2076 [00:01<00:45, 44.81it/s]Loading weights:   3%|▎         | 54/2076 [00:01<00:26, 76.82it/s]Loading weights:   3%|▎         | 65/2076 [00:01<00:28, 71.62it/s]Loading weights:   4%|▎         | 75/2076 [00:01<00:26, 75.02it/s]Loading weights:   4%|▍         | 84/2076 [00:01<00:32, 61.83it/s]Loading weights:   5%|▌         | 105/2076 [00:02<00:21, 89.62it/s]Loading weights:   6%|▌         | 122/2076 [00:02<00:18, 105.67it/s]Loading weights:   7%|▋         | 135/2076 [00:02<00:21, 91.86it/s] Loading weights:   7%|▋         | 146/2076 [00:02<00:23, 82.96it/s]Loading weights:   8%|▊         | 173/2076 [00:02<00:16, 117.11it/s]Loading weights:   9%|▉         | 189/2076 [00:02<00:16, 112.14it/s]Loading weights:  10%|▉         | 202/2076 [00:02<00:18, 103.45it/s]Loading weights:  11%|█         | 220/2076 [00:03<00:17, 109.12it/s]Loading weights:  12%|█▏        | 246/2076 [00:03<00:13, 135.74it/s]Loading weights:  13%|█▎        | 261/2076 [00:03<00:14, 122.24it/s]Loading weights:  13%|█▎        | 274/2076 [00:03<00:16, 107.66it/s]Loading weights:  14%|█▍        | 291/2076 [00:03<00:14, 121.26it/s]Loading weights:  15%|█▌        | 313/2076 [00:03<00:13, 126.38it/s]Loading weights:  16%|█▌        | 327/2076 [00:03<00:15, 112.78it/s]Loading weights:  16%|█▋        | 339/2076 [00:04<00:15, 110.82it/s]Loading weights:  18%|█▊        | 364/2076 [00:04<00:12, 141.14it/s]Loading weights:  18%|█▊        | 379/2076 [00:04<00:12, 135.58it/s]Loading weights:  19%|█▉        | 394/2076 [00:04<00:16, 105.10it/s]Loading weights:  20%|█▉        | 415/2076 [00:04<00:13, 124.42it/s]Loading weights:  21%|██        | 432/2076 [00:04<00:12, 127.25it/s]Loading weights:  21%|██▏       | 446/2076 [00:04<00:14, 113.67it/s]Loading weights:  22%|██▏       | 459/2076 [00:05<00:15, 105.19it/s]Loading weights:  23%|██▎       | 477/2076 [00:05<00:13, 120.95it/s]Loading weights:  24%|██▍       | 494/2076 [00:05<00:12, 127.34it/s]Loading weights:  24%|██▍       | 508/2076 [00:05<00:14, 110.96it/s]Loading weights:  25%|██▌       | 520/2076 [00:05<00:16, 92.89it/s] Loading weights:  26%|██▌       | 539/2076 [00:05<00:13, 112.57it/s]Loading weights:  27%|██▋       | 556/2076 [00:05<00:12, 124.26it/s]Loading weights:  27%|██▋       | 570/2076 [00:06<00:12, 121.14it/s]Loading weights:  29%|██▉       | 601/2076 [00:06<00:08, 165.78it/s]Loading weights:  30%|███       | 628/2076 [00:06<00:07, 191.93it/s]Loading weights:  31%|███▏      | 649/2076 [00:06<00:08, 175.57it/s]Loading weights:  32%|███▏      | 674/2076 [00:06<00:07, 186.04it/s]Loading weights:  33%|███▎      | 694/2076 [00:06<00:07, 182.85it/s]Loading weights:  34%|███▍      | 713/2076 [00:06<00:09, 149.76it/s]Loading weights:  35%|███▌      | 736/2076 [00:06<00:08, 163.09it/s]Loading weights:  36%|███▋      | 754/2076 [00:16<03:20,  6.58it/s] Loading weights:  36%|███▋      | 755/2076 [00:58<22:02,  1.00s/it]Loading weights:  37%|███▋      | 758/2076 [00:59<20:27,  1.07it/s]Loading weights:  37%|███▋      | 771/2076 [00:59<13:59,  1.55it/s]Loading weights:  38%|███▊      | 781/2076 [01:01<10:51,  1.99it/s]Loading weights:  38%|███▊      | 788/2076 [01:01<08:37,  2.49it/s]Loading weights:  38%|███▊      | 794/2076 [01:02<07:41,  2.78it/s]Loading weights:  39%|███▊      | 803/2076 [01:02<05:23,  3.94it/s]Loading weights:  39%|███▉      | 809/2076 [01:03<04:32,  4.64it/s]Loading weights:  39%|███▉      | 813/2076 [01:03<04:15,  4.95it/s]Loading weights:  40%|███▉      | 822/2076 [01:03<02:47,  7.50it/s]Loading weights:  40%|███▉      | 827/2076 [01:04<02:38,  7.89it/s]Loading weights:  40%|████      | 831/2076 [01:04<02:22,  8.74it/s]Loading weights:  40%|████      | 839/2076 [01:04<01:35, 12.97it/s]Loading weights:  41%|████      | 844/2076 [01:05<01:39, 12.44it/s]Loading weights:  41%|████      | 848/2076 [01:05<01:32, 13.31it/s]Loading weights:  41%|████      | 856/2076 [01:05<01:06, 18.42it/s]Loading weights:  41%|████▏     | 860/2076 [01:05<01:07, 17.96it/s]Loading weights:  42%|████▏     | 863/2076 [01:06<01:27, 13.92it/s]Loading weights:  42%|████▏     | 877/2076 [01:06<00:53, 22.47it/s]Loading weights:  42%|████▏     | 880/2076 [01:06<01:09, 17.12it/s]Loading weights:  43%|████▎     | 894/2076 [01:07<00:48, 24.22it/s]Loading weights:  43%|████▎     | 897/2076 [01:07<01:04, 18.38it/s]Loading weights:  44%|████▎     | 908/2076 [01:07<00:42, 27.78it/s]Loading weights:  44%|████▍     | 913/2076 [01:08<01:06, 17.57it/s]Loading weights:  45%|████▍     | 928/2076 [01:08<00:46, 24.73it/s]Loading weights:  45%|████▍     | 932/2076 [01:09<00:59, 19.34it/s]Loading weights:  46%|████▌     | 945/2076 [01:09<00:45, 24.72it/s]Loading weights:  46%|████▌     | 949/2076 [01:10<00:57, 19.60it/s]Loading weights:  46%|████▌     | 958/2076 [01:10<00:45, 24.74it/s]Loading weights:  46%|████▋     | 962/2076 [01:10<00:48, 22.78it/s]Loading weights:  46%|████▋     | 965/2076 [01:10<01:05, 16.91it/s]Loading weights:  47%|████▋     | 979/2076 [01:11<00:44, 24.73it/s]Loading weights:  47%|████▋     | 982/2076 [01:11<00:59, 18.53it/s]Loading weights:  48%|████▊     | 996/2076 [01:11<00:42, 25.54it/s]Loading weights:  48%|████▊     | 999/2076 [01:12<00:56, 19.19it/s]Loading weights:  49%|████▉     | 1013/2076 [01:12<00:41, 25.91it/s]Loading weights:  49%|████▉     | 1016/2076 [01:13<00:54, 19.55it/s]Loading weights:  50%|████▉     | 1030/2076 [01:13<00:40, 26.10it/s]Loading weights:  50%|████▉     | 1033/2076 [01:13<00:53, 19.60it/s]Loading weights:  50%|█████     | 1047/2076 [01:14<00:39, 26.19it/s]Loading weights:  51%|█████     | 1050/2076 [01:14<00:52, 19.71it/s]Loading weights:  51%|█████     | 1060/2076 [01:14<00:39, 25.90it/s]Loading weights:  51%|█████▏    | 1064/2076 [01:14<00:42, 23.67it/s]Loading weights:  51%|█████▏    | 1067/2076 [01:15<00:58, 17.35it/s]Loading weights:  52%|█████▏    | 1081/2076 [01:15<00:39, 25.08it/s]Loading weights:  52%|█████▏    | 1084/2076 [01:16<00:53, 18.63it/s]Loading weights:  53%|█████▎    | 1098/2076 [01:16<00:37, 25.79it/s]Loading weights:  53%|█████▎    | 1101/2076 [01:16<00:50, 19.36it/s]Loading weights:  54%|█████▎    | 1115/2076 [01:17<00:37, 25.88it/s]Loading weights:  54%|█████▍    | 1118/2076 [01:17<00:48, 19.68it/s]Loading weights:  55%|█████▍    | 1132/2076 [01:17<00:36, 26.11it/s]Loading weights:  55%|█████▍    | 1135/2076 [01:18<00:47, 19.79it/s]Loading weights:  55%|█████▌    | 1149/2076 [01:18<00:35, 26.06it/s]Loading weights:  55%|█████▌    | 1152/2076 [01:19<00:46, 19.75it/s]Loading weights:  56%|█████▌    | 1162/2076 [01:19<00:35, 25.90it/s]Loading weights:  56%|█████▌    | 1166/2076 [01:19<00:38, 23.65it/s]Loading weights:  56%|█████▋    | 1169/2076 [01:19<00:52, 17.39it/s]Loading weights:  57%|█████▋    | 1180/2076 [01:20<00:39, 22.61it/s]Loading weights:  57%|█████▋    | 1183/2076 [01:20<00:52, 16.97it/s]Loading weights:  58%|█████▊    | 1194/2076 [01:20<00:39, 22.29it/s]Loading weights:  58%|█████▊    | 1197/2076 [01:21<00:51, 16.98it/s]Loading weights:  58%|█████▊    | 1208/2076 [01:21<00:39, 22.10it/s]Loading weights:  58%|█████▊    | 1211/2076 [01:22<00:51, 16.96it/s]Loading weights:  59%|█████▉    | 1222/2076 [01:22<00:38, 21.90it/s]Loading weights:  59%|█████▉    | 1225/2076 [01:22<00:50, 16.79it/s]Loading weights:  60%|█████▉    | 1236/2076 [01:23<00:38, 22.05it/s]Loading weights:  60%|█████▉    | 1239/2076 [01:23<00:49, 16.95it/s]Loading weights:  60%|██████    | 1247/2076 [01:23<00:37, 22.01it/s]Loading weights:  60%|██████    | 1250/2076 [01:23<00:41, 20.00it/s]Loading weights:  60%|██████    | 1253/2076 [01:24<00:54, 14.97it/s]Loading weights:  61%|██████    | 1264/2076 [01:24<00:38, 21.06it/s]Loading weights:  61%|██████    | 1267/2076 [01:25<00:50, 16.00it/s]Loading weights:  62%|██████▏   | 1278/2076 [01:25<00:37, 21.55it/s]Loading weights:  62%|██████▏   | 1281/2076 [01:25<00:48, 16.45it/s]Loading weights:  62%|██████▏   | 1292/2076 [01:26<00:36, 21.54it/s]Loading weights:  62%|██████▏   | 1295/2076 [01:26<00:47, 16.51it/s]Loading weights:  63%|██████▎   | 1306/2076 [01:26<00:35, 21.79it/s]Loading weights:  63%|██████▎   | 1309/2076 [01:27<00:45, 16.74it/s]Loading weights:  64%|██████▎   | 1320/2076 [01:27<00:34, 21.97it/s]Loading weights:  64%|██████▎   | 1323/2076 [01:28<00:44, 16.85it/s]Loading weights:  64%|██████▍   | 1331/2076 [01:28<00:33, 21.99it/s]Loading weights:  64%|██████▍   | 1334/2076 [01:28<00:37, 19.88it/s]Loading weights:  64%|██████▍   | 1337/2076 [01:28<00:49, 14.93it/s]Loading weights:  65%|██████▍   | 1348/2076 [01:29<00:34, 21.09it/s]Loading weights:  65%|██████▌   | 1351/2076 [01:29<00:45, 15.99it/s]Loading weights:  66%|██████▌   | 1362/2076 [01:29<00:33, 21.20it/s]Loading weights:  66%|██████▌   | 1365/2076 [01:30<00:42, 16.57it/s]Loading weights:  66%|██████▋   | 1376/2076 [01:30<00:32, 21.70it/s]Loading weights:  66%|██████▋   | 1379/2076 [01:30<00:41, 16.64it/s]Loading weights:  67%|██████▋   | 1390/2076 [01:31<00:31, 21.76it/s]Loading weights:  67%|██████▋   | 1393/2076 [01:31<00:40, 16.79it/s]Loading weights:  68%|██████▊   | 1404/2076 [01:32<00:30, 21.93it/s]Loading weights:  68%|██████▊   | 1407/2076 [01:32<00:39, 16.85it/s]Loading weights:  68%|██████▊   | 1415/2076 [01:32<00:30, 21.92it/s]Loading weights:  68%|██████▊   | 1418/2076 [01:32<00:33, 19.73it/s]Loading weights:  71%|███████   | 1468/2076 [01:32<00:07, 82.25it/s]Loading weights:  74%|███████▎  | 1528/2076 [01:33<00:03, 162.84it/s]Loading weights:  76%|███████▋  | 1588/2076 [01:33<00:02, 242.56it/s]Loading weights:  79%|███████▉  | 1637/2076 [01:33<00:01, 286.74it/s]Loading weights:  82%|████████▏ | 1709/2076 [01:33<00:00, 370.32it/s]Loading weights:  85%|████████▍ | 1760/2076 [01:33<00:00, 394.27it/s]Loading weights:  88%|████████▊ | 1832/2076 [01:33<00:00, 461.25it/s]Loading weights:  91%|█████████ | 1884/2076 [01:33<00:00, 461.19it/s]Loading weights:  94%|█████████▍| 1952/2076 [01:33<00:00, 518.22it/s]Loading weights:  97%|█████████▋| 2008/2076 [01:33<00:00, 492.91it/s]Loading weights: 100%|██████████| 2076/2076 [01:34<00:00, 408.47it/s]Loading weights: 100%|██████████| 2076/2076 [01:34<00:00, 22.05it/s] 
+2026-10-13 15:19:00,834 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 15:19:00,839 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fgeneration_config.json=&etag=%22e605bb4523b1462ea9d9a3810b9e3ecf7ab7b1f6%22 "HTTP/1.1 200 OK"
+2026-10-13 15:19:00,846 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fgeneration_config.json=&etag=%22e605bb4523b1462ea9d9a3810b9e3ecf7ab7b1f6%22 "HTTP/1.1 200 OK"
+  0%|          | 0/6 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 297, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 138, in cmd_train
+    train(model_cfg, args.train_file, args.output_dir, eval_file=args.eval_file, max_steps=args.max_steps)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/train.py", line 147, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1562, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1646, in _inner_training_loop
+    self._run_epoch(
+    ~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<9 lines>...
+        steps_trained_in_current_epoch=steps_trained_in_current_epoch,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1892, in _run_epoch
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 2065, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 2147, in compute_loss
+    outputs = model(**inputs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/utils/operations.py", line 943, in forward
+    return model_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/utils/operations.py", line 931, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 2120, in forward
+    return self.base_model(
+           ~~~~~~~~~~~~~~~^
+        input_ids=input_ids,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py", line 359, in forward
+    return self.model(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2622, in forward
+    loss = self.loss_function(logits, labels, self.config.get_text_config().vocab_size, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/loss/loss_utils.py", line 70, in ForCausalLMLoss
+    loss = fixed_cross_entropy(logits, shift_labels, num_items_in_batch, ignore_index, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/loss/loss_utils.py", line 40, in fixed_cross_entropy
+    loss = nn.functional.cross_entropy(source, target, ignore_index=ignore_index, reduction=reduction)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/functional.py", line 3504, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<5 lines>...
+        label_smoothing,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.82 GiB. GPU 0 has a total capacity of 14.56 GiB of which 1.33 GiB is free. Including non-PyTorch memory, this process has 13.23 GiB memory in use. Of the allocated memory 13.04 GiB is allocated by PyTorch, and 64.80 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+  0%|          | 0/6 [00:01<?, ?it/s]

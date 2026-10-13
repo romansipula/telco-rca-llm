@@ -89,7 +89,10 @@ def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = N
     quant = quant or cfg.get("train_quant", "4bit")
     on_gpu = torch.cuda.is_available()
     compute = cfg.get("compute_dtype", "float16") if on_gpu else "float32"
-    model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute)
+    dmap = None
+    if on_gpu and cfg.get("train_multi_gpu") and torch.cuda.device_count() > 1:
+        dmap = "balanced"  # naive model parallelism over both GPUs (memory, not speed)
+    model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute, device_map=dmap)
     probe_texts = [tok.decode(ds[i]["input_ids"]) for i in range(min(3, len(ds)))]
     probe = finite_probe(model, tok, probe_texts)
     fallback = False
@@ -98,7 +101,7 @@ def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = N
         del model
         torch.cuda.empty_cache()
         compute, fallback = "float32", True
-        model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute)
+        model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute, device_map=dmap)
         probe = finite_probe(model, tok, probe_texts)
     model.config.use_cache = False
     if tcfg.get("gradient_checkpointing", True) and on_gpu:
