@@ -1,0 +1,1 @@
+/kaggle/input/notebooks/romansipula/telco-rca-gpu-ministral3/ministral3_3b/sft_hybrid/adapter

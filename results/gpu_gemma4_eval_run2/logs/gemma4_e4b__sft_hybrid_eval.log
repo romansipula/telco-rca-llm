@@ -1,0 +1,68 @@
+2026-10-13 21:42:58,248 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 21:43:00,252 INFO httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 21:43:00,498 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:43:00,754 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:43:00,762 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 21:43:00,771 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 21:43:01,992 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:43:01,999 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 21:43:02,236 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 21:43:02,480 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 21:43:02,711 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer.json "HTTP/1.1 302 Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 21:43:02,711 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 21:43:03,053 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/xet-read-token/ee0ef6023621cff504d758262d4e04895a5af4a2 "HTTP/1.1 200 OK"
+2026-10-13 21:43:04,723 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-13 21:43:04,969 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-10-13 21:43:05,212 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:43:05,219 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 21:43:05,228 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 21:43:08,807 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:43:09,146 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 21:43:09,389 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:43:09,645 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-13 21:43:10,571 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/model.safetensors "HTTP/1.1 302 Found"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   3%|▎         | 53/2076 [00:00<00:03, 529.81it/s]Loading weights:   5%|▌         | 106/2076 [00:00<00:09, 216.22it/s]Loading weights:   7%|▋         | 137/2076 [00:00<00:10, 181.07it/s]Loading weights:   9%|▉         | 184/2076 [00:00<00:08, 228.08it/s]Loading weights:  10%|█         | 213/2076 [00:00<00:08, 218.61it/s]Loading weights:  12%|█▏        | 246/2076 [00:01<00:07, 238.70it/s]Loading weights:  13%|█▎        | 273/2076 [00:01<00:07, 226.32it/s]Loading weights:  15%|█▍        | 308/2076 [00:01<00:07, 247.77it/s]Loading weights:  16%|█▌        | 335/2076 [00:01<00:07, 236.55it/s]Loading weights:  18%|█▊        | 375/2076 [00:01<00:07, 224.61it/s]Loading weights:  21%|██        | 432/2076 [00:01<00:05, 296.65it/s]Loading weights:  22%|██▏       | 465/2076 [00:01<00:06, 250.04it/s]Loading weights:  24%|██▍       | 499/2076 [00:02<00:06, 238.24it/s]Loading weights:  26%|██▌       | 531/2076 [00:02<00:06, 255.91it/s]Loading weights:  27%|██▋       | 561/2076 [00:02<00:06, 237.78it/s]Loading weights:  30%|██▉       | 618/2076 [00:02<00:04, 313.39it/s]Loading weights:  31%|███▏      | 653/2076 [00:02<00:04, 290.25it/s]Loading weights:  33%|███▎      | 685/2076 [00:02<00:05, 238.83it/s]Loading weights:  36%|███▌      | 746/2076 [00:02<00:04, 303.88it/s]Loading weights:  36%|███▌      | 746/2076 [00:15<00:04, 303.88it/s]Loading weights:  36%|███▋      | 754/2076 [00:19<03:16,  6.72it/s] Loading weights:  36%|███▋      | 755/2076 [00:56<13:40,  1.61it/s]Loading weights: 100%|██████████| 2076/2076 [00:56<00:00, 36.75it/s]
+2026-10-13 21:45:32,456 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:45:32,464 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fgeneration_config.json=&etag=%22e605bb4523b1462ea9d9a3810b9e3ecf7ab7b1f6%22 "HTTP/1.1 200 OK"
+2026-10-13 21:45:32,474 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/generation_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fgeneration_config.json=&etag=%22e605bb4523b1462ea9d9a3810b9e3ecf7ab7b1f6%22 "HTTP/1.1 200 OK"
+2026-10-13 21:45:32,486 INFO telco_rca.llm.common: embedding lookups kept on CPU: ['model.language_model.embed_tokens_per_layer']
+2026-10-13 21:46:24,215 INFO telco_rca.llm.hf_infer: 8/308 done (40.0s/batch, peak 11233 MB)
+2026-10-13 21:47:06,604 INFO telco_rca.llm.hf_infer: 16/308 done (42.4s/batch, peak 11296 MB)
+2026-10-13 21:47:43,608 INFO telco_rca.llm.hf_infer: 24/308 done (37.0s/batch, peak 11304 MB)
+2026-10-13 21:48:15,115 INFO telco_rca.llm.hf_infer: 32/308 done (31.5s/batch, peak 11306 MB)
+2026-10-13 21:48:51,421 INFO telco_rca.llm.hf_infer: 40/308 done (36.3s/batch, peak 11326 MB)
+2026-10-13 21:49:26,642 INFO telco_rca.llm.hf_infer: 48/308 done (35.2s/batch, peak 11342 MB)
+2026-10-13 21:50:04,246 INFO telco_rca.llm.hf_infer: 56/308 done (37.6s/batch, peak 11379 MB)
+2026-10-13 21:50:39,829 INFO telco_rca.llm.hf_infer: 64/308 done (35.6s/batch, peak 11379 MB)
+2026-10-13 21:51:15,168 INFO telco_rca.llm.hf_infer: 72/308 done (35.3s/batch, peak 11379 MB)
+2026-10-13 21:51:50,116 INFO telco_rca.llm.hf_infer: 80/308 done (34.9s/batch, peak 11379 MB)
+2026-10-13 21:52:27,628 INFO telco_rca.llm.hf_infer: 88/308 done (37.5s/batch, peak 11395 MB)
+2026-10-13 21:53:05,205 INFO telco_rca.llm.hf_infer: 96/308 done (37.6s/batch, peak 11395 MB)
+2026-10-13 21:53:41,202 INFO telco_rca.llm.hf_infer: 104/308 done (36.0s/batch, peak 11395 MB)
+2026-10-13 21:54:18,412 INFO telco_rca.llm.hf_infer: 112/308 done (37.2s/batch, peak 11423 MB)
+2026-10-13 21:54:53,559 INFO telco_rca.llm.hf_infer: 120/308 done (35.1s/batch, peak 11423 MB)
+2026-10-13 21:55:31,086 INFO telco_rca.llm.hf_infer: 128/308 done (37.5s/batch, peak 11423 MB)
+2026-10-13 21:56:00,784 INFO telco_rca.llm.hf_infer: 136/308 done (29.7s/batch, peak 11423 MB)
+2026-10-13 21:56:38,399 INFO telco_rca.llm.hf_infer: 144/308 done (37.6s/batch, peak 11429 MB)
+2026-10-13 21:57:17,813 INFO telco_rca.llm.hf_infer: 152/308 done (39.4s/batch, peak 11447 MB)
+2026-10-13 21:57:54,986 INFO telco_rca.llm.hf_infer: 160/308 done (37.2s/batch, peak 11447 MB)
+2026-10-13 21:58:35,690 INFO telco_rca.llm.hf_infer: 168/308 done (40.7s/batch, peak 11486 MB)
+2026-10-13 21:59:21,687 INFO telco_rca.llm.hf_infer: 176/308 done (46.0s/batch, peak 11488 MB)
+2026-10-13 22:00:07,912 INFO telco_rca.llm.hf_infer: 184/308 done (46.2s/batch, peak 11496 MB)
+2026-10-13 22:00:54,733 INFO telco_rca.llm.hf_infer: 192/308 done (46.8s/batch, peak 11506 MB)
+2026-10-13 22:01:46,142 INFO telco_rca.llm.hf_infer: 200/308 done (51.4s/batch, peak 11549 MB)
+2026-10-13 22:02:30,429 INFO telco_rca.llm.hf_infer: 208/308 done (44.3s/batch, peak 11575 MB)
+2026-10-13 22:03:22,614 INFO telco_rca.llm.hf_infer: 216/308 done (52.2s/batch, peak 11605 MB)
+2026-10-13 22:04:14,137 INFO telco_rca.llm.hf_infer: 224/308 done (51.5s/batch, peak 11634 MB)
+2026-10-13 22:05:05,075 INFO telco_rca.llm.hf_infer: 232/308 done (50.9s/batch, peak 11691 MB)
+2026-10-13 22:05:57,374 INFO telco_rca.llm.hf_infer: 240/308 done (52.3s/batch, peak 11693 MB)
+2026-10-13 22:06:51,111 INFO telco_rca.llm.hf_infer: 248/308 done (53.7s/batch, peak 11727 MB)
+2026-10-13 22:07:42,617 INFO telco_rca.llm.hf_infer: 256/308 done (51.5s/batch, peak 11764 MB)
+2026-10-13 22:08:36,723 INFO telco_rca.llm.hf_infer: 264/308 done (54.1s/batch, peak 11774 MB)
+2026-10-13 22:09:28,941 INFO telco_rca.llm.hf_infer: 272/308 done (52.2s/batch, peak 11802 MB)
+2026-10-13 22:10:22,709 INFO telco_rca.llm.hf_infer: 280/308 done (53.8s/batch, peak 11869 MB)
+2026-10-13 22:11:15,099 INFO telco_rca.llm.hf_infer: 288/308 done (52.4s/batch, peak 11940 MB)
+2026-10-13 22:12:07,531 INFO telco_rca.llm.hf_infer: 296/308 done (52.4s/batch, peak 12007 MB)
+2026-10-13 22:12:59,627 INFO telco_rca.llm.hf_infer: 304/308 done (52.1s/batch, peak 12272 MB)
+2026-10-13 22:13:52,875 INFO telco_rca.llm.hf_infer: 308/308 done (53.2s/batch, peak 12272 MB)

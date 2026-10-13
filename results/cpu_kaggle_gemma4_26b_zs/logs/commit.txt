@@ -1,0 +1,1 @@
+e41b362fb64b71ee6e025b33fa1de1a877fc391b Per-case prompt hashes with tolerance; CPU kernels reuse the exact GPU prompts

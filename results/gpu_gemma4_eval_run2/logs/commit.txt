@@ -1,0 +1,1 @@
+28287e64325ffc6d55d1ea594635eb6b267630ff Gemma 4 fp16 inference: load in host RAM, keep per-layer table on CPU, move the rest to one GPU

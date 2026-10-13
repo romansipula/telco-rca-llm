@@ -1,0 +1,85 @@
+2026-10-13 21:26:48,590 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 21:26:50,200 INFO httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 21:26:50,241 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:26:50,283 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:26:50,300 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 21:26:50,317 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fconfig.json=&etag=%22d68960fdcce766f2bfe41436325a8a483a74d125%22 "HTTP/1.1 200 OK"
+2026-10-13 21:26:51,222 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 21:26:51,223 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 21:26:51,237 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer_config.json?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 21:26:51,356 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 21:26:51,422 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 21:26:51,462 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/tokenizer.json "HTTP/1.1 302 Found"
+2026-10-13 21:26:51,566 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/xet-read-token/ee0ef6023621cff504d758262d4e04895a5af4a2 "HTTP/1.1 200 OK"
+2026-10-13 21:26:52,130 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-13 21:26:52,168 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-10-13 21:26:52,207 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 21:26:52,224 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 21:26:52,240 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-E4B-it/ee0ef6023621cff504d758262d4e04895a5af4a2/chat_template.jinja?%2Fgoogle%2Fgemma-4-E4B-it%2Fresolve%2Fee0ef6023621cff504d758262d4e04895a5af4a2%2Fchat_template.jinja=&etag=%22fbe3b59b625cd1b8850ea592d4203df6ec04684b%22 "HTTP/1.1 200 OK"
+2026-10-13 21:26:55,225 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:26:55,586 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 21:26:55,629 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:26:56,242 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-E4B-it/resolve/ee0ef6023621cff504d758262d4e04895a5af4a2/model.safetensors "HTTP/1.1 302 Found"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   2%|▏         | 34/2076 [00:00<00:06, 326.90it/s]Loading weights:   3%|▎         | 67/2076 [00:00<00:09, 217.66it/s]Loading weights:   6%|▌         | 122/2076 [00:00<00:06, 289.11it/s]Loading weights:   7%|▋         | 153/2076 [00:00<00:07, 274.63it/s]Loading weights:   9%|▉         | 189/2076 [00:00<00:08, 222.04it/s]Loading weights:  12%|█▏        | 251/2076 [00:01<00:07, 244.06it/s]Loading weights:  15%|█▍        | 305/2076 [00:01<00:05, 297.68it/s]Loading weights:  16%|█▋        | 338/2076 [00:01<00:06, 276.39it/s]Loading weights:  18%|█▊        | 375/2076 [00:01<00:06, 243.82it/s]Loading weights:  21%|██        | 437/2076 [00:01<00:06, 263.69it/s]Loading weights:  24%|██▎       | 491/2076 [00:01<00:05, 308.75it/s]Loading weights:  25%|██▌       | 525/2076 [00:01<00:05, 280.76it/s]Loading weights:  27%|██▋       | 556/2076 [00:02<00:05, 285.22it/s]Loading weights:  28%|██▊       | 586/2076 [00:02<00:05, 264.30it/s]Loading weights:  30%|███       | 623/2076 [00:02<00:06, 233.06it/s]Loading weights:  33%|███▎      | 677/2076 [00:02<00:04, 294.21it/s]Loading weights:  34%|███▍      | 710/2076 [00:02<00:04, 276.75it/s]Loading weights:  36%|███▌      | 752/2076 [00:02<00:04, 268.75it/s]Loading weights:  36%|███▌      | 752/2076 [00:18<00:04, 268.75it/s]Loading weights:  36%|███▋      | 755/2076 [00:44<09:40,  2.28it/s] Loading weights:  68%|██████▊   | 1416/2076 [00:45<00:20, 31.45it/s]
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 305, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 151, in cmd_infer_hf
+    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 92, in infer
+    model = load_model(cfg, quant=quant, device_map=device_map,
+                       compute_dtype=cfg.get("infer_dtype", cfg.get("compute_dtype", "float16"))
+                       if torch.cuda.is_available() else "float32")
+  File "/kaggle/tmp/repo/src/telco_rca/llm/common.py", line 112, in load_model
+    model = cls.from_pretrained(cfg["hf_id"], **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py", line 411, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py", line 4338, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py", line 4481, in _load_pretrained_model
+    loading_info, disk_offload_index = convert_and_load_state_dict_in_model(
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        disk_offload_index=disk_offload_index,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/core_model_loading.py", line 1754, in convert_and_load_state_dict_in_model
+    realized_value = mapping.convert(
+        first_param_name,
+    ...<3 lines>...
+        loading_info=loading_info,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/core_model_loading.py", line 1008, in convert
+    collected_tensors = self.materialize_tensors()
+  File "/usr/local/lib/python3.13/dist-packages/transformers/core_model_loading.py", line 970, in materialize_tensors
+    tensors = [future.result() for future in tensors if future.result() is not None]
+                                                        ~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/core_model_loading.py", line 1262, in _job
+    return _materialize_copy(tensor, device, dtype)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/core_model_loading.py", line 1240, in _materialize_copy
+    tensor = tensor.to(device=device, dtype=dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 54.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 24.81 MiB is free. Including non-PyTorch memory, this process has 14.54 GiB memory in use. Of the allocated memory 14.43 GiB is allocated by PyTorch, and 7.02 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

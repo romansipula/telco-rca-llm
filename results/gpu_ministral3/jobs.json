@@ -1,0 +1,67 @@
+{
+ "spec": {
+  "repo": "https://github.com/romansipula/telco-rca-llm",
+  "ref": "claude/sweet-goldberg-nxv0hn",
+  "models": [
+   "ministral3_3b"
+  ],
+  "jobs": [
+   "train_evidence",
+   "train_hybrid",
+   "zs_evidence",
+   "sft_evidence_eval",
+   "sft_hybrid_eval",
+   "zs_raw"
+  ],
+  "train_max_steps": null,
+  "infer_limit": null,
+  "raw_limit": null,
+  "budget_hours": 4.0,
+  "max_new_tokens": 512
+ },
+ "status": {
+  "ministral3_3b/train_evidence": {
+   "rc": 0,
+   "seconds": 4455.194628238678,
+   "gpus": [
+    0
+   ]
+  },
+  "ministral3_3b/train_hybrid": {
+   "rc": 0,
+   "seconds": 4860.213628053665,
+   "gpus": [
+    1
+   ]
+  },
+  "ministral3_3b/zs_evidence": {
+   "rc": 0,
+   "seconds": 1305.0582168102264,
+   "gpus": [
+    0
+   ]
+  },
+  "ministral3_3b/sft_evidence_eval": {
+   "rc": 0,
+   "seconds": 1155.056794643402,
+   "gpus": [
+    1
+   ]
+  },
+  "ministral3_3b/sft_hybrid_eval": {
+   "rc": 0,
+   "seconds": 1170.056636095047,
+   "gpus": [
+    0
+   ]
+  },
+  "ministral3_3b/zs_raw": {
+   "rc": 1,
+   "seconds": 9705.367927789688,
+   "gpus": [
+    1
+   ]
+  }
+ },
+ "elapsed_s": 15827.870515823364
+}

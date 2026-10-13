@@ -1,0 +1,90 @@
+2026-10-13 21:10:52,536 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 21:10:53,170 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:10:53,474 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 21:10:53,539 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 21:10:56,653 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:10:57,006 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 21:10:57,067 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   3%|▎         | 60/2076 [00:00<00:04, 439.87it/s]Loading weights:   5%|▌         | 104/2076 [00:00<00:07, 269.31it/s]Loading weights:   6%|▋         | 134/2076 [00:00<00:09, 207.01it/s]Loading weights:   9%|▉         | 184/2076 [00:00<00:07, 255.60it/s]Loading weights:  10%|█         | 213/2076 [00:00<00:07, 235.68it/s]Loading weights:  12%|█▏        | 246/2076 [00:00<00:07, 248.76it/s]Loading weights:  13%|█▎        | 273/2076 [00:01<00:09, 198.81it/s]Loading weights:  15%|█▌        | 313/2076 [00:01<00:09, 185.02it/s]Loading weights:  18%|█▊        | 366/2076 [00:01<00:06, 250.72it/s]Loading weights:  19%|█▉        | 397/2076 [00:01<00:07, 215.77it/s]Loading weights:  21%|██        | 437/2076 [00:02<00:08, 187.28it/s]Loading weights:  24%|██▎       | 491/2076 [00:02<00:06, 248.10it/s]Loading weights:  25%|██▌       | 523/2076 [00:02<00:07, 221.48it/s]Loading weights:  27%|██▋       | 553/2076 [00:02<00:06, 227.67it/s]Loading weights:  28%|██▊       | 580/2076 [00:02<00:07, 203.97it/s]Loading weights:  30%|██▉       | 615/2076 [00:02<00:06, 228.69it/s]Loading weights:  31%|███       | 641/2076 [00:02<00:07, 200.18it/s]Loading weights:  33%|███▎      | 677/2076 [00:02<00:05, 233.95it/s]Loading weights:  34%|███▍      | 704/2076 [00:03<00:06, 196.08it/s]Loading weights:  36%|███▌      | 743/2076 [00:03<00:05, 237.22it/s]Loading weights:  37%|███▋      | 771/2076 [00:12<01:58, 11.04it/s] Loading weights:  49%|████▊     | 1009/2076 [00:12<00:23, 45.70it/s]Loading weights:  68%|██████▊   | 1406/2076 [00:12<00:05, 126.02it/s]Loading weights:  76%|███████▋  | 1583/2076 [00:12<00:02, 172.14it/s]Loading weights:  86%|████████▌ | 1789/2076 [00:12<00:01, 245.28it/s]Loading weights:  95%|█████████▍| 1970/2076 [00:13<00:00, 326.37it/s]Loading weights: 100%|██████████| 2076/2076 [00:13<00:00, 157.38it/s]
+2026-10-13 21:11:17,385 INFO telco_rca.llm.common: embedding lookups kept on CPU: ['model.language_model.embed_tokens_per_layer']
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 305, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 151, in cmd_infer_hf
+    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 112, in infer
+    gen, enc = _generate(model, tok, [p for _, p in chunk], dev, max_new_tokens, stops)
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 41, in _generate
+    gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
+                         pad_token_id=tok.pad_token_id)
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 2242, in generate
+    outputs = self.base_model.generate(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 3182, in _sample
+    outputs = self._prefill(
+        input_ids,
+    ...<2 lines>...
+        is_first_iteration=not generation_config.is_assistant,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 4293, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2590, in forward
+    outputs = self.model(
+        input_ids=input_ids,
+    ...<16 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2417, in forward
+    outputs = self.language_model(
+        per_layer_inputs=per_layer_inputs,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1642, in forward
+    per_layer_inputs = self.project_per_layer_inputs(inputs_embeds, per_layer_inputs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1779, in project_per_layer_inputs
+    return (per_layer_projection + per_layer_inputs) * self.per_layer_input_scale
+            ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0!

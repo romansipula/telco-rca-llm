@@ -1,0 +1,11 @@
+{
+ "gguf": "gemma-4-26B_q4_0-it.gguf",
+ "gguf_bytes": 14439363584,
+ "threads": 4,
+ "ctx": 8192,
+ "load_seconds": 40.09249544143677,
+ "peak_rss_mb": 28221.24609375,
+ "n_new": 308,
+ "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+ "host": "a63e2b0f58bf"
+}

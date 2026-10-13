@@ -1,0 +1,34 @@
+[{"stream_name":"stdout","time":0.633965795,"data":"+ nvidia-smi\n"}
+,{"stream_name":"stdout","time":1.050891366,"data":"+ git clone --depth 50 --branch claude/sweet-goldberg-nxv0hn https://github.com/romansipula/telco-rca-llm /kaggle/tmp/repo\n"}
+,{"stream_name":"stdout","time":2.070842588,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 git log -1 --format='%H %s' \u003e /kaggle/working/logs/commit.txt\n"}
+,{"stream_name":"stdout","time":2.07791427,"data":"+ /usr/bin/python3 -m pip install -q -e '/kaggle/tmp/repo[train]' 'transformers==5.19.0' 'peft==0.21.2' 'accelerate==1.15.0' 'bitsandbytes\u003e=0.46' 'lightgbm\u003e=4.0' rouge-score\n"}
+,{"stream_name":"stdout","time":30.702240209,"data":"+ /usr/bin/python3 -m pip uninstall -y -q torchao\n"}
+,{"stream_name":"stdout","time":31.888597881,"data":"+ /usr/bin/python3 -m pip freeze \u003e /kaggle/working/logs/pip-freeze.txt\n"}
+,{"stream_name":"stdout","time":33.775558456,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca prepare --out /kaggle/tmp/prepared --stats-out /kaggle/working/data_stats.json --check-hash /kaggle/tmp/repo/results/data_stats.json\n"}
+,{"stream_name":"stdout","time":85.48470179,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode evidence --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":87.520248954,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode raw --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":89.583817175,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode hybrid --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":94.372639189,"data":"seeded adapter /kaggle/working/gemma4_e4b/sft_hybrid/adapter\n"}
+,{"stream_name":"stdout","time":96.280480719,"data":"seeded adapter /kaggle/working/gemma4_e4b/sft_evidence/adapter\n"}
+,{"stream_name":"stdout","time":96.30385875,"data":"seeded /kaggle/working/gemma4_e4b/sft_evidence/predictions.jsonl\n"}
+,{"stream_name":"stdout","time":96.311932801,"data":"seeded /kaggle/working/gemma4_e4b/zs_raw/predictions.jsonl\n"}
+,{"stream_name":"stdout","time":96.319238167,"data":"seeded /kaggle/working/gemma4_e4b/zs_evidence/predictions.jsonl\n"}
+,{"stream_name":"stdout","time":96.321204243,"data":"seeded /kaggle/working/gemma4_e4b/sft_hybrid/predictions.jsonl\n"}
+,{"stream_name":"stdout","time":102.257140084,"data":"[    102s] start gemma4_e4b/sft_evidence_eval on GPU [0]\n"}
+,{"stream_name":"stdout","time":1812.320718944,"data":"[   1812s] done gemma4_e4b/sft_evidence_eval rc=0 in 1710s\n"}
+,{"stream_name":"stdout","time":1827.35071427,"data":"{\n"}
+,{"stream_name":"stdout","time":1827.350745082,"data":" \"gemma4_e4b/sft_evidence_eval\": {\n"}
+,{"stream_name":"stdout","time":1827.350749424,"data":"  \"rc\": 0,\n"}
+,{"stream_name":"stdout","time":1827.350752721,"data":"  \"seconds\": 1710.0635175704956,\n"}
+,{"stream_name":"stdout","time":1827.350755916,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":1827.350759057,"data":"   0\n"}
+,{"stream_name":"stdout","time":1827.350761969,"data":"  ]\n"}
+,{"stream_name":"stdout","time":1827.350764923,"data":" }\n"}
+,{"stream_name":"stdout","time":1827.350769038,"data":"}\n"}
+,{"stream_name":"stderr","time":1830.008041215,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1830.008070736,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1830.283254178,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1830.283307012,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1831.097379255,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1832.129699791,"data":"[NbConvertApp] Writing 325437 bytes to __results__.html\n"}
+]

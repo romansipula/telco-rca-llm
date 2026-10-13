@@ -1,0 +1,1 @@
+{"kernel": "romansipula/telco-rca-gpu-gemma4-eval", "kind": "gpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "28287e64325ffc6d55d1ea594635eb6b267630ff", "pushed_at": "2026-10-13T21:40:10Z", "overrides": {"models":["gemma4_e4b"],"jobs":["sft_evidence_eval","sft_hybrid_eval","zs_raw"],"budget_hours":1.0}}

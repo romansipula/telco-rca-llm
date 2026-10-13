@@ -1,0 +1,1 @@
+{"kernel": "romansipula/telco-rca-export-ministral3", "kind": "cpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "cdc595e3cc5082966c62663972d8ada5d9b0c7cd", "pushed_at": "2026-10-13T21:28:55Z", "overrides": {"task":"export","model":"ministral3_3b","adapter_glob":"ministral3_3b/sft_hybrid/adapter","quants":["Q8_0","Q4_K_M"]}}

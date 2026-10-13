@@ -1,0 +1,31 @@
+Cloning into '/kaggle/tmp/repo'...
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 98.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 835.4/835.4 kB 31.0 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 18.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.1/43.1 MB 45.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 36.2 MB/s eta 0:00:00
+2026-10-13 19:16:07,907 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/File/processed/chunked.jsonl (attempt 1)
+2026-10-13 19:16:09,276 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl (attempt 1)
+2026-10-13 19:16:09,375 WARNING telco_rca.data.telecomts: download failed: HTTP Error 429: Too Many Requests
+2026-10-13 19:16:11,376 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl (attempt 2)
+2026-10-13 19:16:11,495 WARNING telco_rca.data.telecomts: download failed: HTTP Error 429: Too Many Requests
+2026-10-13 19:16:15,496 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl (attempt 3)
+2026-10-13 19:16:15,601 WARNING telco_rca.data.telecomts: download failed: HTTP Error 429: Too Many Requests
+2026-10-13 19:16:21,602 INFO telco_rca.data.telecomts: downloading https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl (attempt 4)
+2026-10-13 19:16:21,702 WARNING telco_rca.data.telecomts: download failed: HTTP Error 429: Too Many Requests
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 305, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 38, in cmd_prepare
+    out = prepare(cfg, resplit=args.resplit, out_dir=args.out)
+  File "/kaggle/tmp/repo/src/telco_rca/pipeline.py", line 30, in prepare
+    cases = adapter.load_cases()
+  File "/kaggle/tmp/repo/src/telco_rca/data/telecomts.py", line 180, in load_cases
+    path = _download(f"{rec}/processed/chunked.jsonl", self.cache_dir)
+  File "/kaggle/tmp/repo/src/telco_rca/data/telecomts.py", line 136, in _download
+    raise OSError(f"could not download {url}")
+OSError: could not download https://huggingface.co/datasets/AliMaatouk/TelecomTS/resolve/main/anomalous/jammer/Twitch/processed/chunked.jsonl

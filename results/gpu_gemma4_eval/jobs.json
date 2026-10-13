@@ -1,0 +1,27 @@
+{
+ "spec": {
+  "repo": "https://github.com/romansipula/telco-rca-llm",
+  "ref": "claude/sweet-goldberg-nxv0hn",
+  "models": [
+   "gemma4_e4b"
+  ],
+  "jobs": [
+   "sft_evidence_eval"
+  ],
+  "train_max_steps": null,
+  "infer_limit": null,
+  "raw_limit": null,
+  "budget_hours": 0.8,
+  "max_new_tokens": 512
+ },
+ "status": {
+  "gemma4_e4b/sft_evidence_eval": {
+   "rc": 0,
+   "seconds": 1710.0635175704956,
+   "gpus": [
+    0
+   ]
+  }
+ },
+ "elapsed_s": 1826.71679520607
+}

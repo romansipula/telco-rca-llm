@@ -1,0 +1,273 @@
+2026-10-13 17:36:30,015 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 17:36:30,482 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16 "HTTP/1.1 200 OK"
+2026-10-13 17:36:30,533 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 17:36:30,555 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 17:36:32,022 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16 "HTTP/1.1 200 OK"
+2026-10-13 17:36:32,044 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 17:36:32,045 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 17:36:32,053 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fmain%2Fconfig.json=&etag=%228600b8d325919d3dec346b221b5b481e7e672f78%22 "HTTP/1.1 200 OK"
+2026-10-13 17:36:32,287 INFO telco_rca.llm.common: loading mistralai/Ministral-3-3B-Instruct-2512-BF16 with AutoModelForImageTextToText quant=none dtype=torch.float16
+2026-10-13 17:36:32,304 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/458 [00:00<?, ?it/s]Loading weights:   0%|          | 1/458 [00:01<07:58,  1.05s/it]Loading weights:  10%|█         | 48/458 [00:01<00:07, 52.61it/s]Loading weights:  14%|█▍        | 64/458 [00:01<00:06, 59.82it/s]Loading weights:  17%|█▋        | 77/458 [00:01<00:06, 56.26it/s]Loading weights:  19%|█▉        | 87/458 [00:01<00:06, 60.65it/s]Loading weights:  21%|██        | 97/458 [00:01<00:05, 62.13it/s]Loading weights:  23%|██▎       | 106/458 [00:02<00:05, 63.04it/s]Loading weights:  25%|██▍       | 114/458 [00:02<00:05, 60.16it/s]Loading weights:  26%|██▋       | 121/458 [00:02<00:05, 57.85it/s]Loading weights:  28%|██▊       | 129/458 [00:02<00:05, 60.55it/s]Loading weights:  30%|███       | 138/458 [00:02<00:04, 65.44it/s]Loading weights:  32%|███▏      | 147/458 [00:02<00:04, 66.12it/s]Loading weights:  34%|███▍      | 156/458 [00:02<00:04, 64.88it/s]Loading weights:  36%|███▌      | 165/458 [00:03<00:04, 66.39it/s]Loading weights:  38%|███▊      | 174/458 [00:03<00:04, 63.88it/s]Loading weights:  40%|███▉      | 183/458 [00:03<00:04, 65.15it/s]Loading weights:  42%|████▏     | 192/458 [00:03<00:04, 64.56it/s]Loading weights:  44%|████▍     | 201/458 [00:03<00:04, 62.89it/s]Loading weights:  46%|████▌     | 211/458 [00:03<00:03, 64.29it/s]Loading weights:  48%|████▊     | 219/458 [00:03<00:03, 67.52it/s]Loading weights:  50%|████▉     | 228/458 [00:04<00:03, 60.82it/s]Loading weights:  64%|██████▎   | 291/458 [00:04<00:00, 188.21it/s]Loading weights:  76%|███████▌  | 347/458 [00:04<00:00, 277.56it/s]Loading weights:  90%|████████▉ | 410/458 [00:04<00:00, 364.58it/s]Loading weights: 100%|██████████| 458/458 [00:04<00:00, 103.88it/s]
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:38:05,882 INFO telco_rca.llm.hf_infer: 4/308 done (87.6s/batch, peak 11827 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:39:36,498 INFO telco_rca.llm.hf_infer: 8/308 done (90.6s/batch, peak 11862 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:41:10,028 INFO telco_rca.llm.hf_infer: 12/308 done (93.5s/batch, peak 11896 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:42:53,497 INFO telco_rca.llm.hf_infer: 16/308 done (103.4s/batch, peak 11945 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:44:30,757 INFO telco_rca.llm.hf_infer: 20/308 done (97.2s/batch, peak 11973 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:46:13,093 INFO telco_rca.llm.hf_infer: 24/308 done (102.3s/batch, peak 11990 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:47:58,172 INFO telco_rca.llm.hf_infer: 28/308 done (105.0s/batch, peak 12026 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:50:05,099 INFO telco_rca.llm.hf_infer: 32/308 done (126.9s/batch, peak 12105 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:51:51,179 INFO telco_rca.llm.hf_infer: 36/308 done (106.0s/batch, peak 12134 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:53:29,355 INFO telco_rca.llm.hf_infer: 40/308 done (98.1s/batch, peak 12150 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:55:15,790 INFO telco_rca.llm.hf_infer: 44/308 done (106.4s/batch, peak 12165 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:57:08,650 INFO telco_rca.llm.hf_infer: 48/308 done (112.8s/batch, peak 12173 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 17:58:54,255 INFO telco_rca.llm.hf_infer: 52/308 done (105.6s/batch, peak 12185 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:00:39,935 INFO telco_rca.llm.hf_infer: 56/308 done (105.6s/batch, peak 12192 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:02:30,228 INFO telco_rca.llm.hf_infer: 60/308 done (110.3s/batch, peak 12239 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:04:12,584 INFO telco_rca.llm.hf_infer: 64/308 done (102.3s/batch, peak 12258 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:06:14,183 INFO telco_rca.llm.hf_infer: 68/308 done (121.6s/batch, peak 12302 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:08:18,706 INFO telco_rca.llm.hf_infer: 72/308 done (124.5s/batch, peak 12336 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:10:25,847 INFO telco_rca.llm.hf_infer: 76/308 done (127.1s/batch, peak 12337 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:12:25,731 INFO telco_rca.llm.hf_infer: 80/308 done (119.8s/batch, peak 12368 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:14:44,051 INFO telco_rca.llm.hf_infer: 84/308 done (138.3s/batch, peak 12409 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:16:39,383 INFO telco_rca.llm.hf_infer: 88/308 done (115.3s/batch, peak 12440 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:18:34,045 INFO telco_rca.llm.hf_infer: 92/308 done (114.6s/batch, peak 12464 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:20:23,151 INFO telco_rca.llm.hf_infer: 96/308 done (109.1s/batch, peak 12529 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:22:18,104 INFO telco_rca.llm.hf_infer: 100/308 done (114.9s/batch, peak 12546 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:24:18,227 INFO telco_rca.llm.hf_infer: 104/308 done (120.1s/batch, peak 12559 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:26:23,026 INFO telco_rca.llm.hf_infer: 108/308 done (124.8s/batch, peak 12568 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:28:04,190 INFO telco_rca.llm.hf_infer: 112/308 done (101.1s/batch, peak 12603 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:29:58,803 INFO telco_rca.llm.hf_infer: 116/308 done (114.6s/batch, peak 12615 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:31:55,229 INFO telco_rca.llm.hf_infer: 120/308 done (116.4s/batch, peak 12648 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:33:59,626 INFO telco_rca.llm.hf_infer: 124/308 done (124.4s/batch, peak 12678 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:35:54,522 INFO telco_rca.llm.hf_infer: 128/308 done (114.9s/batch, peak 12715 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:38:03,412 INFO telco_rca.llm.hf_infer: 132/308 done (128.8s/batch, peak 12736 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:40:19,414 INFO telco_rca.llm.hf_infer: 136/308 done (136.0s/batch, peak 12747 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:42:33,118 INFO telco_rca.llm.hf_infer: 140/308 done (133.7s/batch, peak 12777 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:44:38,262 INFO telco_rca.llm.hf_infer: 144/308 done (125.1s/batch, peak 12785 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:46:46,497 INFO telco_rca.llm.hf_infer: 148/308 done (128.2s/batch, peak 12806 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:49:26,083 INFO telco_rca.llm.hf_infer: 152/308 done (159.5s/batch, peak 12807 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:51:32,816 INFO telco_rca.llm.hf_infer: 156/308 done (126.7s/batch, peak 12830 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:53:07,338 INFO telco_rca.llm.hf_infer: 160/308 done (94.5s/batch, peak 12884 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:55:17,923 INFO telco_rca.llm.hf_infer: 164/308 done (130.5s/batch, peak 12895 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:57:53,004 INFO telco_rca.llm.hf_infer: 168/308 done (155.0s/batch, peak 12895 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 18:59:48,205 INFO telco_rca.llm.hf_infer: 172/308 done (115.2s/batch, peak 12895 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:01:48,501 INFO telco_rca.llm.hf_infer: 176/308 done (120.3s/batch, peak 12923 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:03:41,981 INFO telco_rca.llm.hf_infer: 180/308 done (113.4s/batch, peak 12948 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:05:41,588 INFO telco_rca.llm.hf_infer: 184/308 done (119.6s/batch, peak 12948 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:07:45,352 INFO telco_rca.llm.hf_infer: 188/308 done (123.7s/batch, peak 12975 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:09:46,881 INFO telco_rca.llm.hf_infer: 192/308 done (121.5s/batch, peak 12980 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:12:09,986 INFO telco_rca.llm.hf_infer: 196/308 done (143.1s/batch, peak 13008 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:14:04,887 INFO telco_rca.llm.hf_infer: 200/308 done (114.9s/batch, peak 13028 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:16:18,426 INFO telco_rca.llm.hf_infer: 204/308 done (133.5s/batch, peak 13045 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:18:33,184 INFO telco_rca.llm.hf_infer: 208/308 done (134.7s/batch, peak 13085 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:21:18,417 INFO telco_rca.llm.hf_infer: 212/308 done (165.2s/batch, peak 13131 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:24:00,134 INFO telco_rca.llm.hf_infer: 216/308 done (161.7s/batch, peak 13151 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:26:34,853 INFO telco_rca.llm.hf_infer: 220/308 done (154.7s/batch, peak 13214 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:29:00,020 INFO telco_rca.llm.hf_infer: 224/308 done (145.1s/batch, peak 13276 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:31:31,854 INFO telco_rca.llm.hf_infer: 228/308 done (151.8s/batch, peak 13312 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:34:00,597 INFO telco_rca.llm.hf_infer: 232/308 done (148.7s/batch, peak 13390 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:36:40,383 INFO telco_rca.llm.hf_infer: 236/308 done (159.7s/batch, peak 13427 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:39:50,969 INFO telco_rca.llm.hf_infer: 240/308 done (190.5s/batch, peak 13522 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:42:47,104 INFO telco_rca.llm.hf_infer: 244/308 done (176.1s/batch, peak 13624 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:45:41,589 INFO telco_rca.llm.hf_infer: 248/308 done (174.4s/batch, peak 13747 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:48:58,319 INFO telco_rca.llm.hf_infer: 252/308 done (196.7s/batch, peak 13925 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:51:56,967 INFO telco_rca.llm.hf_infer: 256/308 done (178.6s/batch, peak 13969 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:54:55,495 INFO telco_rca.llm.hf_infer: 260/308 done (178.5s/batch, peak 14100 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 19:58:23,230 INFO telco_rca.llm.hf_infer: 264/308 done (207.7s/batch, peak 14147 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:01:23,394 INFO telco_rca.llm.hf_infer: 268/308 done (180.1s/batch, peak 14191 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:04:09,420 INFO telco_rca.llm.hf_infer: 272/308 done (166.0s/batch, peak 14223 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:07:48,887 INFO telco_rca.llm.hf_infer: 276/308 done (219.4s/batch, peak 14264 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:11:22,237 INFO telco_rca.llm.hf_infer: 280/308 done (213.3s/batch, peak 14387 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:14:15,019 INFO telco_rca.llm.hf_infer: 284/308 done (172.7s/batch, peak 14407 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+2026-10-13 20:17:23,890 INFO telco_rca.llm.hf_infer: 288/308 done (188.8s/batch, peak 14477 MB)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=262144) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 298, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 146, in cmd_infer_hf
+    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 75, in infer
+    gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
+                         pad_token_id=tok.pad_token_id)
+  File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 3182, in _sample
+    outputs = self._prefill(
+        input_ids,
+    ...<2 lines>...
+        is_first_iteration=not generation_config.is_assistant,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 4293, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/mistral3/modeling_mistral3.py", line 407, in forward
+    outputs = self.model(
+        input_ids=input_ids,
+    ...<8 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/mistral3/modeling_mistral3.py", line 313, in forward
+    outputs = self.language_model(
+        attention_mask=attention_mask,
+    ...<4 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/ministral3/modeling_ministral3.py", line 377, in forward
+    hidden_states = decoder_layer(
+        hidden_states,
+    ...<5 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/ministral3/modeling_ministral3.py", line 234, in forward
+    hidden_states, _ = self.self_attn(
+                       ~~~~~~~~~~~~~~^
+        hidden_states=hidden_states,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/ministral3/modeling_ministral3.py", line 158, in forward
+    attn_output, attn_weights = attention_interface(
+                                ~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/integrations/sdpa_attention.py", line 170, in sdpa_attention_forward
+    attn_output = torch.nn.functional.scaled_dot_product_attention(
+        query,
+    ...<6 lines>...
+        **sdpa_kwargs,
+    )
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 698.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 554.81 MiB is free. Including non-PyTorch memory, this process has 14.02 GiB memory in use. Of the allocated memory 13.54 GiB is allocated by PyTorch, and 363.19 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

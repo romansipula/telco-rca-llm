@@ -1,0 +1,5 @@
+Output file downloaded to /home/user/telco-rca-llm/results/export_ministral3/raw_download/done.json
+Output file downloaded to /home/user/telco-rca-llm/results/export_ministral3/raw_download/gguf/adapter_source.txt
+Output file downloaded to /home/user/telco-rca-llm/results/export_ministral3/raw_download/gguf/export_info.json
+Output file downloaded to /home/user/telco-rca-llm/results/export_ministral3/raw_download/gguf/ministral3-3b-rca-Q4_K_M.gguf
+('Connection broken: IncompleteRead(824238080 bytes read, 2827445248 more expected)', IncompleteRead(824238080 bytes read, 2827445248 more expected))

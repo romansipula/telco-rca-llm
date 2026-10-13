@@ -1,0 +1,1 @@
+{"kernel": "romansipula/telco-rca-export-gemma4", "kind": "cpu", "ref": "claude/sweet-goldberg-nxv0hn", "commit": "883d823fa770f6b14bc93fbf1c5ab5392bcd5e01", "pushed_at": "2026-10-13T22:23:02Z", "overrides": {"task":"export","model":"gemma4_e4b","adapter_glob":"gemma4_e4b/sft_hybrid/adapter","quants":["Q8_0","Q4_K_M"]}}

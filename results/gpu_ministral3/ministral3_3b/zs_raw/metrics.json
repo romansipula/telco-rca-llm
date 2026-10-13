@@ -1,0 +1,250 @@
+{
+ "n": 288,
+ "json_valid_rate": 0.3784722222222222,
+ "schema_valid_rate": 0.375,
+ "root_cause": {
+  "accuracy": 0.020833333333333332,
+  "macro_f1": 0.022900319674513225,
+  "per_class_f1": {
+   "Antenna Failure": 0.06451612903225806,
+   "Buffer Overflow (Gradual Buildup)": 0.0,
+   "Co-Channel Interference (Mild)": 0.0,
+   "Co-Channel Interference (Severe)": 0.13333333333333333,
+   "Doppler Shift (Severe)": 0.0,
+   "Faulty Handover Algorithm (Too Frequent)": 0.0,
+   "Faulty RF Filters (Temporal)": 0.05405405405405406,
+   "High Network Congestion (Gradual Buildup)": 0.0,
+   "High Network Congestion (Sudden Spike)": 0.0,
+   "Jamming": 0.0,
+   "Resource Allocation Bugs": 0.0
+  },
+  "confusion_matrix": {
+   "labels": [
+    "Antenna Failure",
+    "Buffer Overflow (Gradual Buildup)",
+    "Co-Channel Interference (Mild)",
+    "Co-Channel Interference (Severe)",
+    "Doppler Shift (Severe)",
+    "Faulty Handover Algorithm (Too Frequent)",
+    "Faulty RF Filters (Temporal)",
+    "High Network Congestion (Gradual Buildup)",
+    "High Network Congestion (Sudden Spike)",
+    "Jamming",
+    "Resource Allocation Bugs",
+    "__invalid__"
+   ],
+   "matrix": [
+    [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     5
+    ],
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5,
+     0,
+     0,
+     25
+    ],
+    [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0,
+     1,
+     0,
+     0,
+     16
+    ],
+    [
+     6,
+     0,
+     0,
+     4,
+     0,
+     0,
+     1,
+     0,
+     2,
+     0,
+     0,
+     37
+    ],
+    [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     15
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     2,
+     0,
+     2,
+     0,
+     0,
+     7
+    ],
+    [
+     1,
+     0,
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     3,
+     0,
+     0,
+     10
+    ],
+    [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     11
+    ],
+    [
+     4,
+     0,
+     0,
+     1,
+     0,
+     0,
+     12,
+     0,
+     38,
+     0,
+     0,
+     37
+    ],
+    [
+     4,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     4
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "n": 288
+ },
+ "affected_kpis_set_f1": 0.190100451683893,
+ "explanation_kpi_grounding": {
+  "mean_fraction_of_mentioned_kpis_that_deviate": 0.24578782583369732,
+  "cases_mentioning_kpis": 109,
+  "mentions": 704,
+  "mentions_not_in_deviating_list": 538
+ },
+ "root_cause_excl_jamming": {
+  "accuracy": 0.030612244897959183,
+  "n": 196
+ },
+ "explanation_rougeL": 0.05006843115220783,
+ "resolution_rougeL": 0.04725553545060334,
+ "pred_distribution": {
+  "None": 179,
+  "High Network Congestion (Sudden Spike)": 57,
+  "Antenna Failure": 22,
+  "Faulty RF Filters (Temporal)": 20,
+  "Co-Channel Interference (Severe)": 10
+ },
+ "system": "ministral3_3b/zs_raw",
+ "cost": {
+  "prompt_tokens": {
+   "mean": 7418.354166666667,
+   "median": 7315.5,
+   "p95": 9211.8,
+   "total": 2136486.0
+  },
+  "output_tokens": {
+   "mean": 344.46875,
+   "median": 341.5,
+   "p95": 438.29999999999995,
+   "total": 99207.0
+  },
+  "seconds": {
+   "mean": 33.48112252271838,
+   "median": 31.155482530593872,
+   "p95": 49.17031246423721,
+   "total": 9642.563286542892
+  }
+ }
+}

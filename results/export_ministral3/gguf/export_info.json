@@ -1,0 +1,19 @@
+{
+ "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+ "adapter": "/kaggle/input/notebooks/romansipula/telco-rca-gpu-ministral3/ministral3_3b/sft_hybrid/adapter",
+ "files": {
+  "Q8_0": {
+   "path": "ministral3-3b-rca-Q8_0.gguf",
+   "bytes": 3651683328
+  },
+  "Q4_K_M": {
+   "path": "ministral3-3b-rca-Q4_K_M.gguf",
+   "bytes": 2146501632
+  },
+  "f16": {
+   "path": "ministral3-3b-rca-f16.gguf",
+   "bytes": 6866224128
+  }
+ },
+ "seconds": 436.48933696746826
+}

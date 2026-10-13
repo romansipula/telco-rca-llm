@@ -1,0 +1,6 @@
+2026-10-13 21:10:23,110 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 21:10:24,125 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:10:24,520 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 21:10:24,585 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 21:10:27,779 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 21:10:27,845 INFO telco_rca.llm.hf_infer: all 308 predictions already present in /kaggle/working/gemma4_e4b/zs_evidence/predictions.jsonl

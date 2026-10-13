@@ -1,0 +1,19 @@
+{
+ "model": "google/gemma-4-E4B-it",
+ "adapter": "/kaggle/input/notebooks/romansipula/telco-rca-gpu-gemma4/gemma4_e4b/sft_hybrid/adapter",
+ "files": {
+  "Q8_0": {
+   "path": "gemma4-e4b-rca-Q8_0.gguf",
+   "bytes": 7972726688
+  },
+  "Q4_K_M": {
+   "path": "gemma4-e4b-rca-Q4_K_M.gguf",
+   "bytes": 5302273952
+  },
+  "f16": {
+   "path": "gemma4-e4b-rca-f16.gguf",
+   "bytes": 14942971808
+  }
+ },
+ "seconds": 990.4471662044525
+}

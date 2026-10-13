@@ -1,0 +1,1 @@
+68a3bfeee2c0c2095fb94e42582390a854b26ad1 Gemma 4: single-GPU fp16 evaluation; GPU kernel can evaluate adapters from an earlier run

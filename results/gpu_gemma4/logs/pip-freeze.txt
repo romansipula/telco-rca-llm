@@ -804,7 +804,7 @@ tabulate==0.9.0
 tbb==2022.3.1
 tblib==3.2.2
 tcmlib==1.5.0
--e git+https://github.com/romansipula/telco-rca-llm@71edd92272087c28c84d38867f777e5e8d4eab18#egg=telco_rca
+-e git+https://github.com/romansipula/telco-rca-llm@be55c5c6cda189f04e3a55b02d67029db92cd031#egg=telco_rca
 tenacity==9.1.4
 tensorboard==2.20.0
 tensorboard-data-server==0.7.2

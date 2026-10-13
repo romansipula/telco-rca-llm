@@ -1,0 +1,52 @@
+2026-10-13 16:16:31,893 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 16:16:34,186 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-26B-A4B-it "HTTP/1.1 200 OK"
+2026-10-13 16:16:34,266 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 16:16:34,267 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 16:16:34,287 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/config.json?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Fconfig.json=&etag=%22f42adcca257bb0865c506947671e7d0af52ac9c4%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:34,308 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/config.json?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Fconfig.json=&etag=%22f42adcca257bb0865c506947671e7d0af52ac9c4%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:35,330 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 16:16:35,350 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/tokenizer_config.json?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:35,370 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/tokenizer_config.json?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Ftokenizer_config.json=&etag=%226068e357379d36f823c377e30efb101fa2c67fe4%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:35,423 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-26B-A4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 16:16:35,469 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-26B-A4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 16:16:35,514 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/tokenizer.json "HTTP/1.1 302 Found"
+2026-10-13 16:16:35,578 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-26B-A4B-it/xet-read-token/4d7ae4984b7db7de8f8457170b3f1a419ee76d52 "HTTP/1.1 200 OK"
+2026-10-13 16:16:36,165 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-13 16:16:36,207 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-10-13 16:16:36,287 INFO httpx: HTTP Request: HEAD https://huggingface.co/google/gemma-4-26B-A4B-it/resolve/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 16:16:36,307 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/chat_template.jinja?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Fchat_template.jinja=&etag=%224741bf6e4132ba23a5537f9d6e74e9a6d613d7cd%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:36,327 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/gemma-4-26B-A4B-it/4d7ae4984b7db7de8f8457170b3f1a419ee76d52/chat_template.jinja?%2Fgoogle%2Fgemma-4-26B-A4B-it%2Fresolve%2F4d7ae4984b7db7de8f8457170b3f1a419ee76d52%2Fchat_template.jinja=&etag=%224741bf6e4132ba23a5537f9d6e74e9a6d613d7cd%22 "HTTP/1.1 200 OK"
+2026-10-13 16:16:39,870 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-26B-A4B-it "HTTP/1.1 200 OK"
+2026-10-13 16:16:39,950 INFO telco_rca.llm.cpu_infer: starting /kaggle/tmp/llama.cpp/build/bin/llama-server -m /kaggle/tmp/hf/models--google--gemma-4-26B-A4B-it-qat-q4_0-gguf/snapshots/d1c082be9cf3c8a514acf63b8761f4b41935842e/gemma-4-26B_q4_0-it.gguf -t 4 -c 8192 --port 55461 --host 127.0.0.1 -np 1 --no-warmup
+2026-10-13 16:18:54,113 INFO telco_rca.llm.cpu_infer: 1/308 93.9s prompt=721 out=200
+2026-10-13 16:32:11,524 INFO telco_rca.llm.cpu_infer: 11/308 71.7s prompt=699 out=176
+2026-10-13 16:44:09,652 INFO telco_rca.llm.cpu_infer: 21/308 73.3s prompt=660 out=202
+2026-10-13 16:56:09,968 INFO telco_rca.llm.cpu_infer: 31/308 69.4s prompt=682 out=166
+2026-10-13 17:07:18,898 INFO telco_rca.llm.cpu_infer: 41/308 72.7s prompt=734 out=159
+2026-10-13 17:19:53,716 INFO telco_rca.llm.cpu_infer: 51/308 70.9s prompt=681 out=177
+2026-10-13 17:32:54,386 INFO telco_rca.llm.cpu_infer: 61/308 74.0s prompt=687 out=182
+2026-10-13 17:45:09,098 INFO telco_rca.llm.cpu_infer: 71/308 82.3s prompt=725 out=199
+2026-10-13 17:57:28,597 INFO telco_rca.llm.cpu_infer: 81/308 72.4s prompt=692 out=176
+2026-10-13 18:09:42,574 INFO telco_rca.llm.cpu_infer: 91/308 72.3s prompt=678 out=182
+2026-10-13 18:20:55,728 INFO telco_rca.llm.cpu_infer: 101/308 70.7s prompt=669 out=160
+2026-10-13 18:34:38,046 INFO telco_rca.llm.cpu_infer: 111/308 86.2s prompt=785 out=188
+2026-10-13 18:46:01,594 INFO telco_rca.llm.cpu_infer: 121/308 70.7s prompt=685 out=180
+2026-10-13 18:59:45,777 INFO telco_rca.llm.cpu_infer: 131/308 105.2s prompt=871 out=235
+2026-10-13 19:16:30,612 INFO telco_rca.llm.cpu_infer: 141/308 95.4s prompt=877 out=263
+2026-10-13 19:29:48,384 INFO telco_rca.llm.cpu_infer: 151/308 71.5s prompt=780 out=165
+2026-10-13 19:42:11,170 INFO telco_rca.llm.cpu_infer: 161/308 72.7s prompt=735 out=185
+2026-10-13 19:55:55,414 INFO telco_rca.llm.cpu_infer: 171/308 72.6s prompt=678 out=203
+2026-10-13 20:07:58,008 INFO telco_rca.llm.cpu_infer: 181/308 60.7s prompt=646 out=165
+2026-10-13 20:22:31,353 INFO telco_rca.llm.cpu_infer: 191/308 130.1s prompt=1118 out=278
+2026-10-13 20:36:40,951 INFO telco_rca.llm.cpu_infer: 201/308 59.5s prompt=664 out=161
+2026-10-13 20:47:10,494 INFO telco_rca.llm.cpu_infer: 211/308 79.7s prompt=797 out=187
+2026-10-13 21:00:02,786 INFO telco_rca.llm.cpu_infer: 221/308 70.5s prompt=757 out=166
+2026-10-13 21:10:23,348 INFO telco_rca.llm.cpu_infer: 231/308 60.2s prompt=667 out=148
+2026-10-13 21:21:17,517 INFO telco_rca.llm.cpu_infer: 241/308 84.5s prompt=794 out=217
+2026-10-13 21:33:38,311 INFO telco_rca.llm.cpu_infer: 251/308 47.2s prompt=593 out=127
+2026-10-13 21:48:18,166 INFO telco_rca.llm.cpu_infer: 261/308 64.5s prompt=640 out=181
+2026-10-13 22:03:08,621 INFO telco_rca.llm.cpu_infer: 271/308 94.4s prompt=833 out=240
+2026-10-13 22:18:54,102 INFO telco_rca.llm.cpu_infer: 281/308 90.9s prompt=860 out=225
+2026-10-13 22:31:41,170 INFO telco_rca.llm.cpu_infer: 291/308 68.1s prompt=662 out=183
+2026-10-13 22:46:06,370 INFO telco_rca.llm.cpu_infer: 301/308 110.3s prompt=859 out=270
