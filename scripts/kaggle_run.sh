@@ -17,7 +17,7 @@
 #   DATASETS=<owner/ds>[,<owner/ds>...]           Kaggle datasets to attach (e.g. the shared test prompts)
 set -euo pipefail
 
-KIND=$1; SLUG=$2; RUN_ID=$3; OVERRIDES=${4:-'{}'}; shift 4 || true
+KIND=$1; SLUG=$(echo "$2" | tr '_A-Z' '-a-z'); RUN_ID=$3; OVERRIDES=${4:-'{}'}; shift 4 || true
 SOURCES=("$@")
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 REF=${REF:-$(git -C "$ROOT" rev-parse --abbrev-ref HEAD)}
