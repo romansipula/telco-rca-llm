@@ -1,0 +1,6 @@
+# Gemma 4 26B-A4B instruct (Google, Apache-2.0), MoE with ~4B active parameters.
+# Used only as an optional zero-shot CPU reference via Google's QAT Q4_0 GGUF; this file provides
+# the tokenizer / chat template so prompts are identical to the other runs.
+hf_id: google/gemma-4-26B-A4B-it
+short_name: gemma4-26b-a4b
+chat_template_kwargs: {enable_thinking: false}

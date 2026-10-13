@@ -87,6 +87,7 @@ def cmd_baseline(args):
     write_json(out / "gb_template" / "metrics.json", m2)
     # oracle: the SFT targets themselves (upper bound of text metrics for this target design)
     or_rows = [{"case_id": r["case_id"], "output": json.dumps(r["target"])} for r in test]
+    write_jsonl(out / "oracle_targets" / "predictions.jsonl", or_rows)
     m3 = evaluate_predictions(or_rows, test, meta, text_metrics=not args.no_text, bert=not args.no_bert)
     m3["system"] = "oracle_targets"
     write_json(out / "oracle_targets" / "metrics.json", m3)
