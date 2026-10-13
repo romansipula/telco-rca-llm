@@ -108,17 +108,22 @@ def seed_from_inputs():
     root = Path("/kaggle/input")
     if not root.exists():
         return
+    systems = {"zs_evidence", "zs_raw", "sft_evidence", "sft_hybrid"}
     for f in root.rglob("predictions.jsonl"):
-        rel = f.relative_to(root)
-        parts = rel.parts
-        for i in range(len(parts) - 2):
-            if parts[i] in SPEC["models"]:
-                dst = W.joinpath(*parts[i:])
-                if not dst.exists():
-                    dst.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy(f, dst)
-                    print("seeded", dst, flush=True)
-                break
+        parts = f.relative_to(root).parts
+        model = next((p for p in parts if p in SPEC["models"]), None)
+        system = parts[-2] if len(parts) >= 2 else None
+        if system not in systems:
+            continue
+        if model is None and len(SPEC["models"]) == 1:
+            model = SPEC["models"][0]  # dataset uploads drop the top-level folder
+        if model is None:
+            continue
+        dst = W / model / system / "predictions.jsonl"
+        if not dst.exists():
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(f, dst)
+            print("seeded", dst, flush=True)
 
 
 def run_jobs(jobs):
