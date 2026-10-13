@@ -3,6 +3,7 @@
 hf_id: mistralai/Ministral-3-3B-Instruct-2512-BF16
 short_name: ministral3-3b-rca
 loader: image_text_to_text   # Mistral3ForConditionalGeneration (vision tower untouched)
+tokenizer_kwargs: {fix_mistral_regex: true}   # HF tokenizer regex fix (matches llama.cpp tokenisation)
 compute_dtype: float16
 fp32_fallback: true
 infer_quant: none

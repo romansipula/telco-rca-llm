@@ -68,7 +68,8 @@ def load_tokenizer(cfg: dict):
 
     if cfg["hf_id"] == "__tiny__":
         return _tiny_tokenizer()
-    tok = AutoTokenizer.from_pretrained(cfg.get("tokenizer_id", cfg["hf_id"]), trust_remote_code=False)
+    tok = AutoTokenizer.from_pretrained(cfg.get("tokenizer_id", cfg["hf_id"]), trust_remote_code=False,
+                                        **(cfg.get("tokenizer_kwargs") or {}))
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
     return tok

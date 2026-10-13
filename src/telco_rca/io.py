@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 
 def read_jsonl(path: str | Path) -> list[dict]:
@@ -13,8 +13,7 @@ def read_jsonl(path: str | Path) -> list[dict]:
 def write_jsonl(path: str | Path, rows: Iterable[dict]) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w") as f:
-        for r in rows:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        f.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rows)
 
 
 def write_json(path: str | Path, obj) -> None:

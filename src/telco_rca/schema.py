@@ -43,7 +43,7 @@ class ParsedOutput:
     resolution: str = ""
 
 
-_FENCE = re.compile(r"```(?:json)?\s*(.*?)```", re.S)
+_FENCE = re.compile(r"```(?:json)?\s*(.*?)```", re.DOTALL)
 
 
 def _find_json(text: str) -> dict | None:

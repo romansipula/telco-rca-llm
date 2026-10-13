@@ -99,7 +99,7 @@ class DatasetAdapter(abc.ABC):
     def load_cases(self) -> list[Case]:
         """Load all anomalous cases (already-detected anomalies only)."""
 
-    def reference_profile(self, case: Case) -> ReferenceProfile | None:  # noqa: ARG002
+    def reference_profile(self, case: Case) -> ReferenceProfile | None:
         """Normal-behaviour profile for the case's context, or None."""
         return None
 

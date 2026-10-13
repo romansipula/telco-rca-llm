@@ -1,6 +1,6 @@
 import json
 
-from telco_rca.data.telecomts import LABELS, KPI_SPECS, parse_ticket
+from telco_rca.data.telecomts import KPI_SPECS, LABELS, parse_ticket
 from telco_rca.schema import build_schema, dump_target, parse_output
 
 SCHEMA = build_schema(LABELS, [k.name for k in KPI_SPECS])

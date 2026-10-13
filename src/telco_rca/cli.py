@@ -40,7 +40,13 @@ def cmd_prepare(args):
     stats = data_stats(rows)
     if args.stats_out:
         write_json(args.stats_out, stats)
-    print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk != "groups"} for k, v in stats.items()}, indent=1))
+    print(json.dumps({k: ({kk: vv for kk, vv in v.items() if kk != "groups"} if isinstance(v, dict) else v)
+                      for k, v in stats.items()}, indent=1))
+    if args.check_hash:
+        ref = read_json(args.check_hash).get("prepared_sha256")
+        if ref != stats["prepared_sha256"]:
+            raise SystemExit(f"prepared data hash {stats['prepared_sha256']} != committed {ref}")
+        print("prepared data hash matches", ref)
 
 
 def cmd_baseline(args):
@@ -176,8 +182,8 @@ def cmd_evaluate(args):
 
 
 def cmd_review_sheet(args):
-    from .review import review_sheet
     from .pipeline import load_prepared
+    from .review import review_sheet
 
     rows, meta = load_prepared(args.prepared)
     review_sheet(rows, meta, args.pred_a, args.pred_b, args.out_dir, n=args.n, seed=args.seed)
@@ -205,6 +211,7 @@ def main(argv=None):
     p.add_argument("--resplit", action="store_true")
     p.add_argument("--out")
     p.add_argument("--stats-out")
+    p.add_argument("--check-hash", help="data_stats.json whose prepared_sha256 must match")
     p.set_defaults(fn=cmd_prepare)
 
     p = common(sub.add_parser("baseline"))

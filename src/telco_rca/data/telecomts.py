@@ -123,6 +123,13 @@ def _download(rel_path: str, cache_dir: Path) -> Path:
     return dst
 
 
+def _cat(v) -> str:
+    """Protocol channels: TCP / UDP / none (no packets in that 100 ms step)."""
+    if v is None or str(v).strip() in ("", "None", "nan", "null"):
+        return "none"
+    return str(v)
+
+
 def _app_folder(app: str) -> str:
     return {"youtube": "YouTube", "twitch": "Twitch", "file": "File"}[app.lower()]
 
@@ -167,7 +174,7 @@ class TelecomTSAdapter(DatasetAdapter):
                         continue
                     k = r["KPIs"]
                     numeric = {n: np.asarray(k[n], dtype=float) for n in num_names}
-                    categorical = {n: [str(v) for v in k[n]] for n in cat_names}
+                    categorical = {n: [_cat(v) for v in k[n]] for n in cat_names}
                     dur = a.get("anomaly_duration") or {}
                     seg = None
                     if dur.get("start") is not None and dur.get("end") is not None:
@@ -209,7 +216,7 @@ class TelecomTSAdapter(DatasetAdapter):
                     v = row.get(n, "")
                     cols[n].append(float(v) if v not in ("", None) else np.nan)
                 for n in cat_names:
-                    cols[n].append(row.get(n) or "None")
+                    cols[n].append(_cat(row.get(n)))
         num = {n: np.asarray(cols[n], dtype=float) for n in num_names}
         cat = {n: cols[n] for n in cat_names}
         return num, cat, stamps

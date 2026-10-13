@@ -96,8 +96,21 @@ def load_prepared(prepared_dir: str | Path) -> tuple[list[dict], dict]:
     return read_jsonl(p / "cases.jsonl"), read_json(p / "meta.json")
 
 
+def prepared_hash(rows: list[dict]) -> str:
+    """Content hash of what the models see (split, evidence, raw text, target); used to check that a
+    Kaggle kernel rebuilt exactly the same prepared data as the committed results."""
+    import hashlib
+    import json
+
+    h = hashlib.sha256()
+    for r in sorted(rows, key=lambda r: r["case_id"]):
+        h.update(json.dumps([r["case_id"], r["split"], r["evidence_text"], r["raw_text"], r["target"]],
+                            sort_keys=True).encode())
+    return h.hexdigest()
+
+
 def data_stats(rows: list[dict]) -> dict:
-    out = {}
+    out: dict = {"prepared_sha256": prepared_hash(rows)}
     for split in sorted({r["split"] for r in rows}):
         rs = [r for r in rows if r["split"] == split]
         out[split] = {

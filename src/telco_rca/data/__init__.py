@@ -18,5 +18,13 @@ def get_adapter(name: str, **kwargs) -> DatasetAdapter:
     raise KeyError(f"unknown adapter {name!r}; register it in telco_rca.data.ADAPTERS")
 
 
-__all__ = ["Case", "DatasetAdapter", "KPISpec", "ReferenceProfile", "Ticket", "robust_profile", "get_adapter",
-           "ADAPTERS"]
+__all__ = [
+    "ADAPTERS",
+    "Case",
+    "DatasetAdapter",
+    "KPISpec",
+    "ReferenceProfile",
+    "Ticket",
+    "get_adapter",
+    "robust_profile",
+]
