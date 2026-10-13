@@ -1,1 +1,0 @@
-romansipula/telco-rca-cpu-gemma26b has status "KernelWorkerStatus.ERROR"
