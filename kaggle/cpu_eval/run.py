@@ -10,6 +10,7 @@ Tasks (``SPEC["task"]``):
 """
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -93,7 +94,7 @@ def export():
     dst = W / "gguf"
     dst.mkdir(exist_ok=True)
     for f in out.glob("*.gguf"):
-        f.rename(dst / f.name)
+        shutil.move(str(f), str(dst / f.name))  # /kaggle/tmp and /kaggle/working are different filesystems
     (dst / "export_info.json").write_text((out / "export_info.json").read_text())
     (dst / "adapter_source.txt").write_text(str(adapter))
 
