@@ -1,1 +1,1 @@
-622d90f3d3733dc4dbe6e66b2d14b19003d3156c Resume seeding: map flattened dataset paths to the run's model
+7569e96d94967d57febff18171e4ed822f8de72c Gemma 4: CPU embedding lookup as a plain-tensor wrapper; balanced 2-GPU inference map

@@ -124,6 +124,8 @@ def offload_to_cpu(model, names: list[str]) -> list[str]:
     (it refuses to train 4-bit models with CPU offload). A lookup is exact, so results are identical."""
     import torch
 
+    target = model.get_input_embeddings().weight.device  # consumers combine it with inputs_embeds
+
     class _CPUEmbedding(torch.nn.Module):
         def __init__(self, emb):
             super().__init__()
@@ -137,7 +139,7 @@ def offload_to_cpu(model, names: list[str]) -> list[str]:
             out = torch.nn.functional.embedding(input_ids.to("cpu"), self.table)
             if self.scale is not None:
                 out = out * torch.tensor(self.scale, dtype=self.table.dtype)
-            return out.to(input_ids.device)
+            return out.to(target)
 
     moved = []
     for name in names:

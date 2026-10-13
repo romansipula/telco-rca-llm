@@ -64,6 +64,40 @@ def collate(batch, pad_id):
     return {"input_ids": ids, "labels": lab, "attention_mask": att}
 
 
+def make_trainer_cls():
+    """Trainer whose loss only materialises LM-head logits for the answer span.
+
+    With 131k-262k vocabularies, logits over the whole ~900-token sequence cost several GB (fp32
+    for the loss) and most of the LM-head FLOPs, although only the ~150 answer tokens carry loss.
+    ``logits_to_keep`` restricts the head to the positions from the first supervised token on.
+    """
+    import torch
+    from transformers import Trainer
+
+    class SpanLossTrainer(Trainer):
+        def __init__(self, *a, **kw):
+            super().__init__(*a, **kw)
+            self.model_accepts_loss_kwargs = True  # we normalise ourselves (see below)
+
+        def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
+            labels = inputs.pop("labels")
+            sup = labels != -100
+            first = int(sup.float().argmax(1)[sup.any(1)].min()) if sup.any() else labels.shape[1] - 1
+            keep = labels.shape[1] - max(first - 1, 0)
+            out = model(**inputs, logits_to_keep=keep)
+            logits = out.logits[:, :-1].float()
+            tgt = labels[:, -keep:][:, 1:]
+            loss = torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]), tgt.reshape(-1),
+                                                     ignore_index=-100, reduction="sum")
+            if num_items_in_batch is not None:
+                loss = loss / num_items_in_batch
+            else:
+                loss = loss / max(int((tgt != -100).sum()), 1) / self.args.gradient_accumulation_steps
+            return (loss, out) if return_outputs else loss
+
+    return SpanLossTrainer
+
+
 def _peft(model, cfg):
     from peft import LoraConfig, get_peft_model
 
@@ -76,7 +110,7 @@ def _peft(model, cfg):
 def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = None, max_steps: int | None = None,
           quant: str | None = None) -> dict:
     import torch
-    from transformers import Trainer, TrainerCallback, TrainingArguments
+    from transformers import TrainerCallback, TrainingArguments
 
     t0 = time.time()
     out = Path(output_dir)
@@ -149,7 +183,7 @@ def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = N
         remove_unused_columns=False,
         use_cpu=not on_gpu,
     )
-    trainer = Trainer(model=model, args=args, train_dataset=ds,
+    trainer = make_trainer_cls()(model=model, args=args, train_dataset=ds,
                       data_collator=lambda b: collate(b, tok.pad_token_id), callbacks=[LossLog()])
     trainer.train()
     model.save_pretrained(out / "adapter")

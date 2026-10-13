@@ -20,42 +20,42 @@
   "max_new_tokens": 512
  },
  "status": {
-  "gemma4_e4b/train_evidence": {
-   "rc": 1,
-   "seconds": 210.00793147087097,
-   "gpus": [
-    0
-   ]
-  },
   "gemma4_e4b/train_hybrid": {
    "rc": 1,
-   "seconds": 210.00732231140137,
+   "seconds": 300.0116055011749,
    "gpus": [
     1
+   ]
+  },
+  "gemma4_e4b/sft_hybrid_eval": {
+   "rc": "skipped (dependency failed)"
+  },
+  "gemma4_e4b/train_evidence": {
+   "rc": 1,
+   "seconds": 1995.0818929672241,
+   "gpus": [
+    0
    ]
   },
   "gemma4_e4b/sft_evidence_eval": {
    "rc": "skipped (dependency failed)"
   },
-  "gemma4_e4b/sft_hybrid_eval": {
-   "rc": "skipped (dependency failed)"
-  },
   "gemma4_e4b/zs_evidence": {
    "rc": 0,
-   "seconds": 30.001027584075928,
+   "seconds": 45.001474142074585,
    "gpus": [
-    0,
-    1
+    1,
+    0
    ]
   },
   "gemma4_e4b/zs_raw": {
    "rc": 1,
-   "seconds": 135.00504684448242,
+   "seconds": 45.00180387496948,
    "gpus": [
-    0,
-    1
+    1,
+    0
    ]
   }
  },
- "elapsed_s": 482.90420722961426
+ "elapsed_s": 2192.4337515830994
 }

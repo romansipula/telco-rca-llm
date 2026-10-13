@@ -7,7 +7,7 @@ fp32_fallback: true
 chat_template_kwargs: {enable_thinking: false}
 infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
 infer_multi_gpu: true        # fp16 weights spread over 2x T4
-infer_device_map: balanced   # "auto" packs GPU 0 full and OOMs on 8.5k-token raw prompts
+# (the per-layer table moved to CPU frees ~5.6 GB on GPU 0, which "auto" had packed full)
 # QLoRA: the 2.82B-parameter per-layer embedding table (262144 x 10752, not quantised by bnb) does not
 # fit next to the model on a T4, even split over two (first full run OOMed). It is a pure lookup, so it
 # stays in host RAM (training and inference); the rest trains on one T4.
