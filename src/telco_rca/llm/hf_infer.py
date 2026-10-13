@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 
 from ..io import read_jsonl
-from .common import load_model, load_tokenizer, peak_gpu_mb
+from .common import load_model, load_tokenizer, offload_to_cpu, peak_gpu_mb
 from .data import end_of_turn, render_prompt
 
 log = logging.getLogger(__name__)
@@ -92,6 +92,8 @@ def infer(cfg: dict, examples_file: str, out_file: str, adapter: str | None = No
     model = load_model(cfg, quant=quant, device_map=device_map,
                        compute_dtype=cfg.get("infer_dtype", cfg.get("compute_dtype", "float16"))
                        if torch.cuda.is_available() else "float32")
+    if cfg.get("cpu_modules") and torch.cuda.is_available():
+        offload_to_cpu(model, cfg["cpu_modules"])
     if adapter:
         from peft import PeftModel
 
@@ -101,7 +103,8 @@ def infer(cfg: dict, examples_file: str, out_file: str, adapter: str | None = No
     stops = stop_ids(tok, cfg)
     prompts = [(e, render_prompt(tok, e["messages"], cfg)) for e in todo]
     prompts.sort(key=lambda x: len(x[1]))
-    dev = next(model.parameters()).device
+    emb = model.get_input_embeddings()
+    dev = emb.weight.device if hasattr(emb, "weight") else next(model.parameters()).device
     with out.open("a") as f:
         for i in range(0, len(prompts), batch_size):
             chunk = prompts[i : i + batch_size]

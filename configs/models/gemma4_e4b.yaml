@@ -6,10 +6,11 @@ compute_dtype: float16       # T4: no bf16. Overflow is probed before training (
 fp32_fallback: true
 chat_template_kwargs: {enable_thinking: false}
 infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
-infer_multi_gpu: true        # ~16 GB in fp16 -> spread over 2x T4
+infer_multi_gpu: true        # fp16 weights spread over 2x T4
+infer_device_map: balanced   # "auto" packs GPU 0 full and OOMs on 8.5k-token raw prompts
 # QLoRA: the 2.82B-parameter per-layer embedding table (262144 x 10752, not quantised by bnb) does not
 # fit next to the model on a T4, even split over two (first full run OOMed). It is a pure lookup, so it
-# stays in host RAM during training; the rest trains on one T4.
+# stays in host RAM (training and inference); the rest trains on one T4.
 cpu_modules: [model.language_model.embed_tokens_per_layer]
 train_multi_gpu: false
 lora: {r: 16, alpha: 32, dropout: 0.05}

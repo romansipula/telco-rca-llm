@@ -16,35 +16,33 @@
   "train_max_steps": null,
   "infer_limit": null,
   "raw_limit": null,
-  "budget_hours": 6.0,
+  "budget_hours": 4.0,
   "max_new_tokens": 512
  },
  "status": {
   "gemma4_e4b/train_evidence": {
    "rc": 1,
-   "seconds": 195.00889039039612,
+   "seconds": 210.00793147087097,
    "gpus": [
-    0,
+    0
+   ]
+  },
+  "gemma4_e4b/train_hybrid": {
+   "rc": 1,
+   "seconds": 210.00732231140137,
+   "gpus": [
     1
    ]
   },
   "gemma4_e4b/sft_evidence_eval": {
    "rc": "skipped (dependency failed)"
   },
-  "gemma4_e4b/train_hybrid": {
-   "rc": 1,
-   "seconds": 75.0028064250946,
-   "gpus": [
-    0,
-    1
-   ]
-  },
   "gemma4_e4b/sft_hybrid_eval": {
    "rc": "skipped (dependency failed)"
   },
   "gemma4_e4b/zs_evidence": {
    "rc": 0,
-   "seconds": 1245.0444576740265,
+   "seconds": 30.001027584075928,
    "gpus": [
     0,
     1
@@ -52,12 +50,12 @@
   },
   "gemma4_e4b/zs_raw": {
    "rc": 1,
-   "seconds": 4425.15412569046,
+   "seconds": 135.00504684448242,
    "gpus": [
     0,
     1
    ]
   }
  },
- "elapsed_s": 6046.447573661804
+ "elapsed_s": 482.90420722961426
 }

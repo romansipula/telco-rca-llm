@@ -115,38 +115,45 @@ def load_model(cfg: dict, quant: str = "4bit", compute_dtype: str | None = None,
 
 
 def offload_to_cpu(model, names: list[str]) -> list[str]:
-    """Move frozen lookup modules (e.g. Gemma 4's 2.8B-parameter per-layer embedding table) to host
-    RAM after loading, with hooks that move their inputs to CPU and outputs back to the GPU.
+    """Replace frozen embedding lookups (e.g. Gemma 4's 2.8B-parameter per-layer embedding table)
+    by a wrapper that keeps the table in host RAM as a plain tensor and returns its output on the
+    device of the incoming ids.
 
-    Done after loading rather than through ``device_map`` because accelerate refuses to train a
-    4-bit model whose device map contains "cpu"."""
+    The table is deliberately not a parameter/buffer, so later ``.to()`` calls (Trainer, peft,
+    accelerate) cannot move it back to the GPU, and accelerate does not see a "cpu" device map
+    (it refuses to train 4-bit models with CPU offload). A lookup is exact, so results are identical."""
     import torch
+
+    class _CPUEmbedding(torch.nn.Module):
+        def __init__(self, emb):
+            super().__init__()
+            self.table = emb.weight.detach().to("cpu")
+            self.num_embeddings, self.embedding_dim = self.table.shape
+            self.padding_idx = getattr(emb, "padding_idx", None)
+            scale = getattr(emb, "scalar_embed_scale", None)
+            self.scale = None if scale is None else float(scale)
+
+        def forward(self, input_ids):
+            out = torch.nn.functional.embedding(input_ids.to("cpu"), self.table)
+            if self.scale is not None:
+                out = out * torch.tensor(self.scale, dtype=self.table.dtype)
+            return out.to(input_ids.device)
 
     moved = []
     for name in names:
+        parent_name, _, child = name.rpartition(".")
         try:
-            mod = model.get_submodule(name)
+            parent = model.get_submodule(parent_name) if parent_name else model
+            emb = getattr(parent, child)
         except AttributeError:
             log.warning("cpu_modules: %s not found", name)
             continue
-        target = next(p.device for n, p in model.named_parameters() if not n.startswith(name))
-        mod.to("cpu")
-        for p in mod.parameters():
-            p.requires_grad_(False)
-
-        def pre(m, args, kwargs):
-            mv = lambda t: t.to("cpu") if torch.is_tensor(t) else t  # noqa: E731
-            return tuple(mv(a) for a in args), {k: mv(v) for k, v in kwargs.items()}
-
-        def post(m, args, out, _t=target):
-            return out.to(_t) if torch.is_tensor(out) else out
-
-        mod.register_forward_pre_hook(pre, with_kwargs=True)
-        mod.register_forward_hook(post)
+        setattr(parent, child, _CPUEmbedding(emb))
+        del emb
         moved.append(name)
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
-    log.info("offloaded to CPU: %s", moved)
+    log.info("embedding lookups kept on CPU: %s", moved)
     return moved
 
 

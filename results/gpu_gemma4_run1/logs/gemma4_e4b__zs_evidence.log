@@ -1,0 +1,47 @@
+2026-10-13 16:00:41,486 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 16:00:41,978 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 16:00:42,226 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 16:00:42,246 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 16:00:45,018 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 16:00:45,356 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 16:00:45,377 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   9%|▉         | 192/2076 [00:00<00:00, 1918.97it/s]Loading weights:  18%|█▊        | 384/2076 [00:00<00:00, 1844.06it/s]Loading weights:  27%|██▋       | 569/2076 [00:00<00:00, 1748.47it/s]Loading weights:  36%|███▌      | 752/2076 [00:00<00:00, 1760.62it/s]Loading weights:  45%|████▍     | 929/2076 [00:09<00:20, 55.61it/s]  Loading weights:  68%|██████▊   | 1404/2076 [00:09<00:05, 126.44it/s]Loading weights:  76%|███████▌  | 1571/2076 [00:09<00:03, 159.07it/s]Loading weights:  85%|████████▌ | 1766/2076 [00:09<00:01, 211.85it/s]Loading weights:  95%|█████████▍| 1964/2076 [00:09<00:00, 283.21it/s]Loading weights: 100%|██████████| 2076/2076 [00:09<00:00, 209.16it/s]
+2026-10-13 16:01:28,196 INFO telco_rca.llm.hf_infer: 8/308 done (30.9s/batch, peak 9447 MB)
+2026-10-13 16:01:54,931 INFO telco_rca.llm.hf_infer: 16/308 done (26.7s/batch, peak 9488 MB)
+2026-10-13 16:02:21,577 INFO telco_rca.llm.hf_infer: 24/308 done (26.6s/batch, peak 9494 MB)
+2026-10-13 16:02:49,285 INFO telco_rca.llm.hf_infer: 32/308 done (27.7s/batch, peak 9496 MB)
+2026-10-13 16:03:20,650 INFO telco_rca.llm.hf_infer: 40/308 done (31.4s/batch, peak 9496 MB)
+2026-10-13 16:03:49,332 INFO telco_rca.llm.hf_infer: 48/308 done (28.7s/batch, peak 9519 MB)
+2026-10-13 16:04:13,265 INFO telco_rca.llm.hf_infer: 56/308 done (23.9s/batch, peak 9519 MB)
+2026-10-13 16:04:49,187 INFO telco_rca.llm.hf_infer: 64/308 done (35.9s/batch, peak 9525 MB)
+2026-10-13 16:05:17,353 INFO telco_rca.llm.hf_infer: 72/308 done (28.2s/batch, peak 9531 MB)
+2026-10-13 16:05:42,286 INFO telco_rca.llm.hf_infer: 80/308 done (24.9s/batch, peak 9531 MB)
+2026-10-13 16:06:13,929 INFO telco_rca.llm.hf_infer: 88/308 done (31.6s/batch, peak 9537 MB)
+2026-10-13 16:06:44,192 INFO telco_rca.llm.hf_infer: 96/308 done (30.3s/batch, peak 9543 MB)
+2026-10-13 16:07:10,987 INFO telco_rca.llm.hf_infer: 104/308 done (26.8s/batch, peak 9549 MB)
+2026-10-13 16:07:39,488 INFO telco_rca.llm.hf_infer: 112/308 done (28.5s/batch, peak 9549 MB)
+2026-10-13 16:08:07,660 INFO telco_rca.llm.hf_infer: 120/308 done (28.2s/batch, peak 9563 MB)
+2026-10-13 16:08:36,402 INFO telco_rca.llm.hf_infer: 128/308 done (28.7s/batch, peak 9563 MB)
+2026-10-13 16:09:05,983 INFO telco_rca.llm.hf_infer: 136/308 done (29.6s/batch, peak 9563 MB)
+2026-10-13 16:09:35,737 INFO telco_rca.llm.hf_infer: 144/308 done (29.7s/batch, peak 9563 MB)
+2026-10-13 16:10:04,164 INFO telco_rca.llm.hf_infer: 152/308 done (28.4s/batch, peak 9570 MB)
+2026-10-13 16:10:32,403 INFO telco_rca.llm.hf_infer: 160/308 done (28.2s/batch, peak 9582 MB)
+2026-10-13 16:11:00,005 INFO telco_rca.llm.hf_infer: 168/308 done (27.6s/batch, peak 9592 MB)
+2026-10-13 16:11:29,988 INFO telco_rca.llm.hf_infer: 176/308 done (30.0s/batch, peak 9597 MB)
+2026-10-13 16:11:59,484 INFO telco_rca.llm.hf_infer: 184/308 done (29.5s/batch, peak 9599 MB)
+2026-10-13 16:12:29,430 INFO telco_rca.llm.hf_infer: 192/308 done (29.9s/batch, peak 9614 MB)
+2026-10-13 16:12:59,337 INFO telco_rca.llm.hf_infer: 200/308 done (29.9s/batch, peak 9622 MB)
+2026-10-13 16:13:29,678 INFO telco_rca.llm.hf_infer: 208/308 done (30.3s/batch, peak 9655 MB)
+2026-10-13 16:13:57,362 INFO telco_rca.llm.hf_infer: 216/308 done (27.7s/batch, peak 9655 MB)
+2026-10-13 16:14:28,396 INFO telco_rca.llm.hf_infer: 224/308 done (31.0s/batch, peak 9692 MB)
+2026-10-13 16:15:03,680 INFO telco_rca.llm.hf_infer: 232/308 done (35.3s/batch, peak 9699 MB)
+2026-10-13 16:15:35,293 INFO telco_rca.llm.hf_infer: 240/308 done (31.6s/batch, peak 9711 MB)
+2026-10-13 16:16:07,483 INFO telco_rca.llm.hf_infer: 248/308 done (32.2s/batch, peak 9718 MB)
+2026-10-13 16:16:41,861 INFO telco_rca.llm.hf_infer: 256/308 done (34.4s/batch, peak 9743 MB)
+2026-10-13 16:17:16,311 INFO telco_rca.llm.hf_infer: 264/308 done (34.4s/batch, peak 9759 MB)
+2026-10-13 16:17:53,376 INFO telco_rca.llm.hf_infer: 272/308 done (37.1s/batch, peak 9763 MB)
+2026-10-13 16:18:32,152 INFO telco_rca.llm.hf_infer: 280/308 done (38.8s/batch, peak 9798 MB)
+2026-10-13 16:19:08,486 INFO telco_rca.llm.hf_infer: 288/308 done (36.3s/batch, peak 9839 MB)
+2026-10-13 16:19:44,365 INFO telco_rca.llm.hf_infer: 296/308 done (35.9s/batch, peak 9871 MB)
+2026-10-13 16:20:24,899 INFO telco_rca.llm.hf_infer: 304/308 done (40.5s/batch, peak 10037 MB)
+2026-10-13 16:21:02,240 INFO telco_rca.llm.hf_infer: 308/308 done (37.3s/batch, peak 10037 MB)

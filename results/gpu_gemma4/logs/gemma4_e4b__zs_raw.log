@@ -1,89 +1,16 @@
-2026-10-13 16:21:28,818 INFO numexpr.utils: NumExpr defaulting to 4 threads.
-2026-10-13 16:21:29,378 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
-2026-10-13 16:21:29,658 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-10-13 16:21:29,679 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-10-13 16:21:32,509 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
-2026-10-13 16:21:32,868 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
-2026-10-13 16:21:32,888 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
-Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   9%|▉         | 194/2076 [00:00<00:00, 1890.09it/s]Loading weights:  18%|█▊        | 384/2076 [00:00<00:00, 1780.46it/s]Loading weights:  28%|██▊       | 573/2076 [00:00<00:00, 1820.69it/s]Loading weights:  36%|███▋      | 756/2076 [00:09<00:24, 52.93it/s]  Loading weights:  57%|█████▋    | 1186/2076 [00:09<00:07, 119.49it/s]Loading weights:  68%|██████▊   | 1413/2076 [00:09<00:04, 163.94it/s]Loading weights:  80%|████████  | 1662/2076 [00:09<00:01, 233.32it/s]Loading weights:  90%|█████████ | 1873/2076 [00:09<00:00, 309.42it/s]Loading weights: 100%|██████████| 2076/2076 [00:09<00:00, 213.10it/s]
-2026-10-13 16:22:35,165 INFO telco_rca.llm.hf_infer: 4/308 done (50.5s/batch, peak 12444 MB)
-2026-10-13 16:23:31,044 INFO telco_rca.llm.hf_infer: 8/308 done (55.9s/batch, peak 12475 MB)
-2026-10-13 16:24:30,586 INFO telco_rca.llm.hf_infer: 12/308 done (59.5s/batch, peak 12504 MB)
-2026-10-13 16:25:25,765 INFO telco_rca.llm.hf_infer: 16/308 done (55.2s/batch, peak 12546 MB)
-2026-10-13 16:26:23,817 INFO telco_rca.llm.hf_infer: 20/308 done (58.0s/batch, peak 12571 MB)
-2026-10-13 16:27:22,281 INFO telco_rca.llm.hf_infer: 24/308 done (58.4s/batch, peak 12585 MB)
-2026-10-13 16:28:21,243 INFO telco_rca.llm.hf_infer: 28/308 done (58.9s/batch, peak 12616 MB)
-2026-10-13 16:29:19,576 INFO telco_rca.llm.hf_infer: 32/308 done (58.3s/batch, peak 12684 MB)
-2026-10-13 16:30:22,152 INFO telco_rca.llm.hf_infer: 36/308 done (62.6s/batch, peak 12709 MB)
-2026-10-13 16:31:28,060 INFO telco_rca.llm.hf_infer: 40/308 done (65.9s/batch, peak 12723 MB)
-2026-10-13 16:32:26,633 INFO telco_rca.llm.hf_infer: 44/308 done (58.5s/batch, peak 12736 MB)
-2026-10-13 16:33:24,435 INFO telco_rca.llm.hf_infer: 48/308 done (57.8s/batch, peak 12743 MB)
-2026-10-13 16:34:22,956 INFO telco_rca.llm.hf_infer: 52/308 done (58.5s/batch, peak 12753 MB)
-2026-10-13 16:35:26,213 INFO telco_rca.llm.hf_infer: 56/308 done (63.2s/batch, peak 12760 MB)
-2026-10-13 16:36:33,710 INFO telco_rca.llm.hf_infer: 60/308 done (67.5s/batch, peak 12800 MB)
-2026-10-13 16:37:39,104 INFO telco_rca.llm.hf_infer: 64/308 done (65.4s/batch, peak 12816 MB)
-2026-10-13 16:38:43,707 INFO telco_rca.llm.hf_infer: 68/308 done (64.6s/batch, peak 12855 MB)
-2026-10-13 16:39:49,446 INFO telco_rca.llm.hf_infer: 72/308 done (65.7s/batch, peak 12884 MB)
-2026-10-13 16:40:51,280 INFO telco_rca.llm.hf_infer: 76/308 done (61.8s/batch, peak 12885 MB)
-2026-10-13 16:41:52,293 INFO telco_rca.llm.hf_infer: 80/308 done (61.0s/batch, peak 12912 MB)
-2026-10-13 16:42:56,422 INFO telco_rca.llm.hf_infer: 84/308 done (64.1s/batch, peak 12948 MB)
-2026-10-13 16:43:59,516 INFO telco_rca.llm.hf_infer: 88/308 done (63.1s/batch, peak 12974 MB)
-2026-10-13 16:45:01,192 INFO telco_rca.llm.hf_infer: 92/308 done (61.6s/batch, peak 12995 MB)
-2026-10-13 16:46:06,575 INFO telco_rca.llm.hf_infer: 96/308 done (65.4s/batch, peak 13052 MB)
-2026-10-13 16:47:12,066 INFO telco_rca.llm.hf_infer: 100/308 done (65.5s/batch, peak 13067 MB)
-2026-10-13 16:48:13,443 INFO telco_rca.llm.hf_infer: 104/308 done (61.4s/batch, peak 13078 MB)
-2026-10-13 16:49:16,609 INFO telco_rca.llm.hf_infer: 108/308 done (63.1s/batch, peak 13086 MB)
-2026-10-13 16:50:22,339 INFO telco_rca.llm.hf_infer: 112/308 done (65.7s/batch, peak 13116 MB)
-2026-10-13 16:51:28,333 INFO telco_rca.llm.hf_infer: 116/308 done (66.0s/batch, peak 13126 MB)
-2026-10-13 16:52:35,325 INFO telco_rca.llm.hf_infer: 120/308 done (67.0s/batch, peak 13155 MB)
-2026-10-13 16:53:44,339 INFO telco_rca.llm.hf_infer: 124/308 done (69.0s/batch, peak 13181 MB)
-2026-10-13 16:54:51,014 INFO telco_rca.llm.hf_infer: 128/308 done (66.6s/batch, peak 13214 MB)
-2026-10-13 16:56:01,291 INFO telco_rca.llm.hf_infer: 132/308 done (70.3s/batch, peak 13232 MB)
-2026-10-13 16:57:09,109 INFO telco_rca.llm.hf_infer: 136/308 done (67.8s/batch, peak 13242 MB)
-2026-10-13 16:58:14,458 INFO telco_rca.llm.hf_infer: 140/308 done (65.3s/batch, peak 13268 MB)
-2026-10-13 16:59:22,523 INFO telco_rca.llm.hf_infer: 144/308 done (68.0s/batch, peak 13275 MB)
-2026-10-13 17:00:33,496 INFO telco_rca.llm.hf_infer: 148/308 done (70.9s/batch, peak 13294 MB)
-2026-10-13 17:01:40,476 INFO telco_rca.llm.hf_infer: 152/308 done (67.0s/batch, peak 13294 MB)
-2026-10-13 17:02:50,055 INFO telco_rca.llm.hf_infer: 156/308 done (69.6s/batch, peak 13314 MB)
-2026-10-13 17:03:57,745 INFO telco_rca.llm.hf_infer: 160/308 done (67.7s/batch, peak 13362 MB)
-2026-10-13 17:05:05,907 INFO telco_rca.llm.hf_infer: 164/308 done (68.1s/batch, peak 13372 MB)
-2026-10-13 17:06:12,238 INFO telco_rca.llm.hf_infer: 168/308 done (66.3s/batch, peak 13372 MB)
-2026-10-13 17:07:23,011 INFO telco_rca.llm.hf_infer: 172/308 done (70.7s/batch, peak 13372 MB)
-2026-10-13 17:08:32,745 INFO telco_rca.llm.hf_infer: 176/308 done (69.7s/batch, peak 13396 MB)
-2026-10-13 17:09:42,405 INFO telco_rca.llm.hf_infer: 180/308 done (69.6s/batch, peak 13418 MB)
-2026-10-13 17:10:55,665 INFO telco_rca.llm.hf_infer: 184/308 done (73.2s/batch, peak 13418 MB)
-2026-10-13 17:12:08,078 INFO telco_rca.llm.hf_infer: 188/308 done (72.4s/batch, peak 13442 MB)
-2026-10-13 17:13:15,853 INFO telco_rca.llm.hf_infer: 192/308 done (67.7s/batch, peak 13446 MB)
-2026-10-13 17:14:26,594 INFO telco_rca.llm.hf_infer: 196/308 done (70.7s/batch, peak 13470 MB)
-2026-10-13 17:15:34,841 INFO telco_rca.llm.hf_infer: 200/308 done (68.2s/batch, peak 13489 MB)
-2026-10-13 17:16:43,800 INFO telco_rca.llm.hf_infer: 204/308 done (68.9s/batch, peak 13503 MB)
-2026-10-13 17:17:52,619 INFO telco_rca.llm.hf_infer: 208/308 done (68.8s/batch, peak 13538 MB)
-2026-10-13 17:19:00,557 INFO telco_rca.llm.hf_infer: 212/308 done (67.9s/batch, peak 13579 MB)
-2026-10-13 17:20:12,187 INFO telco_rca.llm.hf_infer: 216/308 done (71.6s/batch, peak 13596 MB)
-2026-10-13 17:21:27,441 INFO telco_rca.llm.hf_infer: 220/308 done (75.2s/batch, peak 13652 MB)
-2026-10-13 17:22:38,799 INFO telco_rca.llm.hf_infer: 224/308 done (71.3s/batch, peak 13706 MB)
-2026-10-13 17:23:49,439 INFO telco_rca.llm.hf_infer: 228/308 done (70.6s/batch, peak 13738 MB)
-2026-10-13 17:25:06,779 INFO telco_rca.llm.hf_infer: 232/308 done (77.3s/batch, peak 13807 MB)
-2026-10-13 17:26:24,584 INFO telco_rca.llm.hf_infer: 236/308 done (77.8s/batch, peak 13839 MB)
-2026-10-13 17:27:37,487 INFO telco_rca.llm.hf_infer: 240/308 done (72.9s/batch, peak 13924 MB)
-2026-10-13 17:29:01,182 INFO telco_rca.llm.hf_infer: 244/308 done (83.7s/batch, peak 14014 MB)
-2026-10-13 17:30:17,856 INFO telco_rca.llm.hf_infer: 248/308 done (76.6s/batch, peak 14123 MB)
-2026-10-13 17:31:40,148 INFO telco_rca.llm.hf_infer: 252/308 done (82.3s/batch, peak 14287 MB)
-2026-10-13 17:33:01,761 INFO telco_rca.llm.hf_infer: 256/308 done (81.6s/batch, peak 14330 MB)
-2026-10-13 17:34:27,330 INFO telco_rca.llm.hf_infer: 260/308 done (85.5s/batch, peak 14458 MB)
+2026-10-13 17:55:34,231 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 17:55:34,806 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 17:55:35,132 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 17:55:35,233 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 17:55:38,316 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 17:55:38,679 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=none dtype=torch.float16
+2026-10-13 17:55:38,762 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   3%|▎         | 65/2076 [00:00<00:06, 329.73it/s]Loading weights:   6%|▌         | 122/2076 [00:00<00:04, 412.00it/s]Loading weights:   8%|▊         | 166/2076 [00:00<00:05, 327.14it/s]Loading weights:  10%|▉         | 202/2076 [00:00<00:07, 265.45it/s]Loading weights:  12%|█▏        | 246/2076 [00:00<00:06, 300.41it/s]Loading weights:  13%|█▎        | 279/2076 [00:00<00:06, 290.15it/s]Loading weights:  15%|█▍        | 310/2076 [00:01<00:05, 294.51it/s]Loading weights:  16%|█▋        | 341/2076 [00:01<00:06, 282.47it/s]Loading weights:  18%|█▊        | 375/2076 [00:01<00:07, 228.98it/s]Loading weights:  21%|██        | 429/2076 [00:01<00:05, 289.43it/s]Loading weights:  22%|██▏       | 461/2076 [00:01<00:05, 270.16it/s]Loading weights:  24%|██▍       | 499/2076 [00:01<00:06, 235.78it/s]Loading weights:  27%|██▋       | 553/2076 [00:01<00:05, 291.33it/s]Loading weights:  28%|██▊       | 586/2076 [00:02<00:05, 275.27it/s]Loading weights:  30%|██▉       | 618/2076 [00:02<00:05, 275.04it/s]Loading weights:  31%|███       | 647/2076 [00:02<00:05, 258.87it/s]Loading weights:  33%|███▎      | 685/2076 [00:02<00:06, 219.18it/s]Loading weights:  36%|███▌      | 742/2076 [00:02<00:04, 288.29it/s]Loading weights:  37%|███▋      | 775/2076 [00:11<01:29, 14.52it/s] Loading weights:  57%|█████▋    | 1187/2076 [00:11<00:11, 78.29it/s]Loading weights:  68%|██████▊   | 1405/2076 [00:11<00:05, 123.31it/s]Loading weights:  78%|███████▊  | 1617/2076 [00:11<00:02, 183.07it/s]Loading weights:  87%|████████▋ | 1802/2076 [00:11<00:01, 251.43it/s]Loading weights:  96%|█████████▌| 1995/2076 [00:11<00:00, 343.82it/s]Loading weights: 100%|██████████| 2076/2076 [00:11<00:00, 173.62it/s]
+2026-10-13 17:57:07,713 INFO telco_rca.llm.hf_infer: 4/48 done (74.8s/batch, peak 14505 MB)
+2026-10-13 17:57:29,377 WARNING telco_rca.llm.hf_infer: OOM at batch 4; splitting
+2026-10-13 17:57:29,646 WARNING telco_rca.llm.hf_infer: OOM at batch 2; splitting
 Traceback (most recent call last):
-  File "/usr/local/bin/telco-rca", line 8, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 298, in main
-    args.fn(args)
-    ~~~~~~~^^^^^^
-  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 146, in cmd_infer_hf
-    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
-    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 75, in infer
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 41, in _generate
     gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
                          pad_token_id=tok.pad_token_id)
   File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
@@ -190,4 +117,248 @@ Traceback (most recent call last):
     ...<6 lines>...
         **sdpa_kwargs,
     )
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 568.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 514.81 MiB is free. Including non-PyTorch memory, this process has 14.06 GiB memory in use. Of the allocated memory 13.61 GiB is allocated by PyTorch, and 325.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 572.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 532.81 MiB is free. Including non-PyTorch memory, this process has 14.04 GiB memory in use. Of the allocated memory 13.65 GiB is allocated by PyTorch, and 267.46 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 41, in _generate
+    gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
+                         pad_token_id=tok.pad_token_id)
+  File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 3182, in _sample
+    outputs = self._prefill(
+        input_ids,
+    ...<2 lines>...
+        is_first_iteration=not generation_config.is_assistant,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 4293, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2590, in forward
+    outputs = self.model(
+        input_ids=input_ids,
+    ...<16 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2417, in forward
+    outputs = self.language_model(
+        per_layer_inputs=per_layer_inputs,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1683, in forward
+    hidden_states = decoder_layer(
+        hidden_states,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1389, in forward
+    hidden_states, _ = self.self_attn(
+                       ~~~~~~~~~~~~~~^
+        hidden_states=hidden_states,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1252, in forward
+    attn_output, attn_weights = attention_interface(
+                                ~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/integrations/sdpa_attention.py", line 170, in sdpa_attention_forward
+    attn_output = torch.nn.functional.scaled_dot_product_attention(
+        query,
+    ...<6 lines>...
+        **sdpa_kwargs,
+    )
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 316.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 312.81 MiB is free. Including non-PyTorch memory, this process has 14.25 GiB memory in use. Of the allocated memory 13.90 GiB is allocated by PyTorch, and 234.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 305, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 151, in cmd_infer_hf
+    infer(model_cfg, args.examples, args.out, adapter=args.adapter, limit=args.limit,
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          batch_size=args.batch_size, max_new_tokens=args.max_new_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 109, in infer
+    gen, enc = _generate(model, tok, [p for _, p in chunk], dev, max_new_tokens, stops)
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 51, in _generate
+    parts = [_generate(model, tok, prompts[:h], dev, max_new_tokens, stops),
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 51, in _generate
+    parts = [_generate(model, tok, prompts[:h], dev, max_new_tokens, stops),
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/hf_infer.py", line 41, in _generate
+    gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
+                         pad_token_id=tok.pad_token_id)
+  File "/usr/local/lib/python3.13/dist-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 3182, in _sample
+    outputs = self._prefill(
+        input_ids,
+    ...<2 lines>...
+        is_first_iteration=not generation_config.is_assistant,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/generation/utils.py", line 4293, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2590, in forward
+    outputs = self.model(
+        input_ids=input_ids,
+    ...<16 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2417, in forward
+    outputs = self.language_model(
+        per_layer_inputs=per_layer_inputs,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1683, in forward
+    hidden_states = decoder_layer(
+        hidden_states,
+    ...<6 lines>...
+        **kwargs,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1389, in forward
+    hidden_states, _ = self.self_attn(
+                       ~~~~~~~~~~~~~~^
+        hidden_states=hidden_states,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py", line 192, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 1252, in forward
+    attn_output, attn_weights = attention_interface(
+                                ~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<7 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/integrations/sdpa_attention.py", line 170, in sdpa_attention_forward
+    attn_output = torch.nn.functional.scaled_dot_product_attention(
+        query,
+    ...<6 lines>...
+        **sdpa_kwargs,
+    )
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 158.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 132.81 MiB is free. Including non-PyTorch memory, this process has 14.43 GiB memory in use. Of the allocated memory 14.09 GiB is allocated by PyTorch, and 222.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

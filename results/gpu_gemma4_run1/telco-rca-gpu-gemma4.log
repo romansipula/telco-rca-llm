@@ -1,0 +1,65 @@
+[{"stream_name":"stdout","time":0.736267736,"data":"+ nvidia-smi\n"}
+,{"stream_name":"stdout","time":1.1683874969999999,"data":"+ git clone --depth 50 --branch claude/sweet-goldberg-nxv0hn https://github.com/romansipula/telco-rca-llm /kaggle/tmp/repo\n"}
+,{"stream_name":"stdout","time":1.8616964980000001,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 git log -1 --format='%H %s' \u003e /kaggle/working/logs/commit.txt\n"}
+,{"stream_name":"stdout","time":1.86889848,"data":"+ /usr/bin/python3 -m pip install -q -e '/kaggle/tmp/repo[train]' 'transformers==5.19.0' 'peft==0.21.2' 'accelerate==1.15.0' 'bitsandbytes\u003e=0.46' 'lightgbm\u003e=4.0' rouge-score\n"}
+,{"stream_name":"stdout","time":30.588686073,"data":"+ /usr/bin/python3 -m pip uninstall -y -q torchao\n"}
+,{"stream_name":"stdout","time":31.80345056,"data":"+ /usr/bin/python3 -m pip freeze \u003e /kaggle/working/logs/pip-freeze.txt\n"}
+,{"stream_name":"stdout","time":33.677178989,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca prepare --out /kaggle/tmp/prepared --stats-out /kaggle/working/data_stats.json --check-hash /kaggle/tmp/repo/results/data_stats.json\n"}
+,{"stream_name":"stdout","time":78.802227371,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode evidence --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":80.770313157,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode raw --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":82.795793232,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 telco-rca build-sft --prepared /kaggle/tmp/prepared --mode hybrid --out /kaggle/tmp/sft --gb-probs /kaggle/tmp/repo/results/baseline/gb_probs.jsonl\n"}
+,{"stream_name":"stdout","time":91.963714072,"data":"[     91s] start gemma4_e4b/train_evidence on GPU [0, 1]\n"}
+,{"stream_name":"stdout","time":286.972550059,"data":"[    286s] done gemma4_e4b/train_evidence rc=1 in 195s\n"}
+,{"stream_name":"stdout","time":286.973502124,"data":"[    286s] start gemma4_e4b/train_hybrid on GPU [0, 1]\n"}
+,{"stream_name":"stdout","time":361.976964797,"data":"[    361s] done gemma4_e4b/train_hybrid rc=1 in 75s\n"}
+,{"stream_name":"stdout","time":361.977435679,"data":"[    361s] start gemma4_e4b/zs_evidence on GPU [0, 1]\n"}
+,{"stream_name":"stdout","time":1607.022042226,"data":"[   1606s] done gemma4_e4b/zs_evidence rc=0 in 1245s\n"}
+,{"stream_name":"stdout","time":1607.023606267,"data":"[   1606s] start gemma4_e4b/zs_raw on GPU [0, 1]\n"}
+,{"stream_name":"stdout","time":6032.177639417,"data":"[   6031s] done gemma4_e4b/zs_raw rc=1 in 4425s\n"}
+,{"stream_name":"stdout","time":6047.183765281,"data":"{\n"}
+,{"stream_name":"stdout","time":6047.183791639,"data":" \"gemma4_e4b/train_evidence\": {\n"}
+,{"stream_name":"stdout","time":6047.183797848,"data":"  \"rc\": 1,\n"}
+,{"stream_name":"stdout","time":6047.183802341,"data":"  \"seconds\": 195.00889039039612,\n"}
+,{"stream_name":"stdout","time":6047.183806689,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":6047.183816515,"data":"   0,\n"}
+,{"stream_name":"stdout","time":6047.183819793,"data":"   1\n"}
+,{"stream_name":"stdout","time":6047.183822507,"data":"  ]\n"}
+,{"stream_name":"stdout","time":6047.183825249,"data":" },\n"}
+,{"stream_name":"stdout","time":6047.183827936,"data":" \"gemma4_e4b/sft_evidence_eval\": {\n"}
+,{"stream_name":"stdout","time":6047.183840971,"data":"  \"rc\": \"skipped (dependency failed)\"\n"}
+,{"stream_name":"stdout","time":6047.18384435,"data":" },\n"}
+,{"stream_name":"stdout","time":6047.183847085,"data":" \"gemma4_e4b/train_hybrid\": {\n"}
+,{"stream_name":"stdout","time":6047.183850042,"data":"  \"rc\": 1,\n"}
+,{"stream_name":"stdout","time":6047.183863291,"data":"  \"seconds\": 75.0028064250946,\n"}
+,{"stream_name":"stdout","time":6047.183865849,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":6047.18386798,"data":"   0,\n"}
+,{"stream_name":"stdout","time":6047.183870087,"data":"   1\n"}
+,{"stream_name":"stdout","time":6047.183872257,"data":"  ]\n"}
+,{"stream_name":"stdout","time":6047.183874337,"data":" },\n"}
+,{"stream_name":"stdout","time":6047.183876433,"data":" \"gemma4_e4b/sft_hybrid_eval\": {\n"}
+,{"stream_name":"stdout","time":6047.183878644,"data":"  \"rc\": \"skipped (dependency failed)\"\n"}
+,{"stream_name":"stdout","time":6047.183880921,"data":" },\n"}
+,{"stream_name":"stdout","time":6047.183882988,"data":" \"gemma4_e4b/zs_evidence\": {\n"}
+,{"stream_name":"stdout","time":6047.18388515,"data":"  \"rc\": 0,\n"}
+,{"stream_name":"stdout","time":6047.183887302,"data":"  \"seconds\": 1245.0444576740265,\n"}
+,{"stream_name":"stdout","time":6047.183889726,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":6047.18389185,"data":"   0,\n"}
+,{"stream_name":"stdout","time":6047.183893925,"data":"   1\n"}
+,{"stream_name":"stdout","time":6047.183895979,"data":"  ]\n"}
+,{"stream_name":"stdout","time":6047.183898039,"data":" },\n"}
+,{"stream_name":"stdout","time":6047.183900117,"data":" \"gemma4_e4b/zs_raw\": {\n"}
+,{"stream_name":"stdout","time":6047.183902358,"data":"  \"rc\": 1,\n"}
+,{"stream_name":"stdout","time":6047.183904476,"data":"  \"seconds\": 4425.15412569046,\n"}
+,{"stream_name":"stdout","time":6047.183906699,"data":"  \"gpus\": [\n"}
+,{"stream_name":"stdout","time":6047.183908812,"data":"   0,\n"}
+,{"stream_name":"stdout","time":6047.183910907,"data":"   1\n"}
+,{"stream_name":"stdout","time":6047.183912995,"data":"  ]\n"}
+,{"stream_name":"stdout","time":6047.18391514,"data":" }\n"}
+,{"stream_name":"stdout","time":6047.183917555,"data":"}\n"}
+,{"stream_name":"stderr","time":6049.547118978,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":6049.547150012,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":6049.828292155,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":6049.828324665,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":6050.64848799,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":6051.723221102,"data":"[NbConvertApp] Writing 316729 bytes to __results__.html\n"}
+]
