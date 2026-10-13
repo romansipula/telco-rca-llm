@@ -74,7 +74,7 @@ telco-rca build-sft --config configs/my_oss.yaml --mode hybrid --gb-probs result
   physical fault shows up on neighbours. Use time blocks as well if you will evaluate on future
   incidents (train on months 1-9, test on 10-12). The split function guarantees that no group
   crosses splits. Do not use a random incident-level split: on TelecomTS that inflated the GB
-  baseline from 0.744 to 0.960 accuracy (`results/baseline/gb_random_split/metrics.json`).
+  baseline from 0.737 to 0.951 accuracy (`results/baseline/gb/metrics.json` vs `results/baseline/gb_random_split/metrics.json`).
 * **Counters vs KPIs.** Feed ratios and rates (success rates, utilisation, BLER, CQI, throughput per
   user) rather than raw cumulative counters. Add the denominators as their own KPIs (attempts, active
   users) so the model can tell "low success" apart from "no traffic".

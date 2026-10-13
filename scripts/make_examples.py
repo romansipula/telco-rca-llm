@@ -36,6 +36,7 @@ def main():
     a = ap.parse_args()
     rows, meta = load_prepared(a.prepared)
     by_id = {r["case_id"]: r for r in rows}
+    gb = {p["case_id"]: p for p in read_jsonl("results/baseline/gb_probs.jsonl")}
     rng = random.Random(a.seed)
     items = []
     for p in read_jsonl(a.pred):
@@ -51,11 +52,24 @@ def main():
             md.append(f"`{r['case_id']}`; schema-valid: {po.schema_ok}\n")
             md.append("<details><summary>evidence block (model input)</summary>\n\n```\n" + r["evidence_text"] +
                       "\n```\n</details>\n")
+            if "hybrid" in a.pred:
+                top3 = ", ".join(f"{lab} {p_:.2f}" for lab, p_ in gb[r["case_id"]]["top3"])
+                md.append(f"GB top-3 in the prompt: {top3}\n")
             out = po.obj if po.obj is not None else p["output"]
             md.append("```json\n" + (json.dumps(out, indent=1, ensure_ascii=False) if isinstance(out, dict) else out)
                       + "\n```\n")
             md.append(f"Reference resolution: _{r['reference_resolution']}_\n")
     open(a.out, "w").write("\n".join(md))
+    # compact table for the README
+    tab = ["| # | true root cause | predicted | case-specific part of the generated explanation |", "|---|---|---|---|"]
+    for title, group in (("ok", good), ("wrong", bad)):
+        for i, (r, p, po) in enumerate(group, 1):
+            ex = po.explanation.replace("|", "/")
+            i0 = ex.find("In this window")
+            ex = ex[i0:] if i0 >= 0 else ex
+            ex = ex if len(ex) <= 300 else ex[:297] + "..."
+            tab.append(f"| {title} {i} | {r['root_cause']} | {po.root_cause} | {ex} |")
+    open(a.out.replace(".md", "_table.md"), "w").write("\n".join(tab) + "\n")
     print("wrote", a.out)
 
 

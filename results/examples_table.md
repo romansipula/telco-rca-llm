@@ -1,0 +1,12 @@
+| # | true root cause | predicted | case-specific part of the generated explanation |
+|---|---|---|---|
+| ok 1 | High Network Congestion (Sudden Spike) | High Network Congestion (Sudden Spike) | In this window (steps 0-3 (0.4 s)): UL_NPRB up (5 -> 9.3, z=+86.0, step up). |
+| ok 2 | Jamming | Jamming | In this window (steps 0-127 (12.8 s)): DL_BLER up (0 -> 0.00584, z=+99+, ramp up). |
+| ok 3 | Faulty RF Filters (Temporal) | Faulty RF Filters (Temporal) | In this window (steps 0-36 (3.7 s)): DL_BLER up (0 -> 0.00104, z=+99+, step up); UL_BLER up (0 -> 9.01e-04, z=+99+, step up). |
+| ok 4 | High Network Congestion (Gradual Buildup) | High Network Congestion (Gradual Buildup) | In this window (steps 84-122 (3.9 s)): DL_BLER up (0 -> 9.14e-04, z=+99+, step up); UL_BLER up (0 -> 8.17e-04, z=+99+, step up); PRB_Utilization_UL up (0 -> 0.685, z=+18.1, step up); UL_NumberOfPackets up (0 -> 13.4, z=+6.9, step up). |
+| ok 5 | Resource Allocation Bugs | Resource Allocation Bugs | In this window (steps 13-127 (11.5 s)): RX_Bytes down (209 -> 81, z=-5.4, step down). |
+| wrong 1 | High Network Congestion (Gradual Buildup) | Buffer Overflow (Gradual Buildup) | In this window (steps 0-127 (12.8 s)): DL_BLER up (0 -> 0.00176, z=+99+, step up); PRB_Utilization_UL up (0.0289 -> 16.9, z=+99+, step up); UL_NumberOfPackets up (0 -> 221, z=+99+, step up); DL_NumberOfPackets up (0 -> 292, z=+17.7, ramp up). |
+| wrong 2 | Faulty Handover Algorithm (Too Frequent) | High Network Congestion (Sudden Spike) | In this window (steps 61-70 (1 s)): UL_BLER up (5.97e-04 -> 0.0706, z=+79.1, ramp up); RX_Bytes up (49 -> 1,640, z=+99+, step up); PRB_Utilization_UL up (0.0472 -> 3.23, z=+45.5, step up); Estimated_UL_Buffer up (0 -> 940, z=+7.7, step up). |
+| wrong 3 | Doppler Shift (Severe) | Co-Channel Interference (Mild) | In this window (steps 0-127 (12.8 s)): DL_MCS down (7 -> 6, z=-14.3, step down). |
+| wrong 4 | Antenna Failure | Co-Channel Interference (Mild) | In this window (steps 80-127 (4.8 s)): RSRP down (-97.3 -> -102, z=-5.3, step down); RX_Bytes up (95 -> 142, z=+3.2, ramp down). |
+| wrong 5 | Buffer Overflow (Gradual Buildup) | High Network Congestion (Gradual Buildup) | In this window (steps 0-112 (11.3 s)): PRB_Utilization_DL up (0 -> 69, z=+99+, step up); PRB_Utilization_UL up (0.0472 -> 45.7, z=+99+, step up); UL_NPRB up (5 -> 34.8, z=+99+, step up); DL_BLER up (2.00e-05 -> 0.0037, z=+99+, step up). |

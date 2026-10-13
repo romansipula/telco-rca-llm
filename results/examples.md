@@ -18,6 +18,8 @@ WITHIN BASELINE: RX_Bytes(-1.6), PRB_Utilization_UL(+1.2), PRBs_UL_Current(+0.7)
 ```
 </details>
 
+GB top-3 in the prompt: High Network Congestion (Sudden Spike) 0.99, Co-Channel Interference (Mild) 0.00, Buffer Overflow (Gradual Buildup) 0.00
+
 ```json
 {
  "root_cause": "High Network Congestion (Sudden Spike)",
@@ -57,6 +59,8 @@ WITHIN BASELINE: PRBs_UL_Current(-0.7, spikes up), PRB_Utilization_UL(-0.7, spik
 ```
 </details>
 
+GB top-3 in the prompt: Jamming 0.99, Co-Channel Interference (Mild) 0.01, Faulty RF Filters (Temporal) 0.00
+
 ```json
 {
  "root_cause": "Jamming",
@@ -90,6 +94,8 @@ DEVIATING KPIs (robust z of segment median vs baseline, |z|>=3; strongest first)
 WITHIN BASELINE: UL_NPRB(+1.6, higher variance), PRBs_UL_Current(-1.3), PRB_Utilization_UL(-1.3), RX_Bytes(-0.8), RSRP(-0.7), UL_SNR(-0.3, spikes down), PRB_Utilization_DL(+0.0), DL_MCS(+0.0), UL_MCS(+0.0), TX_Bytes(+0.0), Estimated_UL_Buffer(+0.0), PRBs_DL_Current(+0.0), UL_NumberOfPackets(+0.0), DL_NumberOfPackets(+0.0)
 ```
 </details>
+
+GB top-3 in the prompt: Faulty RF Filters (Temporal) 0.99, High Network Congestion (Gradual Buildup) 0.00, Co-Channel Interference (Mild) 0.00
 
 ```json
 {
@@ -131,6 +137,8 @@ WITHIN BASELINE: PRBs_UL_Current(+1.3, spikes up), UL_NPRB(+0.7, spikes up), DL_
 ```
 </details>
 
+GB top-3 in the prompt: Buffer Overflow (Gradual Buildup) 0.36, High Network Congestion (Gradual Buildup) 0.35, Faulty RF Filters (Temporal) 0.27
+
 ```json
 {
  "root_cause": "High Network Congestion (Gradual Buildup)",
@@ -169,6 +177,8 @@ DEVIATING KPIs (robust z of segment median vs baseline, |z|>=3; strongest first)
 WITHIN BASELINE: UL_SNR(+0.5), PRBs_UL_Current(-0.4), PRB_Utilization_UL(-0.4), DL_BLER(+0.0), UL_NPRB(+0.1, higher variance), RSRP(+0.0), DL_MCS(+0.0), UL_BLER(+0.0), UL_MCS(+0.0), TX_Bytes(+0.0), Estimated_UL_Buffer(+0.0), PRBs_DL_Current(+0.0), PRB_Utilization_DL(+0.0), UL_NumberOfPackets(+0.0), DL_NumberOfPackets(+0.0)
 ```
 </details>
+
+GB top-3 in the prompt: Resource Allocation Bugs 0.52, Co-Channel Interference (Mild) 0.28, Buffer Overflow (Gradual Buildup) 0.10
 
 ```json
 {
@@ -211,6 +221,8 @@ DEVIATING KPIs (robust z of segment median vs baseline, |z|>=3; strongest first)
 WITHIN BASELINE: PRBs_UL_Current(+0.5), UL_SNR(+0.3, spikes down), UL_BLER(+0.1), RX_Bytes(-0.0), Estimated_UL_Buffer(+0.0), RSRP(+0.0), DL_MCS(+0.0), UL_MCS(+0.0), TX_Bytes(+0.0), PRBs_DL_Current(+0.0)
 ```
 </details>
+
+GB top-3 in the prompt: Buffer Overflow (Gradual Buildup) 0.95, High Network Congestion (Gradual Buildup) 0.05, Jamming 0.00
 
 ```json
 {
@@ -260,6 +272,8 @@ WITHIN BASELINE: TX_Bytes(+2.7, shift up), UL_SNR(-0.7), DL_MCS(+0.0), UL_Number
 ```
 </details>
 
+GB top-3 in the prompt: High Network Congestion (Sudden Spike) 0.91, Jamming 0.04, Faulty RF Filters (Temporal) 0.04
+
 ```json
 {
  "root_cause": "High Network Congestion (Sudden Spike)",
@@ -297,6 +311,8 @@ DEVIATING KPIs (robust z of segment median vs baseline, |z|>=3; strongest first)
 WITHIN BASELINE: UL_MCS(-2.5), UL_SNR(-0.5), RSRP(-0.4), DL_BLER(+0.0), RX_Bytes(+0.0), UL_NPRB(-0.0, oscillating), UL_BLER(+0.0), TX_Bytes(+0.0), Estimated_UL_Buffer(+0.0), PRBs_DL_Current(+0.0), PRBs_UL_Current(+0.0), PRB_Utilization_DL(+0.0), PRB_Utilization_UL(+0.0), UL_NumberOfPackets(+0.0), DL_NumberOfPackets(+0.0)
 ```
 </details>
+
+GB top-3 in the prompt: Co-Channel Interference (Mild) 0.99, Doppler Shift (Severe) 0.01, Antenna Failure 0.00
 
 ```json
 {
@@ -337,6 +353,8 @@ CATEGORICAL UL_Protocol: 'TCP' share 0% -> 12%
 CATEGORICAL DL_Protocol: 'TCP' share 0% -> 12%
 ```
 </details>
+
+GB top-3 in the prompt: Co-Channel Interference (Mild) 0.94, Antenna Failure 0.02, High Network Congestion (Gradual Buildup) 0.02
 
 ```json
 {
@@ -383,6 +401,8 @@ CATEGORICAL UL_Protocol: 'UDP' share 4% -> 16%
 CATEGORICAL DL_Protocol: 'UDP' share 4% -> 16%
 ```
 </details>
+
+GB top-3 in the prompt: Buffer Overflow (Gradual Buildup) 0.90, High Network Congestion (Gradual Buildup) 0.08, Co-Channel Interference (Mild) 0.02
 
 ```json
 {
