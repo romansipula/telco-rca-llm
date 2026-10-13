@@ -114,6 +114,42 @@ def load_model(cfg: dict, quant: str = "4bit", compute_dtype: str | None = None,
     return model
 
 
+def offload_to_cpu(model, names: list[str]) -> list[str]:
+    """Move frozen lookup modules (e.g. Gemma 4's 2.8B-parameter per-layer embedding table) to host
+    RAM after loading, with hooks that move their inputs to CPU and outputs back to the GPU.
+
+    Done after loading rather than through ``device_map`` because accelerate refuses to train a
+    4-bit model whose device map contains "cpu"."""
+    import torch
+
+    moved = []
+    for name in names:
+        try:
+            mod = model.get_submodule(name)
+        except AttributeError:
+            log.warning("cpu_modules: %s not found", name)
+            continue
+        target = next(p.device for n, p in model.named_parameters() if not n.startswith(name))
+        mod.to("cpu")
+        for p in mod.parameters():
+            p.requires_grad_(False)
+
+        def pre(m, args, kwargs):
+            mv = lambda t: t.to("cpu") if torch.is_tensor(t) else t  # noqa: E731
+            return tuple(mv(a) for a in args), {k: mv(v) for k, v in kwargs.items()}
+
+        def post(m, args, out, _t=target):
+            return out.to(_t) if torch.is_tensor(out) else out
+
+        mod.register_forward_pre_hook(pre, with_kwargs=True)
+        mod.register_forward_hook(post)
+        moved.append(name)
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    log.info("offloaded to CPU: %s", moved)
+    return moved
+
+
 def finite_probe(model, tokenizer, texts: list[str], max_len: int = 1024) -> dict:
     """Forward a few real examples and check the logits/loss are finite (fp16 overflow check)."""
     import torch

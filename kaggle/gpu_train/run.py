@@ -102,6 +102,25 @@ def jobs_for(model, sft):
     return [(f"{model}/{j}", dict(J[j], deps=[f"{model}/{d}" for d in J[j]["deps"]])) for j in SPEC["jobs"]]
 
 
+def seed_from_inputs():
+    """Resume: copy earlier partial predictions (attached as a Kaggle dataset/kernel output laid out
+    as <model>/<system>/predictions.jsonl) into /kaggle/working; infer-hf skips finished cases."""
+    root = Path("/kaggle/input")
+    if not root.exists():
+        return
+    for f in root.rglob("predictions.jsonl"):
+        rel = f.relative_to(root)
+        parts = rel.parts
+        for i in range(len(parts) - 2):
+            if parts[i] in SPEC["models"]:
+                dst = W.joinpath(*parts[i:])
+                if not dst.exists():
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy(f, dst)
+                    print("seeded", dst, flush=True)
+                break
+
+
 def run_jobs(jobs):
     import torch
 
@@ -158,6 +177,7 @@ def run_jobs(jobs):
 
 def main():
     prep, sft = setup()
+    seed_from_inputs()
     jobs = []
     for m in SPEC["models"]:
         jobs += jobs_for(m, sft)

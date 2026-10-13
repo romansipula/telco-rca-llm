@@ -29,6 +29,43 @@ def stop_ids(tok, cfg) -> list[int]:
     return sorted(ids)
 
 
+def _generate(model, tok, prompts, dev, max_new_tokens, stops):
+    """Greedy batch generation; on CUDA OOM the batch is split in half and retried (results are
+    re-padded to one tensor so the caller sees a single batch)."""
+    import torch
+
+    enc = tok(prompts, return_tensors="pt", padding=True, add_special_tokens=False)
+    enc = {k: v.to(dev) for k, v in enc.items()}
+    try:
+        with torch.no_grad():
+            gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
+                                 pad_token_id=tok.pad_token_id)
+        return gen, enc
+    except torch.OutOfMemoryError:
+        if len(prompts) == 1:
+            raise
+        del enc
+        torch.cuda.empty_cache()
+        log.warning("OOM at batch %d; splitting", len(prompts))
+        h = len(prompts) // 2
+        parts = [_generate(model, tok, prompts[:h], dev, max_new_tokens, stops),
+                 _generate(model, tok, prompts[h:], dev, max_new_tokens, stops)]
+        # left-pad prompts / right-pad generations to a common shape
+        P = max(e["input_ids"].shape[1] for _, e in parts)
+        G = max(g.shape[1] - e["input_ids"].shape[1] for g, e in parts)
+        gens, ids, masks = [], [], []
+        for g, e in parts:
+            p = e["input_ids"].shape[1]
+            new = g[:, p:]
+            new = torch.nn.functional.pad(new, (0, G - new.shape[1]), value=tok.pad_token_id)
+            pid = torch.nn.functional.pad(e["input_ids"], (P - p, 0), value=tok.pad_token_id)
+            msk = torch.nn.functional.pad(e["attention_mask"], (P - p, 0), value=0)
+            gens.append(torch.cat([pid, new], 1))
+            ids.append(pid)
+            masks.append(msk)
+        return torch.cat(gens), {"input_ids": torch.cat(ids), "attention_mask": torch.cat(masks)}
+
+
 def infer(cfg: dict, examples_file: str, out_file: str, adapter: str | None = None, limit: int | None = None,
           batch_size: int = 8, max_new_tokens: int = 512, quant: str | None = None) -> None:
     import torch
@@ -68,12 +105,8 @@ def infer(cfg: dict, examples_file: str, out_file: str, adapter: str | None = No
     with out.open("a") as f:
         for i in range(0, len(prompts), batch_size):
             chunk = prompts[i : i + batch_size]
-            enc = tok([p for _, p in chunk], return_tensors="pt", padding=True, add_special_tokens=False)
-            enc = {k: v.to(dev) for k, v in enc.items()}
             t0 = time.time()
-            with torch.no_grad():
-                gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False, eos_token_id=stops,
-                                     pad_token_id=tok.pad_token_id)
+            gen, enc = _generate(model, tok, [p for _, p in chunk], dev, max_new_tokens, stops)
             dt = time.time() - t0
             new = gen[:, enc["input_ids"].shape[1]:]
             for j, (e, _) in enumerate(chunk):

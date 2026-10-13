@@ -7,7 +7,11 @@ fp32_fallback: true
 chat_template_kwargs: {enable_thinking: false}
 infer_quant: none            # GPU reference = fp16 weights (+ unmerged LoRA)
 infer_multi_gpu: true        # ~16 GB in fp16 -> spread over 2x T4
-train_multi_gpu: true        # QLoRA OOMs on one T4 (262k-vocab per-layer embeddings stay fp16)
+# QLoRA: the 2.82B-parameter per-layer embedding table (262144 x 10752, not quantised by bnb) does not
+# fit next to the model on a T4, even split over two (first full run OOMed). It is a pure lookup, so it
+# stays in host RAM during training; the rest trains on one T4.
+cpu_modules: [model.language_model.embed_tokens_per_layer]
+train_multi_gpu: false
 lora: {r: 16, alpha: 32, dropout: 0.05}
 train:
   epochs: 2

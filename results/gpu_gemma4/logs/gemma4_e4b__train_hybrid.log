@@ -1,0 +1,88 @@
+2026-10-13 15:59:29,253 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 15:59:31,950 INFO datasets: TensorFlow version 2.20.0 available.
+2026-10-13 15:59:31,951 INFO datasets: JAX version 0.11.1 available.
+2026-10-13 15:59:32,437 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 15:59:32,486 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 15:59:32,507 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 15:59:35,324 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+2026-10-13 15:59:38,352 INFO telco_rca.llm.train: SFT examples: 927 (dropped 0 over max length)
+2026-10-13 15:59:38,352 INFO telco_rca.llm.common: loading google/gemma-4-E4B-it with AutoModelForCausalLM quant=4bit dtype=torch.float16
+2026-10-13 15:59:38,375 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/google/gemma-4-E4B-it "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:   3%|▎         | 57/2076 [00:00<00:03, 561.33it/s]Loading weights:   9%|▉         | 194/2076 [00:00<00:01, 1026.87it/s]Loading weights:  16%|█▌        | 330/2076 [00:00<00:01, 1168.25it/s]Loading weights:  23%|██▎       | 477/2076 [00:00<00:01, 1276.90it/s]Loading weights:  30%|██▉       | 618/2076 [00:00<00:01, 1324.15it/s]Loading weights:  36%|███▋      | 753/2076 [00:00<00:00, 1326.01it/s]Loading weights:  43%|████▎     | 886/2076 [00:18<00:52, 22.62it/s]  Loading weights:  43%|████▎     | 894/2076 [00:18<00:52, 22.71it/s]Loading weights:  47%|████▋     | 985/2076 [00:21<00:44, 24.56it/s]Loading weights:  50%|█████     | 1048/2076 [00:23<00:39, 25.71it/s]Loading weights:  53%|█████▎    | 1092/2076 [00:25<00:37, 26.09it/s]Loading weights:  54%|█████▍    | 1124/2076 [00:25<00:32, 29.45it/s]Loading weights:  55%|█████▌    | 1149/2076 [00:26<00:27, 33.20it/s]Loading weights:  56%|█████▋    | 1170/2076 [00:26<00:24, 36.43it/s]Loading weights:  57%|█████▋    | 1187/2076 [00:26<00:21, 40.53it/s]Loading weights:  58%|█████▊    | 1202/2076 [00:26<00:19, 44.67it/s]Loading weights:  59%|█████▊    | 1216/2076 [00:26<00:17, 48.95it/s]Loading weights:  59%|█████▉    | 1228/2076 [00:26<00:16, 52.33it/s]Loading weights:  60%|█████▉    | 1239/2076 [00:27<00:15, 55.02it/s]Loading weights:  60%|██████    | 1251/2076 [00:27<00:13, 61.22it/s]Loading weights:  61%|██████    | 1264/2076 [00:27<00:11, 69.70it/s]Loading weights:  61%|██████▏   | 1275/2076 [00:27<00:10, 74.85it/s]Loading weights:  62%|██████▏   | 1286/2076 [00:27<00:10, 75.07it/s]Loading weights:  62%|██████▏   | 1296/2076 [00:27<00:10, 71.51it/s]Loading weights:  63%|██████▎   | 1307/2076 [00:27<00:09, 77.91it/s]Loading weights:  64%|██████▎   | 1320/2076 [00:28<00:08, 87.05it/s]Loading weights:  64%|██████▍   | 1330/2076 [00:28<00:08, 87.84it/s]Loading weights:  65%|██████▍   | 1340/2076 [00:28<00:09, 79.77it/s]Loading weights:  65%|██████▍   | 1349/2076 [00:28<00:09, 80.68it/s]Loading weights:  66%|██████▌   | 1362/2076 [00:28<00:07, 90.56it/s]Loading weights:  66%|██████▌   | 1372/2076 [00:28<00:07, 91.66it/s]Loading weights:  67%|██████▋   | 1382/2076 [00:28<00:08, 82.54it/s]Loading weights:  67%|██████▋   | 1391/2076 [00:28<00:08, 82.66it/s]Loading weights:  68%|██████▊   | 1404/2076 [00:28<00:07, 90.78it/s]Loading weights:  68%|██████▊   | 1414/2076 [00:29<00:07, 90.51it/s]Loading weights:  72%|███████▏  | 1493/2076 [00:29<00:02, 276.09it/s]Loading weights:  81%|████████▏ | 1691/2076 [00:29<00:00, 744.68it/s]Loading weights:  91%|█████████ | 1883/2076 [00:29<00:00, 1074.64it/s]Loading weights: 100%|██████████| 2076/2076 [00:29<00:00, 1257.19it/s]Loading weights: 100%|██████████| 2076/2076 [00:29<00:00, 70.36it/s]  
+  0%|          | 0/58 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/usr/local/bin/telco-rca", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 298, in main
+    args.fn(args)
+    ~~~~~~~^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/cli.py", line 139, in cmd_train
+    train(model_cfg, args.train_file, args.output_dir, eval_file=args.eval_file, max_steps=args.max_steps)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/kaggle/tmp/repo/src/telco_rca/llm/train.py", line 150, in train
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1562, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1646, in _inner_training_loop
+    self._run_epoch(
+    ~~~~~~~~~~~~~~~^
+        model=model,
+        ^^^^^^^^^^^^
+    ...<9 lines>...
+        steps_trained_in_current_epoch=steps_trained_in_current_epoch,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 1892, in _run_epoch
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 2065, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/trainer.py", line 2147, in compute_loss
+    outputs = model(**inputs)
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/utils/operations.py", line 943, in forward
+    return model_forward(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/accelerate/utils/operations.py", line 931, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/peft_model.py", line 2120, in forward
+    return self.base_model(
+           ~~~~~~~~~~~~~~~^
+        input_ids=input_ids,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py", line 359, in forward
+    return self.model(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/usr/local/lib/python3.13/dist-packages/transformers/models/gemma4/modeling_gemma4.py", line 2616, in forward
+    logits = logits / final_logit_softcapping
+             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.48 GiB. GPU 0 has a total capacity of 14.56 GiB of which 1.52 GiB is free. Including non-PyTorch memory, this process has 13.04 GiB memory in use. Of the allocated memory 12.79 GiB is allocated by PyTorch, and 127.12 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+  0%|          | 0/58 [00:03<?, ?it/s]

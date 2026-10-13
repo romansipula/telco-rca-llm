@@ -15,7 +15,7 @@ import time
 from pathlib import Path
 
 from ..io import read_jsonl, write_json
-from .common import finite_probe, gpu_info, load_model, load_tokenizer, peak_gpu_mb
+from .common import finite_probe, gpu_info, load_model, load_tokenizer, offload_to_cpu, peak_gpu_mb
 from .data import render_full
 
 log = logging.getLogger(__name__)
@@ -93,6 +93,8 @@ def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = N
     if on_gpu and cfg.get("train_multi_gpu") and torch.cuda.device_count() > 1:
         dmap = "balanced"  # naive model parallelism over both GPUs (memory, not speed)
     model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute, device_map=dmap)
+    if on_gpu and cfg.get("cpu_modules"):
+        offload_to_cpu(model, cfg["cpu_modules"])
     probe_texts = [tok.decode(ds[i]["input_ids"]) for i in range(min(3, len(ds)))]
     probe = finite_probe(model, tok, probe_texts)
     fallback = False
@@ -102,6 +104,8 @@ def train(cfg: dict, train_file: str, output_dir: str, eval_file: str | None = N
         torch.cuda.empty_cache()
         compute, fallback = "float32", True
         model = load_model(cfg, quant=quant if on_gpu else "none", compute_dtype=compute, device_map=dmap)
+        if cfg.get("cpu_modules"):
+            offload_to_cpu(model, cfg["cpu_modules"])
         probe = finite_probe(model, tok, probe_texts)
     model.config.use_cache = False
     if tcfg.get("gradient_checkpointing", True) and on_gpu:
