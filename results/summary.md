@@ -18,6 +18,7 @@
 | zero-shot | `gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0` | 308 | 0.065 | 0.046 | 0.065 | 0.444 | 1.000 | 0.994 | 0.732 |
 | CPU GGUF (llama.cpp) | `ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle` | 308 | 0.672 | 0.599 | 0.667 | 0.919 | 1.000 | 0.994 | 1.000 |
 | CPU GGUF (llama.cpp) | `ministral3_3b_hybrid_gguf_q4_k_m_cpu_kaggle` | 308 | 0.649 | 0.567 | 0.620 | 0.921 | 1.000 | 0.997 | 1.000 |
+| CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q8_0_cpu_kaggle` | 308 | 0.724 | 0.578 | 0.606 | 0.923 | 1.000 | 1.000 | 0.998 |
 | CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_kaggle` | 308 | 0.721 | 0.562 | 0.602 | 0.850 | 1.000 | 0.948 | 0.995 |
 | CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q8_0_cpu_vm_sub100` | 100 | 0.840 | 0.723 | 0.789 | 0.934 | 1.000 | 1.000 | 1.000 |
 | CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 100 | 0.790 | 0.682 | 0.724 | 0.862 | 1.000 | 0.970 | 0.981 |
@@ -40,6 +41,7 @@
 | `gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0` | 0.131 | 0.844 | 0.073 | 0.117 | 0.863 | 0.191 |
 | `ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle` | 0.307 | 0.851 | 0.116 | 0.750 | 0.964 | 0.789 |
 | `ministral3_3b_hybrid_gguf_q4_k_m_cpu_kaggle` | 0.300 | 0.849 | 0.106 | 0.736 | 0.963 | 0.778 |
+| `gemma4_e4b_hybrid_gguf_q8_0_cpu_kaggle` | 0.326 | 0.852 | 0.125 | 0.744 | 0.967 | 0.806 |
 | `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_kaggle` | 0.308 | 0.850 | 0.110 | 0.761 | 0.968 | 0.809 |
 | `gemma4_e4b_hybrid_gguf_q8_0_cpu_vm_sub100` | 0.338 | 0.852 | 0.125 | 0.817 | 0.978 | 0.871 |
 | `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 0.314 | 0.849 | 0.108 | 0.796 | 0.973 | 0.842 |

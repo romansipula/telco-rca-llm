@@ -112,6 +112,34 @@
   "cases_per_hour": 41.82128904937338
  },
  {
+  "run": "results/cpu_kaggle_gemma4_hybrid_q8_0/gemma4_hybrid_q8_0",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "gemma4-e4b-rca-Q8_0.gguf",
+  "gguf_gb": 7.972726688,
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+  "threads": 4,
+  "n": 308,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.737012987012987,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9254153188258826
+  },
+  "cpu": {
+   "accuracy": 0.724025974025974,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9233397002089107
+  },
+  "root_cause_agreement_with_gpu": 0.987012987012987,
+  "prompt_tokens_mean": 799.5292207792207,
+  "output_tokens_mean": 204.41883116883116,
+  "seconds_mean": 114.1974366733006,
+  "seconds_median": 108.91192674636841,
+  "seconds_p95": 156.1355410337448,
+  "peak_rss_gb": 14.020702362060547,
+  "load_seconds": 71.15354776382446,
+  "cases_per_hour": 31.52435032582199
+ },
+ {
   "run": "results/cpu_kaggle_ministral3_hybrid_q4_k_m/ministral3_hybrid_q4_k_m",
   "cache_ram_mib": "llama.cpp default (8192)",
   "gguf": "ministral3-3b-rca-Q4_K_M.gguf",

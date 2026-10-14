@@ -1,0 +1,1 @@
+romansipula/telco-rca-cpu-gemma4-q8-0 has status "KernelWorkerStatus.COMPLETE"
