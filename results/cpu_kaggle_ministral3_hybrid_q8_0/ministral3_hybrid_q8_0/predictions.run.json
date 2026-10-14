@@ -1,0 +1,11 @@
+{
+ "gguf": "ministral3-3b-rca-Q8_0.gguf",
+ "gguf_bytes": 3651683328,
+ "threads": 4,
+ "ctx": 8192,
+ "load_seconds": 27.072582006454468,
+ "peak_rss_mb": 12654.1640625,
+ "n_new": 308,
+ "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+ "host": "a9baed1007b3"
+}

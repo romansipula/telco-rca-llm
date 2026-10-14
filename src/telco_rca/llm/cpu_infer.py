@@ -59,7 +59,7 @@ def find_server(llama_cpp: str = "", server_bin: str | None = None) -> str:
 
 def infer_cpu(gguf: str, examples_file: str, out_file: str, llama_cpp: str = "", threads: int | None = None,
               ctx: int = 8192, limit: int | None = None, max_new_tokens: int = 512, server_bin: str | None = None,
-              model_cfg: dict | None = None, cache_prompt: bool = True) -> dict:
+              model_cfg: dict | None = None, cache_prompt: bool = True, cache_ram_mib: int | None = 0) -> dict:
     from .common import load_tokenizer
     from .data import render_prompt
 
@@ -79,6 +79,10 @@ def infer_cpu(gguf: str, examples_file: str, out_file: str, llama_cpp: str = "",
     binary = find_server(llama_cpp, server_bin)
     cmd = [binary, "-m", gguf, "-t", str(threads), "-c", str(ctx), "--port", str(port), "--host", "127.0.0.1",
            "-np", "1", "--no-warmup"]
+    if cache_ram_mib is not None:
+        # llama-server keeps up to 8 GB of past prompts in host RAM by default; cases here are
+        # independent (only the system-prompt prefix is shared, which the slot's KV reuses anyway)
+        cmd += ["--cache-ram", str(cache_ram_mib)]
     log.info("starting %s", " ".join(cmd))
     t_load = time.time()
     proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=open(out.with_suffix(".server.log"), "w"))
@@ -121,7 +125,8 @@ def infer_cpu(gguf: str, examples_file: str, out_file: str, llama_cpp: str = "",
         except subprocess.TimeoutExpired:
             proc.kill()
     info = {"gguf": Path(gguf).name, "gguf_bytes": Path(gguf).stat().st_size, "threads": threads, "ctx": ctx,
-            "load_seconds": load_s, "peak_rss_mb": peak, "n_new": len(todo), "cpu": _cpu_name(),
+            "load_seconds": load_s, "peak_rss_mb": peak, "cache_ram_mib": cache_ram_mib, "n_new": len(todo),
+            "cpu": _cpu_name(),
             "host": socket.gethostname()}
     write_json(out.with_suffix(".run.json"), info)
     return info

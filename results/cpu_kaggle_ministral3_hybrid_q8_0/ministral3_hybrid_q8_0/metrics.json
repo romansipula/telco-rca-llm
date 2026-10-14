@@ -1,0 +1,265 @@
+{
+ "n": 308,
+ "json_valid_rate": 1.0,
+ "schema_valid_rate": 0.9935064935064936,
+ "root_cause": {
+  "accuracy": 0.672077922077922,
+  "macro_f1": 0.5991456110154806,
+  "per_class_f1": {
+   "Antenna Failure": 0.7368421052631579,
+   "Buffer Overflow (Gradual Buildup)": 0.6451612903225806,
+   "Co-Channel Interference (Mild)": 0.3146067415730337,
+   "Co-Channel Interference (Severe)": 0.8260869565217391,
+   "Doppler Shift (Severe)": 0.7368421052631579,
+   "Faulty Handover Algorithm (Too Frequent)": 0.0,
+   "Faulty RF Filters (Temporal)": 0.7,
+   "High Network Congestion (Gradual Buildup)": 0.6956521739130435,
+   "High Network Congestion (Sudden Spike)": 0.8148148148148148,
+   "Jamming": 0.8129032258064516,
+   "Resource Allocation Bugs": 0.3076923076923077
+  },
+  "confusion_matrix": {
+   "labels": [
+    "Antenna Failure",
+    "Buffer Overflow (Gradual Buildup)",
+    "Co-Channel Interference (Mild)",
+    "Co-Channel Interference (Severe)",
+    "Doppler Shift (Severe)",
+    "Faulty Handover Algorithm (Too Frequent)",
+    "Faulty RF Filters (Temporal)",
+    "High Network Congestion (Gradual Buildup)",
+    "High Network Congestion (Sudden Spike)",
+    "Jamming",
+    "Resource Allocation Bugs",
+    "__invalid__"
+   ],
+   "matrix": [
+    [
+     7,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     20,
+     0,
+     0,
+     4,
+     0,
+     0,
+     13,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     14,
+     0,
+     0,
+     0,
+     6,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     12,
+     38,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     4,
+     0,
+     14,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     3,
+     1,
+     0,
+     0,
+     2,
+     0,
+     4,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     14,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     5,
+     1,
+     0,
+     0,
+     0,
+     1,
+     24,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     11,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     25,
+     0,
+     2,
+     0,
+     0,
+     1,
+     0,
+     63,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     2,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  "n": 308
+ },
+ "affected_kpis_set_f1": 0.9189522965921183,
+ "explanation_kpi_grounding": {
+  "mean_fraction_of_mentioned_kpis_that_deviate": 1.0,
+  "cases_mentioning_kpis": 285,
+  "mentions": 729,
+  "mentions_not_in_deviating_list": 0
+ },
+ "root_cause_excl_jamming": {
+  "accuracy": 0.6666666666666666,
+  "n": 216
+ },
+ "explanation_rougeL": 0.30655175869818685,
+ "resolution_rougeL": 0.7497943461957899,
+ "explanation_bertscore": {
+  "f1": 0.8508380055427551,
+  "f1_rescaled": 0.11620424687862396,
+  "model": "roberta-large"
+ },
+ "resolution_bertscore": {
+  "f1": 0.9643049240112305,
+  "f1_rescaled": 0.7885040640830994,
+  "model": "roberta-large"
+ },
+ "pred_distribution": {
+  "Co-Channel Interference (Mild)": 68,
+  "Jamming": 63,
+  "Co-Channel Interference (Severe)": 42,
+  "High Network Congestion (Gradual Buildup)": 38,
+  "Buffer Overflow (Gradual Buildup)": 25,
+  "Faulty RF Filters (Temporal)": 23,
+  "Doppler Shift (Severe)": 20,
+  "High Network Congestion (Sudden Spike)": 16,
+  "Antenna Failure": 10,
+  "Resource Allocation Bugs": 3
+ },
+ "system": "ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle",
+ "cost": {
+  "prompt_tokens": {
+   "mean": 838.2824675324675,
+   "median": 791.0,
+   "p95": 1067.0,
+   "total": 258191.0
+  },
+  "output_tokens": {
+   "mean": 214.50974025974025,
+   "median": 203.0,
+   "p95": 292.0,
+   "total": 66069.0
+  },
+  "seconds": {
+   "mean": 76.59274955229326,
+   "median": 68.59517431259155,
+   "p95": 115.69776800870895,
+   "total": 23590.566862106323
+  }
+ }
+}

@@ -1,0 +1,198 @@
+[
+ {
+  "run": "results/cpu_vm_gemma4_hybrid_q4_k_m_sub100",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "gemma4-e4b-rca-Q4_K_M.gguf",
+  "gguf_gb": 5.302273952,
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "threads": 4,
+  "n": 100,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.85,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9330739028287486
+  },
+  "cpu": {
+   "accuracy": 0.79,
+   "schema_valid": 0.97,
+   "kpi_f1": 0.8622463635136942
+  },
+  "root_cause_agreement_with_gpu": 0.94,
+  "prompt_tokens_mean": 805.16,
+  "output_tokens_mean": 218.63,
+  "seconds_mean": 52.56217577457428,
+  "seconds_median": 50.62200713157654,
+  "seconds_p95": 68.38510919809342,
+  "peak_rss_gb": 12.166667938232422,
+  "load_seconds": 7.043456554412842,
+  "cases_per_hour": 68.4903154587717
+ },
+ {
+  "run": "results/cpu_vm_gemma4_hybrid_q8_0_sub100",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "gemma4-e4b-rca-Q8_0.gguf",
+  "gguf_gb": 7.972726688,
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "threads": 4,
+  "n": 100,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.85,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9330739028287486
+  },
+  "cpu": {
+   "accuracy": 0.84,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9336503439315057
+  },
+  "root_cause_agreement_with_gpu": 0.99,
+  "prompt_tokens_mean": 805.16,
+  "output_tokens_mean": 209.3,
+  "seconds_mean": 85.08183888196945,
+  "seconds_median": 79.97483086585999,
+  "seconds_p95": 116.09938391447066,
+  "peak_rss_gb": 11.75863265991211,
+  "load_seconds": 16.07551598548889,
+  "cases_per_hour": 42.312202548820466
+ },
+ {
+  "run": "results/cpu_vm_ministral3_hybrid_q4_k_m_sub100",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "ministral3-3b-rca-Q4_K_M.gguf",
+  "gguf_gb": 2.146501632,
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.80GHz",
+  "threads": 4,
+  "n": 100,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.77,
+   "schema_valid": 0.99,
+   "kpi_f1": 0.954701826536037
+  },
+  "cpu": {
+   "accuracy": 0.76,
+   "schema_valid": 1.0,
+   "kpi_f1": 0.9557062125009493
+  },
+  "root_cause_agreement_with_gpu": 0.93,
+  "prompt_tokens_mean": 844.19,
+  "output_tokens_mean": 224.86,
+  "seconds_mean": 44.02617977380753,
+  "seconds_median": 41.08547878265381,
+  "seconds_p95": 63.414313471317286,
+  "peak_rss_gb": 8.965389251708984,
+  "load_seconds": 8.0484037399292,
+  "cases_per_hour": 81.76952936856325
+ },
+ {
+  "run": "results/cpu_kaggle_ministral3_hybrid_q4_k_m/ministral3_hybrid_q4_k_m",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "ministral3-3b-rca-Q4_K_M.gguf",
+  "gguf_gb": 2.146501632,
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+  "threads": 4,
+  "n": 308,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.6558441558441559,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "cpu": {
+   "accuracy": 0.6493506493506493,
+   "schema_valid": 0.9967532467532467,
+   "kpi_f1": 0.921294171938748
+  },
+  "root_cause_agreement_with_gpu": 0.935064935064935,
+  "prompt_tokens_mean": 838.2824675324675,
+  "output_tokens_mean": 216.64935064935065,
+  "seconds_mean": 64.82542533301688,
+  "seconds_median": 57.63182508945465,
+  "seconds_p95": 102.61190898418423,
+  "peak_rss_gb": 12.319637298583984,
+  "load_seconds": 25.080057382583618,
+  "cases_per_hour": 55.53376598003513
+ },
+ {
+  "run": "results/cpu_kaggle_ministral3_hybrid_q4_k_m/raw_download/ministral3_hybrid_q4_k_m",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "ministral3-3b-rca-Q4_K_M.gguf",
+  "gguf_gb": 2.146501632,
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+  "threads": 4,
+  "n": 308,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.6558441558441559,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "cpu": {
+   "accuracy": 0.6493506493506493,
+   "schema_valid": 0.9967532467532467,
+   "kpi_f1": 0.921294171938748
+  },
+  "root_cause_agreement_with_gpu": 0.935064935064935,
+  "prompt_tokens_mean": 838.2824675324675,
+  "output_tokens_mean": 216.64935064935065,
+  "seconds_mean": 64.82542533301688,
+  "seconds_median": 57.63182508945465,
+  "seconds_p95": 102.61190898418423,
+  "peak_rss_gb": 12.319637298583984,
+  "load_seconds": 25.080057382583618,
+  "cases_per_hour": 55.53376598003513
+ },
+ {
+  "run": "results/cpu_kaggle_ministral3_hybrid_q8_0/ministral3_hybrid_q8_0",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "ministral3-3b-rca-Q8_0.gguf",
+  "gguf_gb": 3.651683328,
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+  "threads": 4,
+  "n": 308,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.6558441558441559,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "cpu": {
+   "accuracy": 0.672077922077922,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "root_cause_agreement_with_gpu": 0.9837662337662337,
+  "prompt_tokens_mean": 838.2824675324675,
+  "output_tokens_mean": 214.50974025974025,
+  "seconds_mean": 76.59274955229326,
+  "seconds_median": 68.59517431259155,
+  "seconds_p95": 115.69776800870895,
+  "peak_rss_gb": 12.357582092285156,
+  "load_seconds": 27.072582006454468,
+  "cases_per_hour": 47.00183791603043
+ },
+ {
+  "run": "results/cpu_kaggle_ministral3_hybrid_q8_0/raw_download/ministral3_hybrid_q8_0",
+  "cache_ram_mib": "llama.cpp default (8192)",
+  "gguf": "ministral3-3b-rca-Q8_0.gguf",
+  "gguf_gb": 3.651683328,
+  "cpu_model": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+  "threads": 4,
+  "n": 308,
+  "gpu_fp16_on_same_cases": {
+   "accuracy": 0.6558441558441559,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "cpu": {
+   "accuracy": 0.672077922077922,
+   "schema_valid": 0.9935064935064936,
+   "kpi_f1": 0.9189522965921183
+  },
+  "root_cause_agreement_with_gpu": 0.9837662337662337,
+  "prompt_tokens_mean": 838.2824675324675,
+  "output_tokens_mean": 214.50974025974025,
+  "seconds_mean": 76.59274955229326,
+  "seconds_median": 68.59517431259155,
+  "seconds_p95": 115.69776800870895,
+  "peak_rss_gb": 12.357582092285156,
+  "load_seconds": 27.072582006454468,
+  "cases_per_hour": 47.00183791603043
+ }
+]

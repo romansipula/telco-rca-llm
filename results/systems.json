@@ -1,16 +1,105 @@
 {
  "_doc": "System name -> predictions file and the run that produced it. scripts/evaluate_all.sh evaluates these; telco-rca report builds the README tables from them. Runs that failed are kept for transparency (logs) but not listed here.",
- "majority_class": {"metrics": "results/baseline/majority/metrics.json", "group": "classical", "producer": "telco-rca baseline (local CPU)"},
- "gb_evidence_features": {"pred": "results/baseline/gb/predictions.jsonl", "metrics": "results/baseline/gb/metrics.json", "group": "classical", "producer": "telco-rca baseline (local CPU)", "label_only": true},
- "gb_plus_ticket_template": {"pred": "results/baseline/gb_template/predictions.jsonl", "group": "classical", "producer": "telco-rca baseline (local CPU)"},
- "gemma4_e4b_zeroshot_raw": {"pred": "results/gpu_gemma4_run1/gemma4_e4b/zs_raw/predictions.jsonl", "group": "zero-shot", "producer": "kaggle telco-rca-gpu-gemma4 run 1 (fp16, 2xT4); 48 longest prompts OOM -> n=260"},
- "gemma4_e4b_zeroshot_evidence": {"pred": "results/gpu_gemma4_run1/gemma4_e4b/zs_evidence/predictions.jsonl", "group": "zero-shot", "producer": "kaggle telco-rca-gpu-gemma4 run 1 (fp16, 2xT4)"},
- "ministral3_3b_zeroshot_raw": {"pred": "results/gpu_ministral3/ministral3_3b/zs_raw/predictions.jsonl", "group": "zero-shot", "producer": "kaggle telco-rca-gpu-ministral3 (fp16, 1xT4); stopped by GPU budget -> n=288"},
- "ministral3_3b_zeroshot_evidence": {"pred": "results/gpu_ministral3/ministral3_3b/zs_evidence/predictions.jsonl", "group": "zero-shot", "producer": "kaggle telco-rca-gpu-ministral3 (fp16, 1xT4)"},
- "gemma4_e4b_sft_evidence": {"pred": "results/gpu_gemma4_eval/gemma4_e4b/sft_evidence/predictions.jsonl", "group": "QLoRA SFT", "producer": "adapter: kaggle telco-rca-gpu-gemma4 run 5; eval: telco-rca-gpu-gemma4-eval (fp16 + LoRA, 1xT4)"},
- "ministral3_3b_sft_evidence": {"pred": "results/gpu_ministral3/ministral3_3b/sft_evidence/predictions.jsonl", "group": "QLoRA SFT", "producer": "kaggle telco-rca-gpu-ministral3 (fp16 + LoRA, 1xT4)"},
- "gemma4_e4b_sft_hybrid": {"pred": "results/gpu_gemma4_eval_run2/gemma4_e4b/sft_hybrid/predictions.jsonl", "group": "hybrid (SFT + GB top-3)", "producer": "adapter: kaggle telco-rca-gpu-gemma4 run 5; eval: telco-rca-gpu-gemma4-eval run 2 (fp16 + LoRA, 1xT4)"},
- "ministral3_3b_sft_hybrid": {"pred": "results/gpu_ministral3/ministral3_3b/sft_hybrid/predictions.jsonl", "group": "hybrid (SFT + GB top-3)", "producer": "kaggle telco-rca-gpu-ministral3 (fp16 + LoRA, 1xT4)"},
- "gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0": {"pred": "results/cpu_kaggle_gemma4_26b_zs/gemma4_26b_a4b_q4_0_zs_evidence/predictions.jsonl", "group": "zero-shot", "producer": "kaggle CPU telco-rca-cpu-gemma26b, Google QAT Q4_0 GGUF, llama.cpp"},
- "oracle_sft_targets": {"pred": "results/baseline/oracle_targets/predictions.jsonl", "group": "reference", "producer": "the SFT targets themselves (upper bound of the text metrics)"}
+ "majority_class": {
+  "metrics": "results/baseline/majority/metrics.json",
+  "group": "classical",
+  "producer": "telco-rca baseline (local CPU)"
+ },
+ "gb_evidence_features": {
+  "pred": "results/baseline/gb/predictions.jsonl",
+  "metrics": "results/baseline/gb/metrics.json",
+  "group": "classical",
+  "producer": "telco-rca baseline (local CPU)",
+  "label_only": true
+ },
+ "gb_plus_ticket_template": {
+  "pred": "results/baseline/gb_template/predictions.jsonl",
+  "group": "classical",
+  "producer": "telco-rca baseline (local CPU)"
+ },
+ "gemma4_e4b_zeroshot_raw": {
+  "pred": "results/gpu_gemma4_run1/gemma4_e4b/zs_raw/predictions.jsonl",
+  "group": "zero-shot",
+  "producer": "kaggle telco-rca-gpu-gemma4 run 1 (fp16, 2xT4); 48 longest prompts OOM -> n=260"
+ },
+ "gemma4_e4b_zeroshot_evidence": {
+  "pred": "results/gpu_gemma4_run1/gemma4_e4b/zs_evidence/predictions.jsonl",
+  "group": "zero-shot",
+  "producer": "kaggle telco-rca-gpu-gemma4 run 1 (fp16, 2xT4)"
+ },
+ "ministral3_3b_zeroshot_raw": {
+  "pred": "results/gpu_ministral3/ministral3_3b/zs_raw/predictions.jsonl",
+  "group": "zero-shot",
+  "producer": "kaggle telco-rca-gpu-ministral3 (fp16, 1xT4); stopped by GPU budget -> n=288"
+ },
+ "ministral3_3b_zeroshot_evidence": {
+  "pred": "results/gpu_ministral3/ministral3_3b/zs_evidence/predictions.jsonl",
+  "group": "zero-shot",
+  "producer": "kaggle telco-rca-gpu-ministral3 (fp16, 1xT4)"
+ },
+ "gemma4_e4b_sft_evidence": {
+  "pred": "results/gpu_gemma4_eval/gemma4_e4b/sft_evidence/predictions.jsonl",
+  "group": "QLoRA SFT",
+  "producer": "adapter: kaggle telco-rca-gpu-gemma4 run 5; eval: telco-rca-gpu-gemma4-eval (fp16 + LoRA, 1xT4)"
+ },
+ "ministral3_3b_sft_evidence": {
+  "pred": "results/gpu_ministral3/ministral3_3b/sft_evidence/predictions.jsonl",
+  "group": "QLoRA SFT",
+  "producer": "kaggle telco-rca-gpu-ministral3 (fp16 + LoRA, 1xT4)"
+ },
+ "gemma4_e4b_sft_hybrid": {
+  "pred": "results/gpu_gemma4_eval_run2/gemma4_e4b/sft_hybrid/predictions.jsonl",
+  "group": "hybrid (SFT + GB top-3)",
+  "producer": "adapter: kaggle telco-rca-gpu-gemma4 run 5; eval: telco-rca-gpu-gemma4-eval run 2 (fp16 + LoRA, 1xT4)"
+ },
+ "ministral3_3b_sft_hybrid": {
+  "pred": "results/gpu_ministral3/ministral3_3b/sft_hybrid/predictions.jsonl",
+  "group": "hybrid (SFT + GB top-3)",
+  "producer": "kaggle telco-rca-gpu-ministral3 (fp16 + LoRA, 1xT4)"
+ },
+ "gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0": {
+  "pred": "results/cpu_kaggle_gemma4_26b_zs/gemma4_26b_a4b_q4_0_zs_evidence/predictions.jsonl",
+  "group": "zero-shot",
+  "producer": "kaggle CPU telco-rca-cpu-gemma26b, Google QAT Q4_0 GGUF, llama.cpp"
+ },
+ "ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle": {
+  "pred": "results/cpu_kaggle_ministral3_hybrid_q8_0/ministral3_hybrid_q8_0/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "kaggle CPU telco-rca-cpu-ministral3-q8-0 (4 vCPU Xeon 2.2 GHz)"
+ },
+ "ministral3_3b_hybrid_gguf_q4_k_m_cpu_kaggle": {
+  "pred": "results/cpu_kaggle_ministral3_hybrid_q4_k_m/ministral3_hybrid_q4_k_m/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "kaggle CPU telco-rca-cpu-ministral3-q4-k-m"
+ },
+ "gemma4_e4b_hybrid_gguf_q8_0_cpu_kaggle": {
+  "pred": "results/cpu_kaggle_gemma4_hybrid_q8_0/gemma4_hybrid_q8_0/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "kaggle CPU telco-rca-cpu-gemma4-q8-0"
+ },
+ "gemma4_e4b_hybrid_gguf_q4_k_m_cpu_kaggle": {
+  "pred": "results/cpu_kaggle_gemma4_hybrid_q4_k_m/gemma4_hybrid_q4_k_m/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "kaggle CPU telco-rca-cpu-gemma4-q4-k-m"
+ },
+ "gemma4_e4b_hybrid_gguf_q8_0_cpu_vm_sub100": {
+  "pred": "results/cpu_vm_gemma4_hybrid_q8_0_sub100/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "this VM (4 vCPU Xeon 2.8 GHz, AVX-512), scripts/cpu_vm_runs.sh, 100-case subset"
+ },
+ "gemma4_e4b_hybrid_gguf_q4_k_m_cpu_vm_sub100": {
+  "pred": "results/cpu_vm_gemma4_hybrid_q4_k_m_sub100/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "this VM, 100-case subset"
+ },
+ "ministral3_3b_hybrid_gguf_q4_k_m_cpu_vm_sub100": {
+  "pred": "results/cpu_vm_ministral3_hybrid_q4_k_m_sub100/predictions.jsonl",
+  "group": "CPU GGUF (llama.cpp)",
+  "producer": "this VM, 100-case subset"
+ },
+ "oracle_sft_targets": {
+  "pred": "results/baseline/oracle_targets/predictions.jsonl",
+  "group": "reference",
+  "producer": "the SFT targets themselves (upper bound of the text metrics)"
+ }
 }

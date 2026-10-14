@@ -1,0 +1,1 @@
+romansipula/telco-rca-cpu-ministral3-q8-0 has status "KernelWorkerStatus.COMPLETE"

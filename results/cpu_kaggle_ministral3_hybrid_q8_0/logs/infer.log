@@ -1,0 +1,58 @@
+2026-10-13 22:06:56,979 INFO numexpr.utils: NumExpr defaulting to 4 threads.
+2026-10-13 22:06:59,174 INFO httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,214 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16 "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,257 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 22:06:59,274 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fconfig.json=&etag=%228600b8d325919d3dec346b221b5b481e7e672f78%22 "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,293 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fconfig.json=&etag=%228600b8d325919d3dec346b221b5b481e7e672f78%22 "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,367 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 22:06:59,367 WARNING huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 22:06:59,385 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/tokenizer_config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Ftokenizer_config.json=&etag=%227f9f2f4f941ab1dffda12e9feeff2fd1d18d3e03%22 "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,403 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/tokenizer_config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Ftokenizer_config.json=&etag=%227f9f2f4f941ab1dffda12e9feeff2fd1d18d3e03%22 "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,452 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 22:06:59,500 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 22:06:59,557 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/tokenizer.json "HTTP/1.1 302 Found"
+2026-10-13 22:06:59,672 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/xet-read-token/b6d637bef2393152b3da2b2fde72eecdee30557e "HTTP/1.1 200 OK"
+2026-10-13 22:07:00,251 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/tokenizer.model "HTTP/1.1 404 Not Found"
+2026-10-13 22:07:00,288 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-13 22:07:00,333 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 22:07:00,349 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/special_tokens_map.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fspecial_tokens_map.json=&etag=%22c5ac9bbb2b7c801eec23cb07fee0d07805aebc42%22 "HTTP/1.1 200 OK"
+2026-10-13 22:07:00,367 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/special_tokens_map.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fspecial_tokens_map.json=&etag=%22c5ac9bbb2b7c801eec23cb07fee0d07805aebc42%22 "HTTP/1.1 200 OK"
+2026-10-13 22:07:00,424 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/b6d637bef2393152b3da2b2fde72eecdee30557e/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 22:07:00,440 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/chat_template.jinja?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fchat_template.jinja=&etag=%22e4892f515cbf545b702de4d4e6f0b55f6dcca2fa%22 "HTTP/1.1 200 OK"
+2026-10-13 22:07:00,459 INFO httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/chat_template.jinja?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fb6d637bef2393152b3da2b2fde72eecdee30557e%2Fchat_template.jinja=&etag=%22e4892f515cbf545b702de4d4e6f0b55f6dcca2fa%22 "HTTP/1.1 200 OK"
+2026-10-13 22:07:02,373 INFO httpx: HTTP Request: GET https://huggingface.co/api/models/mistralai/Ministral-3-3B-Instruct-2512-BF16 "HTTP/1.1 200 OK"
+2026-10-13 22:07:02,419 INFO httpx: HTTP Request: HEAD https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 22:07:02,436 INFO httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Ministral-3-3B-Instruct-2512-BF16/b6d637bef2393152b3da2b2fde72eecdee30557e/config.json?%2Fmistralai%2FMinistral-3-3B-Instruct-2512-BF16%2Fresolve%2Fmain%2Fconfig.json=&etag=%228600b8d325919d3dec346b221b5b481e7e672f78%22 "HTTP/1.1 200 OK"
+2026-10-13 22:07:02,537 INFO telco_rca.llm.cpu_infer: starting /kaggle/tmp/llama.cpp/build/bin/llama-server -m /kaggle/input/notebooks/romansipula/telco-rca-export-ministral3/gguf/ministral3-3b-rca-Q8_0.gguf -t 4 -c 8192 --port 50753 --host 127.0.0.1 -np 1 --no-warmup
+2026-10-13 22:09:03,797 INFO telco_rca.llm.cpu_infer: 1/308 94.1s prompt=808 out=178
+2026-10-13 22:19:03,486 INFO telco_rca.llm.cpu_infer: 11/308 61.9s prompt=788 out=176
+2026-10-13 22:28:57,204 INFO telco_rca.llm.cpu_infer: 21/308 54.2s prompt=748 out=156
+2026-10-13 22:37:45,571 INFO telco_rca.llm.cpu_infer: 31/308 55.0s prompt=768 out=154
+2026-10-13 22:46:34,256 INFO telco_rca.llm.cpu_infer: 41/308 62.5s prompt=819 out=166
+2026-10-13 22:56:10,961 INFO telco_rca.llm.cpu_infer: 51/308 53.6s prompt=769 out=150
+2026-10-13 23:06:21,400 INFO telco_rca.llm.cpu_infer: 61/308 55.3s prompt=773 out=151
+2026-10-13 23:16:27,931 INFO telco_rca.llm.cpu_infer: 71/308 62.8s prompt=812 out=175
+2026-10-13 23:26:04,824 INFO telco_rca.llm.cpu_infer: 81/308 56.1s prompt=778 out=154
+2026-10-13 23:35:41,902 INFO telco_rca.llm.cpu_infer: 91/308 64.0s prompt=764 out=192
+2026-10-13 23:46:03,901 INFO telco_rca.llm.cpu_infer: 101/308 62.4s prompt=755 out=209
+2026-10-14 00:00:28,744 INFO telco_rca.llm.cpu_infer: 111/308 95.9s prompt=874 out=267
+2026-10-14 00:12:35,033 INFO telco_rca.llm.cpu_infer: 121/308 72.2s prompt=773 out=192
+2026-10-14 00:26:48,456 INFO telco_rca.llm.cpu_infer: 131/308 115.7s prompt=977 out=290
+2026-10-14 00:44:50,248 INFO telco_rca.llm.cpu_infer: 141/308 103.7s prompt=976 out=297
+2026-10-14 00:59:23,050 INFO telco_rca.llm.cpu_infer: 151/308 86.5s prompt=878 out=232
+2026-10-14 01:13:11,304 INFO telco_rca.llm.cpu_infer: 161/308 91.1s prompt=831 out=266
+2026-10-14 01:27:42,358 INFO telco_rca.llm.cpu_infer: 171/308 66.1s prompt=771 out=204
+2026-10-14 01:40:45,674 INFO telco_rca.llm.cpu_infer: 181/308 61.9s prompt=735 out=171
+2026-10-14 01:55:50,761 INFO telco_rca.llm.cpu_infer: 191/308 129.0s prompt=1223 out=287
+2026-10-14 02:10:04,562 INFO telco_rca.llm.cpu_infer: 201/308 58.7s prompt=748 out=192
+2026-10-14 02:19:45,255 INFO telco_rca.llm.cpu_infer: 211/308 79.2s prompt=887 out=200
+2026-10-14 02:34:26,951 INFO telco_rca.llm.cpu_infer: 221/308 87.3s prompt=850 out=268
+2026-10-14 02:45:25,824 INFO telco_rca.llm.cpu_infer: 231/308 47.8s prompt=759 out=212
+2026-10-14 02:57:29,896 INFO telco_rca.llm.cpu_infer: 241/308 102.1s prompt=896 out=290
+2026-10-14 03:10:45,732 INFO telco_rca.llm.cpu_infer: 251/308 53.8s prompt=685 out=153
+2026-10-14 03:27:04,846 INFO telco_rca.llm.cpu_infer: 261/308 67.9s prompt=730 out=193
+2026-10-14 03:43:39,189 INFO telco_rca.llm.cpu_infer: 271/308 98.6s prompt=933 out=289
+2026-10-14 03:59:57,923 INFO telco_rca.llm.cpu_infer: 281/308 100.7s prompt=960 out=291
+2026-10-14 04:13:57,174 INFO telco_rca.llm.cpu_infer: 291/308 69.4s prompt=752 out=194
+2026-10-14 04:29:35,635 INFO telco_rca.llm.cpu_infer: 301/308 99.2s prompt=957 out=289

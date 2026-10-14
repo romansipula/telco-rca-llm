@@ -4,8 +4,9 @@ Reads every ``predictions.jsonl`` that has a sibling ``predictions.run.json`` (w
 ``telco-rca infer-cpu``) and the GPU reference predictions given with --gpu-ref. Writes
 results/cpu_report.json and results/cpu_report.md.
 
-    python scripts/cpu_report.py --gpu-ref results/gpu_gemma4/gemma4_e4b/sft_hybrid/predictions.jsonl \
+    python scripts/cpu_report.py --gpu-ref gemma4=<gemma fp16 predictions> --gpu-ref ministral3=<...> \
         --cpu results/cpu_vm_* results/cpu_kaggle_*
+(each run is matched to the reference whose key occurs in its GGUF file name)
 """
 import argparse
 from pathlib import Path
@@ -37,7 +38,7 @@ def agreement(a, b, schema, ids):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--gpu-ref", required=True)
+    ap.add_argument("--gpu-ref", action="append", required=True, help="key=predictions.jsonl")
     ap.add_argument("--cpu", nargs="+", required=True, help="dirs searched for predictions.run.json")
     ap.add_argument("--prepared", default="data_cache/prepared/telecomts")
     ap.add_argument("--out", default="results/cpu_report")
@@ -45,18 +46,25 @@ def main():
     rows, meta = load_prepared(a.prepared)
     by_id = {r["case_id"]: r for r in rows}
     schema = meta["schema"]
-    gpu = read_jsonl(a.gpu_ref)
+    refs = {k: read_jsonl(v) for k, v in (x.split("=", 1) for x in a.gpu_ref)}
     runs = []
     for d in a.cpu:
         for rj in sorted(Path(d).rglob("predictions.run.json")):
+            if "raw_download" in rj.parts:
+                continue
             preds = read_jsonl(rj.with_name("predictions.jsonl"))
             info = read_json(rj)
+            key = next((k for k in refs if k in info["gguf"]), None)
+            if key is None:
+                continue
+            gpu = refs[key]
             ids = sorted({p["case_id"] for p in preds} & {p["case_id"] for p in gpu})
             if not ids:
                 continue
             sec = np.array([p["seconds"] for p in preds])
             runs.append({
-                "run": str(rj.parent), "gguf": info["gguf"], "gguf_gb": info["gguf_bytes"] / 1e9, "cpu_model": info["cpu"],
+                "run": str(rj.parent), "cache_ram_mib": info.get("cache_ram_mib", "llama.cpp default (8192)"),
+                "gguf": info["gguf"], "gguf_gb": info["gguf_bytes"] / 1e9, "cpu_model": info["cpu"],
                 "threads": info["threads"], "n": len(ids),
                 "gpu_fp16_on_same_cases": score(gpu, by_id, schema, ids),
                 "cpu": score(preds, by_id, schema, ids),

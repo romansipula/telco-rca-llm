@@ -16,6 +16,11 @@
 | hybrid (SFT + GB top-3) | `gemma4_e4b_sft_hybrid` | 308 | 0.737 | 0.590 | 0.625 | 0.925 | 1.000 | 1.000 | 0.998 |
 | hybrid (SFT + GB top-3) | `ministral3_3b_sft_hybrid` | 308 | 0.656 | 0.584 | 0.644 | 0.919 | 1.000 | 0.994 | 1.000 |
 | zero-shot | `gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0` | 308 | 0.065 | 0.046 | 0.065 | 0.444 | 1.000 | 0.994 | 0.732 |
+| CPU GGUF (llama.cpp) | `ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle` | 308 | 0.672 | 0.599 | 0.667 | 0.919 | 1.000 | 0.994 | 1.000 |
+| CPU GGUF (llama.cpp) | `ministral3_3b_hybrid_gguf_q4_k_m_cpu_kaggle` | 308 | 0.649 | 0.567 | 0.620 | 0.921 | 1.000 | 0.997 | 1.000 |
+| CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q8_0_cpu_vm_sub100` | 100 | 0.840 | 0.723 | 0.789 | 0.934 | 1.000 | 1.000 | 1.000 |
+| CPU GGUF (llama.cpp) | `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 100 | 0.790 | 0.682 | 0.724 | 0.862 | 1.000 | 0.970 | 0.981 |
+| CPU GGUF (llama.cpp) | `ministral3_3b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 100 | 0.760 | 0.665 | 0.737 | 0.956 | 1.000 | 1.000 | 1.000 |
 | reference | `oracle_sft_targets` | 308 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 | 1.000 |
 
 ## Explanation / resolution text vs reference tickets
@@ -32,6 +37,11 @@
 | `gemma4_e4b_sft_hybrid` | 0.329 | 0.853 | 0.127 | 0.767 | 0.969 | 0.818 |
 | `ministral3_3b_sft_hybrid` | 0.302 | 0.850 | 0.112 | 0.738 | 0.963 | 0.779 |
 | `gemma4_26b_a4b_zeroshot_evidence_cpu_q4_0` | 0.131 | 0.844 | 0.073 | 0.117 | 0.863 | 0.191 |
+| `ministral3_3b_hybrid_gguf_q8_0_cpu_kaggle` | 0.307 | 0.851 | 0.116 | 0.750 | 0.964 | 0.789 |
+| `ministral3_3b_hybrid_gguf_q4_k_m_cpu_kaggle` | 0.300 | 0.849 | 0.106 | 0.736 | 0.963 | 0.778 |
+| `gemma4_e4b_hybrid_gguf_q8_0_cpu_vm_sub100` | 0.338 | 0.852 | 0.125 | 0.817 | 0.978 | 0.871 |
+| `gemma4_e4b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 0.314 | 0.849 | 0.108 | 0.796 | 0.973 | 0.842 |
+| `ministral3_3b_hybrid_gguf_q4_k_m_cpu_vm_sub100` | 0.316 | 0.849 | 0.107 | 0.825 | 0.975 | 0.855 |
 | `oracle_sft_targets` | 0.397 | 0.862 | 0.185 | 1.000 | 1.000 | 1.000 |
 
 ## Per-class F1

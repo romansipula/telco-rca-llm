@@ -1,0 +1,1 @@
+883d823fa770f6b14bc93fbf1c5ab5392bcd5e01 Slugify kernel names like Kaggle does; GGUF checksums (VM and Kaggle builds identical)

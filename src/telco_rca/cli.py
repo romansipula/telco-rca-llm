@@ -164,7 +164,8 @@ def cmd_infer_cpu(args):
 
     model_cfg = load_config(args.model_config, args.set)
     infer_cpu(args.gguf, args.examples, args.out, args.llama_cpp, threads=args.threads, ctx=args.ctx,
-              limit=args.limit, max_new_tokens=args.max_new_tokens, server_bin=args.server_bin, model_cfg=model_cfg)
+              limit=args.limit, max_new_tokens=args.max_new_tokens, server_bin=args.server_bin, model_cfg=model_cfg,
+              cache_ram_mib=None if args.cache_ram < 0 else args.cache_ram)
 
 
 def cmd_evaluate(args):
@@ -271,6 +272,8 @@ def main(argv=None):
     p.add_argument("--out", required=True)
     p.add_argument("--llama-cpp", default="")
     p.add_argument("--server-bin")
+    p.add_argument("--cache-ram", type=int, default=0,
+                   help="llama-server host prompt cache in MiB (llama.cpp default 8192; -1 = leave default)")
     p.add_argument("--threads", type=int)
     p.add_argument("--ctx", type=int, default=8192)
     p.add_argument("--limit", type=int)

@@ -1,0 +1,16 @@
+[{"stream_name":"stdout","time":1.224506352,"data":"+ lscpu; free -g; df -h /kaggle/working /kaggle/tmp\n"}
+,{"stream_name":"stdout","time":1.29929008,"data":"+ git clone --depth 50 --branch claude/sweet-goldberg-nxv0hn https://github.com/romansipula/telco-rca-llm /kaggle/tmp/repo\n"}
+,{"stream_name":"stdout","time":2.437886382,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 git log -1 --format='%H %s' \u003e /kaggle/working/logs/commit.txt\n"}
+,{"stream_name":"stdout","time":2.4474740759999998,"data":"+ /usr/bin/python3 -m pip install -q -e '/kaggle/tmp/repo' 'transformers==5.19.0'  sentencepiece protobuf huggingface_hub\n"}
+,{"stream_name":"stdout","time":35.675273965,"data":"+ /usr/bin/python3 -m pip uninstall -y -q torchao\n"}
+,{"stream_name":"stdout","time":37.227045893,"data":"+ git clone --depth 1 https://github.com/ggml-org/llama.cpp.git /kaggle/tmp/llama.cpp\n"}
+,{"stream_name":"stdout","time":44.140309301,"data":"+ cd /kaggle/tmp/llama.cpp \u0026\u0026 git log -1 --format='%H %cd' \u003e /kaggle/working/logs/llama_cpp_commit.txt\n"}
+,{"stream_name":"stdout","time":44.14452263,"data":"+ cd /kaggle/tmp/llama.cpp \u0026\u0026 cmake -B build -DGGML_NATIVE=ON -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release \u0026\u0026 cmake --build build -j4 --target llama-server\n"}
+,{"stream_name":"stdout","time":424.289370342,"data":"+ cd /kaggle/tmp/repo \u0026\u0026 timeout 39176 telco-rca infer-cpu --gguf /kaggle/input/notebooks/romansipula/telco-rca-export-ministral3/gguf/ministral3-3b-rca-Q8_0.gguf --model-config configs/models/ministral3_3b.yaml --examples /kaggle/input/datasets/romansipula/telco-rca-prompts/hybrid_test.jsonl --out /kaggle/working/ministral3_hybrid_q8_0/predictions.jsonl --llama-cpp /kaggle/tmp/llama.cpp --max-new-tokens 512\n"}
+,{"stream_name":"stderr","time":24089.16674867,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":24089.166960825,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":24089.560507948,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":24089.560546348,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":24090.91015937,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":24093.998741806,"data":"[NbConvertApp] Writing 303518 bytes to __results__.html\n"}
+]
