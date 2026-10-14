@@ -1,0 +1,11 @@
+{
+ "gguf": "gemma4-e4b-rca-Q4_K_M.gguf",
+ "gguf_bytes": 5302273952,
+ "threads": 4,
+ "ctx": 8192,
+ "load_seconds": 46.10190176963806,
+ "peak_rss_mb": 16021.4609375,
+ "n_new": 308,
+ "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+ "host": "b246bbd2af68"
+}

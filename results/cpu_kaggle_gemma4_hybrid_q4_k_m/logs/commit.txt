@@ -1,0 +1,1 @@
+b589bb21c8cd72f0216dc462afb133c4a4066b03 GPU results: Ministral 3 3B and Gemma 4 E4B zero-shot, SFT and hybrid predictions

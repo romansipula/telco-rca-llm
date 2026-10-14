@@ -43,6 +43,11 @@ merged fine-tunes is the actual proof; see `results/export_*`.
   are finite. If they are not, it reloads with fp32 compute and records that in `train_log.json`
   (`fp32_fallback_used`).
 * **GPU reference precision:** the fine-tuned models are evaluated with fp16 base weights plus the
-  unmerged LoRA adapter (`infer_quant: none`). For Gemma 4 E4B (~16 GB in fp16 with its per-layer
-  embeddings) this is spread over both T4s. This is the "GPU fp16" baseline that the GGUF quantisations
-  are compared against.
+  unmerged LoRA adapter (`infer_quant: none`). Gemma 4 E4B is ~16 GB in fp16, 5.6 GB of which is its
+  per-layer embedding table (262144 × 10752). That table is a pure lookup, so it is kept in host RAM
+  (`cpu_modules` in `configs/models/gemma4_e4b.yaml`; exact, no numerical change), and the rest runs
+  in fp16 on one T4. This is the "GPU fp16" baseline that the GGUF quantisations are compared against.
+* **Why not 2×T4 for Gemma:** splitting over both GPUs still put the embedding table and the tied
+  262k-vocab LM head on GPU 0 and OOMed during QLoRA. Once the table was moved to CPU, a
+  cuda:0/cuda:1 mismatch appeared in 2-GPU generation. Training also computes LM-head logits only
+  for the answer span (`logits_to_keep`), which is verified to give the same loss as the full sequence.

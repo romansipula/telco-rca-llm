@@ -40,8 +40,11 @@ tables.
   only be judged by humans: `results/review/review_sheet.csv` (30 cases, blind A/B: LLM vs template).
 * **The window-level random split leaks.** Windows overlap by 75%. A window-level random split, as in
   TelecomTS' own `run.py`, gives GB 0.951 accuracy instead of 0.737 (`results/baseline/gb_random_split`).
-* **CPU deployment works.** See [CPU deployment](#cpu-deployment-llamacpp-gguf) for the
-  accuracy-vs-fp16 and seconds-per-case table.
+* **CPU deployment works.**
+  * Q8_0 GGUFs are essentially lossless vs GPU fp16: 98-99% of root causes agree.
+  * Q4_K_M loses 0.006-0.016 accuracy on the full test set.
+  * One 4-core CPU handles a case in 44-86 s, i.e. 42-82 cases per hour per machine, with 4-8 GB RAM.
+  * Details in [CPU deployment](#cpu-deployment-llamacpp-gguf).
 
 ## Data and split
 
@@ -225,7 +228,65 @@ The fine-tuned LLM almost always picks from GB's top 3, and mostly GB's top 1. O
 is at best a neutral re-ranker. Its local wins (Doppler for Ministral, Gradual-Buildup Congestion for
 Gemma) are offset elsewhere.
 
-<!-- CPU_SECTION -->
+## CPU deployment (llama.cpp GGUF)
+
+Both hybrid fine-tunes were merged into their base models in fp16, converted with llama.cpp
+`convert_hf_to_gguf.py` and quantised to Q8_0 and Q4_K_M. The Ministral GGUFs built on Kaggle and
+on this VM are bit-identical (`results/gguf_ministral3.sha256`).
+
+Inference runs through `llama-server`, one request at a time, 4 threads, greedy decoding. Prompts are
+rendered with the model's own chat template and sent as token ids, so they are byte-identical to the
+GPU fp16 runs.
+
+The rows below cover three settings:
+* **Kaggle CPU kernel** (4 vCPU Xeon @ 2.20 GHz, 30 GB RAM): the full 308-case test set.
+* **This VM** (4 vCPU Xeon @ 2.80 GHz with AVX-512, 15 GB RAM): a fixed, seeded 100-case subset
+  (`results/cpu_subset_ids.json`), run strictly one job at a time.
+* **Model RAM:** a separate 10-case run per GGUF on this VM with the host prompt cache disabled
+  (`--cache-ram 0`). The main runs used llama.cpp's default 8 GB prompt cache, which dominates
+  their peak RSS (~12-16 GB) without changing speed.
+
+| model | quant | GGUF GB | where | n | acc GPU fp16 (same cases) | acc CPU | Δ | agreement with fp16 | schema valid | prompt / output tokens | s/case (mean, p95) | cases/hour | model RAM GB (`--cache-ram 0`) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Gemma 4 E4B hybrid | Q4_K_M | 5.30 | Kaggle CPU | 308 | 0.737 | 0.721 | −0.016 | 0.977 | 0.948 | 800 / 217 | 86.1 / 116.6 | 42 | 7.15 |
+| Gemma 4 E4B hybrid | Q8_0 | 7.97 | Kaggle CPU | <!--G8N--> | <!--G8ROW--> |
+| Gemma 4 E4B hybrid | Q4_K_M | 5.30 | this VM | 100 | 0.850 | 0.790 | −0.060 | 0.940 | 0.970 | 805 / 219 | 52.6 / 68.4 | 68 | 7.15 |
+| Gemma 4 E4B hybrid | Q8_0 | 7.97 | this VM | 100 | 0.850 | 0.840 | −0.010 | 0.990 | 1.000 | 805 / 209 | 85.1 / 116.1 | 42 | 7.85 |
+| Ministral 3 3B hybrid | Q4_K_M | 2.15 | Kaggle CPU | 308 | 0.656 | 0.649 | −0.006 | 0.935 | 0.997 | 838 / 217 | 64.8 / 102.6 | 56 | 4.32 |
+| Ministral 3 3B hybrid | Q8_0 | 3.65 | Kaggle CPU | 308 | 0.656 | 0.672 | +0.016 | 0.984 | 0.994 | 838 / 215 | 76.6 / 115.7 | 47 | 4.36 |
+| Ministral 3 3B hybrid | Q4_K_M | 2.15 | this VM | 100 | 0.770 | 0.760 | −0.010 | 0.930 | 1.000 | 844 / 225 | 44.0 / 63.4 | 82 | 4.32 |
+| Gemma 4 26B-A4B zero-shot (reference) | Q4_0 (Google QAT) | 14.44 | Kaggle CPU | 308 | – | 0.065 | – | – | 0.994 | 746 / 192 | 78.0 | 46 | 28.2 (default cache) |
+
+Sources: `results/cpu_report.md` / `.json` (`scripts/cpu_report.py`), the `results/cpu_*` run
+directories (`predictions.run.json` records CPU, threads, load time and peak RSS), and
+`results/cpu_vm_memory/`.
+
+Reading it:
+
+* **Q8_0 is essentially lossless.**
+  * Gemma Q8_0 agrees with GPU fp16 on 99% of root causes.
+  * Ministral Q8_0 agrees on 98.4%, with +0.016 accuracy, which is noise in the other direction.
+* **Q4_K_M costs a little.**
+  * Accuracy drops 0.006-0.016 on the full test set (0.06 on Gemma's 100-case VM subset).
+  * Agreement with fp16 is 93-98%.
+  * For Gemma, Q4_K_M sometimes repeats a KPI in `affected_kpis` (16 of 308 outputs), and the
+    strict schema rejects these. The root cause is unaffected. A dedupe step, or llama.cpp's
+    JSON-schema-constrained decoding (`json_schema` in the `/completion` request), removes this
+    failure mode. It was not used in these measurements.
+* **Cost per case.** Every case is ~800 prompt tokens plus ~215 output tokens. Generation (~5-6 tok/s
+  on 4 cores) dominates.
+  * Ministral 3 3B Q4_K_M: 44 s/case on this VM (82 cases/hour), 65 s on Kaggle's slower vCPUs.
+  * Gemma 4 E4B Q4_K_M: 53 s/case on this VM, 86 s on Kaggle.
+  * One 4-core machine therefore handles ~1,000-2,000 incidents per night. Throughput scales almost
+    linearly with cores, and per-case latency falls with the core count up to the memory-bandwidth
+    limit.
+* **RAM.** With the prompt cache off, Ministral needs ~4.3 GB and Gemma 4 E4B ~7-8 GB. The 26B-A4B
+  MoE needs a 14.4 GB file and peaked at 28 GB with the default cache, and gives nothing in return here.
+* **Deployment recommendation.** Ministral 3 3B Q8_0 (3.65 GB, ~4.4 GB RAM, near-identical to fp16)
+  or Gemma 4 E4B Q8_0 (7.97 GB, ~7.9 GB RAM). Gemma's hybrid has +0.081 accuracy over Ministral's at GPU fp16, at equal macro-F1 (0.590 vs 0.584). Always run
+  it behind the GB classifier, and fall back to the GB+template answer if the JSON is not
+  schema-valid.
+
 
 ## 10 example outputs
 
@@ -311,8 +372,12 @@ Different splits, class sets and inputs; listed only for orientation:
      from 0.737 to 0.951 here.
    * The deployment numbers (tokens, seconds per case, RAM) carry over almost directly, since the
      evidence block length does not depend on the sampling rate.
-5. **CPU-only is practical for batch use.** See the CPU table: a few hundred cases per hour on one
-   small VM, and overnight batches of thousands of alarms.
+5. **CPU-only is practical for batch use, not for interactive use.**
+   * Throughput is 42-82 cases per hour on a 4-core VM, i.e. ~1,000-2,000 incidents in an overnight
+     batch.
+   * Q8_0 is the safe default. Q4_K_M is 15-40% faster (Gemma 53 vs 85 s/case on this VM; Ministral
+     65 vs 77 s on Kaggle) and smaller, at a small accuracy cost.
+   * Put the GB classifier in front, and fall back to its template answer when the JSON is invalid.
 
 ## GPU budget and failed runs (transparency)
 

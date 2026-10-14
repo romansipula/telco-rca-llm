@@ -74,6 +74,9 @@ def infer_cpu(gguf: str, examples_file: str, out_file: str, llama_cpp: str = "",
     if out.exists():
         done = {json.loads(line)["case_id"] for line in out.open() if line.strip()}
     todo = [e for e in examples if e["case_id"] not in done]
+    if not todo:
+        log.info("all %d predictions already present in %s", len(examples), out)
+        return {}
     threads = threads or os.cpu_count() or 4
     port = _free_port()
     binary = find_server(llama_cpp, server_bin)
